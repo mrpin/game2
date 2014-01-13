@@ -22,14 +22,19 @@ public class ViewChip extends ViewBase
     /*
      * Properties
      */
-
+    public function set enabled(value:Boolean):void
+    {
+        //TODO:Implement!
+        Debug.assert(false, "Implement");
+    }
 
     /*
      * Methods
      */
-    public function ViewChip(controller:IController, valueType:int)
+    public function ViewChip(controller:IController, chipType:int)
     {
-        _source = chipType(valueType);
+        var sourceClass:Class = getChipViewClass(chipType);
+        _source = new sourceClass();
         super(controller, _source);
 
         init();
@@ -40,60 +45,57 @@ public class ViewChip extends ViewBase
 
     }
 
-    private static function chipType(index:int):DisplayObjectContainer
+    private static function getChipViewClass(index:int):Class
     {
-        //TODO: разобратся что вписать место 8!
-        Debug.assert(ETypeBamboo.ETB_COUNT == 8);
-
-        var result:DisplayObjectContainer = null;
+        var result:Class = null;
 
         switch (index)
         {
             case ETypeBamboo.ETB_0:
             {
-                result = new gChip0();
+                result = gChip0;
 
                 break;
             }
             case ETypeBamboo.ETB_1:
             {
-                result = new gChip1();
+                result = gChip1;
 
                 break;
             }
             case ETypeBamboo.ETB_2:
             {
-                result = new gChip2();
+                result = gChip2;
 
                 break;
             }
             case ETypeBamboo.ETB_3:
             {
-                result = new gChip3();
+                result = gChip3;
 
                 break;
             }
             case ETypeBamboo.ETB_4:
             {
-                result = new gChip4();
+                result = gChip4;
 
                 break;
             }
             case ETypeBamboo.ETB_5:
             {
-                result = new gChip5();
+                result = gChip5;
 
                 break;
             }
             case ETypeBamboo.ETB_6:
             {
-                result = new gChip6();
+                result = gChip6;
 
                 break;
             }
             case ETypeBamboo.ETB_7:
             {
-                result = new gChip7();
+                result = gChip7;
 
                 break;
             }

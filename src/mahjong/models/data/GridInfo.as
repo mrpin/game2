@@ -5,11 +5,8 @@ package mahjong.models.data
 {
 import core.DisposableObject;
 
-import flash.geom.Point;
-
 import serialization.ISerializable;
 
-import utils.Utils;
 import utils.UtilsArray;
 
 public class GridInfo extends DisposableObject implements ISerializable
@@ -17,18 +14,14 @@ public class GridInfo extends DisposableObject implements ISerializable
     /*
      * Fields
      */
-    private var _sizeGrid:Point;
-
-    private var _countChips:int;
-
-    private var _chips:Array;
+    private var _layersChips:Array;
 
     /*
      * Properties
      */
     public function get chips():Array
     {
-        return _chips;
+        return _layersChips;
     }
 
     /*
@@ -43,51 +36,8 @@ public class GridInfo extends DisposableObject implements ISerializable
 
     private function init():void
     {
-        _chips = [];
+        _layersChips = [];
 
-        for (var i:int = ETypeBamboo.ETB_0; i < ETypeBamboo.ETB_COUNT; i++)
-        {
-            var chip0:ChipInfo = new ChipInfo();
-            chip0.value = i;
-            _chips.push(chip0);
-
-            var chip1:ChipInfo = new ChipInfo();
-            chip1.value = i;
-            _chips.push(chip1);
-        }
-
-        UtilsArray.shuffle(_chips);
-        UtilsArray.shuffle(_chips);
-
-        generatorMahjong();
-    }
-
-    private function generatorMahjong():void
-    {
-        var chips:Array = [];
-
-        for (var z:int = 0; z < 3; z++)
-        {
-            var chipByY:Array = [];
-
-            for (var y:int = 0; y < 10; y++)
-            {
-                var chipByX:Array = [];
-
-                for (var x:int = 0; x < 10; x++)
-                {
-                    var randomFactor:int = Math.round(Utils.randomFromTo(0, 1));
-
-                    var chipSet:Boolean = randomFactor != 0;
-
-                    chipByX.push(chipSet);
-                }
-                chipByY.push(chipByX);
-            }
-            chips.push(chipByY);
-        }
-
-        Debug.assert(false, "no implement");
     }
 
 
@@ -100,7 +50,27 @@ public class GridInfo extends DisposableObject implements ISerializable
 
     public function deserialize(data:Object):void
     {
-        _countChips = 10;
+
+        for each(var columnZ:Array in data["grid"])
+        {
+            var layerChips:Array = [];
+
+            for each(var columnY:Array in columnZ)
+            {
+                for each(var columnX:Object in columnY)
+                {
+                    if (columnX["setChip"] == true)
+                    {
+                        var chipInfo:ChipInfo = new ChipInfo();
+                        chipInfo.deserialize(columnX);
+                        layerChips.push(chipInfo);
+                    }
+
+                }
+            }
+            UtilsArray.shuffle(layerChips);
+            _layersChips.push(layerChips);
+        }
     }
 }
 }

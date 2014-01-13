@@ -5,8 +5,7 @@ package mahjong.controllers.game
 {
 import controllers.implementations.Controller;
 
-import flash.display.DisplayObjectContainer;
-
+import mahjong.models.data.ChipInfo;
 import mahjong.view.game.ViewChip;
 
 public class ControllerChip extends Controller
@@ -16,7 +15,7 @@ public class ControllerChip extends Controller
      */
     private var _view:ViewChip;
 
-    private var _type:int;
+    private var _entry:ChipInfo;
 
 
     /*
@@ -24,15 +23,20 @@ public class ControllerChip extends Controller
      */
 
 
+    public function get entry():ChipInfo
+    {
+        return _entry;
+    }
+
     /*
      * Methods
      */
-    public function ControllerChip(valueType:int)
+    public function ControllerChip(entry:ChipInfo)
     {
-        _view = new ViewChip(this, valueType);
+        _view = new ViewChip(this, entry["type"]);
         super(_view);
 
-        _type = valueType
+        _entry = entry;
 
         init();
     }

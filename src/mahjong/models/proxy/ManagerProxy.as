@@ -67,6 +67,31 @@ public class ManagerProxy implements IManagerProxy
 
     public function getLevelsData(data:Object):Object
     {
+        var grid00:Array = [];
+
+        for (var z:int = 0; z < 3; z++)
+        {
+            var containerForY:Array = [];
+
+            for (var y:int = 0; y < 20; y ++)
+            {
+                var containerForX:Array = [];
+
+                for (var x:int = 0; x < 20; x ++)
+                {
+                    var chip:Object =
+                    {
+                        setChip: true,
+                        x: x,
+                        y: y,
+                        z: z
+                    };
+                    containerForX.push(chip);
+                }
+                containerForY.push(containerForX)
+            }
+            grid00.push(containerForY);
+        }
 
 ////////////////////// LEVELS_CONTAINER_0 /////////////////////
         var level0Container0:Object =
@@ -74,6 +99,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level0Container0",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -83,6 +109,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level1Container0",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -92,6 +119,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level2Container0",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -103,6 +131,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level0Container1",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -112,6 +141,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level1Container1",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -121,6 +151,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level2Container1",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -132,6 +163,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level0Container2",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -141,6 +173,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level1Container2",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -150,6 +183,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level2Container2",
             name: "",
             number: 0,
+            grid: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };

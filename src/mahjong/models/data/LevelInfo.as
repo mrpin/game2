@@ -3,8 +3,6 @@
  */
 package mahjong.models.data
 {
-import flash.text.GridFitType;
-
 import models.implementations.levels.LevelInfoBase;
 
 public class LevelInfo extends LevelInfoBase
@@ -12,12 +10,15 @@ public class LevelInfo extends LevelInfoBase
     /*
      * Fields
      */
-    private var _grid:Array;
+    private var _grid3D:GridInfo;
 
     /*
      * Properties
      */
-
+    public function get grid3D():GridInfo
+    {
+        return _grid3D;
+    }
 
     /*
      * Methods

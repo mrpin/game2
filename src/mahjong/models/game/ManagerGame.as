@@ -3,6 +3,7 @@
  */
 package mahjong.models.game
 {
+import mahjong.models.data.ChipInfo;
 import mahjong.models.data.LevelInfo;
 
 import models.implementations.game.ManagerGameBase;
@@ -13,7 +14,9 @@ public class ManagerGame extends ManagerGameBase
     /*
      * Fields
      */
+    private var _currentLevel:LevelInfo;
 
+    private var _chipSelected:ChipInfo;
 
     /*
      * Properties
@@ -34,8 +37,6 @@ public class ManagerGame extends ManagerGameBase
     {
 
     }
-
-
 
 
 }

@@ -12,19 +12,35 @@ public class ChipInfo extends DisposableObject implements ISerializable
     /*
      * Fields
      */
-    private var _value:uint;
+    private var _type:uint;
+
+    private var _x:uint;
+    private var _y:uint;
+    private var _z:uint;
+
 
     /*
      * Properties
      */
-    public function get value():uint
+    public function get type():uint
     {
-        return _value;
+        return _type;
     }
 
-    public function set value(value:uint):void
+
+    public function get x():uint
     {
-        _value = value;
+        return _x;
+    }
+
+    public function get y():uint
+    {
+        return _y;
+    }
+
+    public function get z():uint
+    {
+        return _z;
     }
 
     /*
@@ -43,6 +59,7 @@ public class ChipInfo extends DisposableObject implements ISerializable
     }
 
 
+
     public function serialize():Object
     {
         Debug.assert(false, "no implement");
@@ -52,7 +69,13 @@ public class ChipInfo extends DisposableObject implements ISerializable
 
     public function deserialize(data:Object):void
     {
+        Debug.assert(data.hasOwnProperty("x"));
+        Debug.assert(data.hasOwnProperty("y"));
+        Debug.assert(data.hasOwnProperty("z"));
 
+        _x = data["x"];
+        _y = data["y"];
+        _z = data["z"];
     }
 }
 }
