@@ -7,8 +7,6 @@ import core.DisposableObject;
 
 import serialization.ISerializable;
 
-import utils.UtilsArray;
-
 public class GridInfo extends DisposableObject implements ISerializable
 {
     /*
@@ -50,25 +48,23 @@ public class GridInfo extends DisposableObject implements ISerializable
 
     public function deserialize(data:Object):void
     {
+        Debug.assert(data is Array);
 
-        for each(var columnZ:Array in data["grid"])
+        var layerZ:Array = data as Array;
+
+        for each(var columnZ:Array in layerZ)
         {
             var layerChips:Array = [];
 
             for each(var columnY:Array in columnZ)
             {
-                for each(var columnX:Object in columnY)
+                for each(var chipData:Object in columnY)
                 {
-                    if (columnX["setChip"] == true)
-                    {
-                        var chipInfo:ChipInfo = new ChipInfo();
-                        chipInfo.deserialize(columnX);
-                        layerChips.push(chipInfo);
-                    }
-
+                    var chipInfo:ChipInfo = new ChipInfo();
+                    chipInfo.deserialize(chipData);
+                    layerChips.push(chipInfo);
                 }
             }
-            UtilsArray.shuffle(layerChips);
             _layersChips.push(layerChips);
         }
     }

@@ -3,8 +3,12 @@
  */
 package mahjong.models.data
 {
-public class ETypeBamboo
+public class EChipType
 {
+    public static const ETB_EMPTY:int = -2;
+    //TODO: change ETB to ECT
+    public static const ETB_STUB:int = -1;
+
     public static const ETB_0:uint = 0;
     public static const ETB_1:uint = 1;
     public static const ETB_2:uint = 2;

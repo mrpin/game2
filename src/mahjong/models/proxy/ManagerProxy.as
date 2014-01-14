@@ -5,6 +5,8 @@ package mahjong.models.proxy
 {
 import bwf.models.proxy.IManagerProxy;
 
+import mahjong.models.data.EChipType;
+
 import models.interfaces.social.IManagerSocial;
 
 public class ManagerProxy implements IManagerProxy
@@ -73,20 +75,21 @@ public class ManagerProxy implements IManagerProxy
         {
             var containerForY:Array = [];
 
-            for (var y:int = 0; y < 20; y ++)
+            for (var y:int = 0; y < 20; y++)
             {
                 var containerForX:Array = [];
 
-                for (var x:int = 0; x < 20; x ++)
+                for (var x:int = 0; x < 20; x++)
                 {
-                    var chip:Object =
+                    var chipData:Object =
                     {
-                        setChip: true,
+                        chip_type: (x > 5 && x < 10) ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
                         x: x,
                         y: y,
                         z: z
                     };
-                    containerForX.push(chip);
+
+                    containerForX.push(chipData);
                 }
                 containerForY.push(containerForX)
             }
@@ -99,7 +102,7 @@ public class ManagerProxy implements IManagerProxy
             id: "level0Container0",
             name: "",
             number: 0,
-            grid: grid00,
+            grid_data: grid00,
             reward_currency_soft: 1,
             reward_points: 2
         };
@@ -197,32 +200,32 @@ public class ManagerProxy implements IManagerProxy
             name: "name",
             description: "",
             requirements: [],
-            levels: [level0Container0, level1Container0, level2Container0]
+            levels: [level0Container0]// level1Container0, level2Container0]
         };
 
-        var container1:Object =
-        {
-            id: "",
-            number: 4,
-            name: "name",
-            description: "",
-            requirements: [],
-            levels: [level0Container1, level1Container1, level2Container1]
-        };
-
-        var container2:Object =
-        {
-            id: "",
-            number: 4,
-            name: "name",
-            description: "",
-            requirements: [],
-            levels: [level0Container2, level1Container2, level2Container2]
-        };
+//        var container1:Object =
+//        {
+//            id: "",
+//            number: 4,
+//            name: "name",
+//            description: "",
+//            requirements: [],
+//            levels: [level0Container1, level1Container1, level2Container1]
+//        };
+//
+//        var container2:Object =
+//        {
+//            id: "",
+//            number: 4,
+//            name: "name",
+//            description: "",
+//            requirements: [],
+//            levels: [level0Container2, level1Container2, level2Container2]
+//        };
 ///////////////////////////////////////////////////////
         var result:Object =
         {
-            level_containers: [container0, container1, container2],
+            level_containers: [container0], // container1, container2],
             level_progress: null,
             level_complete_ids: []
         };

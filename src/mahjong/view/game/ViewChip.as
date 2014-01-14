@@ -7,7 +7,7 @@ import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
 
-import mahjong.models.data.ETypeBamboo;
+import mahjong.models.data.EChipType;
 
 import views.implementations.ViewBase;
 
@@ -51,49 +51,49 @@ public class ViewChip extends ViewBase
 
         switch (index)
         {
-            case ETypeBamboo.ETB_0:
+            case EChipType.ETB_0:
             {
                 result = gChip0;
 
                 break;
             }
-            case ETypeBamboo.ETB_1:
+            case EChipType.ETB_1:
             {
                 result = gChip1;
 
                 break;
             }
-            case ETypeBamboo.ETB_2:
+            case EChipType.ETB_2:
             {
                 result = gChip2;
 
                 break;
             }
-            case ETypeBamboo.ETB_3:
+            case EChipType.ETB_3:
             {
                 result = gChip3;
 
                 break;
             }
-            case ETypeBamboo.ETB_4:
+            case EChipType.ETB_4:
             {
                 result = gChip4;
 
                 break;
             }
-            case ETypeBamboo.ETB_5:
+            case EChipType.ETB_5:
             {
                 result = gChip5;
 
                 break;
             }
-            case ETypeBamboo.ETB_6:
+            case EChipType.ETB_6:
             {
                 result = gChip6;
 
                 break;
             }
-            case ETypeBamboo.ETB_7:
+            case EChipType.ETB_7:
             {
                 result = gChip7;
 

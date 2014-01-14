@@ -10,14 +10,14 @@ public class LevelInfo extends LevelInfoBase
     /*
      * Fields
      */
-    private var _grid3D:GridInfo;
+    private var _grid:GridInfo;
 
     /*
      * Properties
      */
-    public function get grid3D():GridInfo
+    public function get grid():GridInfo
     {
-        return _grid3D;
+        return _grid;
     }
 
     /*
@@ -44,8 +44,10 @@ public class LevelInfo extends LevelInfoBase
 
     override public function deserialize(data:Object):void
     {
-        var grid:GridInfo = new GridInfo;
-        grid.deserialize(data);
+        Debug.assert(data.hasOwnProperty("grid_data"));
+
+        _grid = new GridInfo;
+        grid.deserialize(data["grid_data"]);
 
         super.deserialize(data);
     }
