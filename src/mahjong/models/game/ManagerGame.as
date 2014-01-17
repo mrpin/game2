@@ -10,6 +10,9 @@ import mahjong.models.data.LevelInfo;
 import models.implementations.game.ManagerGameBase;
 import models.interfaces.levels.ILevelInfo;
 
+import utils.Utils;
+import utils.UtilsArray;
+
 public class ManagerGame extends ManagerGameBase
 {
     /*
@@ -34,6 +37,7 @@ public class ManagerGame extends ManagerGameBase
     {
         return _grid;
     }
+
     /*
      * Methods
      */
@@ -41,67 +45,149 @@ public class ManagerGame extends ManagerGameBase
     {
         super(levelInfo);
 
+        _currentLevel = levelInfo as LevelInfo;
+
         init();
     }
 
     private function init():void
     {
+
+
+
         //init grid
         initGrid();
     }
 
     private function initGrid():void
     {
-        //этот grid с фишками и
-        var grid:Array = [];
+        var grid:Array = getGrid();
+        var gridMain:Array = getMainGrid(grid);
+    }
 
-        for each(var layerZ:Array in _currentLevel.grid)
+    private function getGrid():Array
+    {
+        //этот grid с фишками и
+        var result:Array = [];
+
+        for each(var gridCarcassZ:Array in _currentLevel.gridCarcass)
         {
-            for each(var layerY:Array in layerZ)
+            var layerY:Array = [];
+
+            for each(var gridCarcassY:Array in gridCarcassZ)
             {
-                var layerY:Array = [];
-                for each(var chip:ChipInfo in layerY)
+                var layerX:Array = [];
+
+                for each(var chip:ChipInfo in gridCarcassY)
                 {
-                    if (chip.chipType == EChipType.ETB_EMPTY)
-                    {
-                        //TODO: push to layer empty
-                    }
-                    else
-                    {
-                        var newChip:ChipInfo = new ChipInfo();
-                        newChip.deserialize(chip.serialize());
-                        //TODO: push new chip
-                    }
+                    var newChip:ChipInfo = ChipInfo.getCloneWithType(chip, chip.chipType);
+
+                    layerX.push(newChip);
+                }
+                layerY.push(layerX);
+            }
+            result.push(layerY);
+        }
+
+        for each(var axisZ:Array in result)
+        {
+            for each(var axisY:Array in axisZ)
+            {
+                for each(var currentChip:ChipInfo in axisY)
+                {
+                    currentChip.gridOwner = result;
                 }
             }
         }
+        return result;
+    }
 
-        //fill grid with specify chip types
-        _grid = [];
+    private static function getMainGrid(grid:Array):Array
+    {
+        var result:Array = getChipsEmpty(grid);
 
         var enabledChips:Array = [];
 
         do
         {
-            for each(var layerZ:Array in grid)
+            for (var z:int = 0; z < grid.length; z++)
             {
-                for each(var chip:ChipInfo in layerY)
+                for (var y:int = 0; y < grid[z].length; y++)
                 {
-                    if (chip != ChipInfo.CHIP_EMPTY && chip.isEnabled)
+                    for (var x:int = 0; x < grid[z][y].length; x++)
                     {
-                        enabledChips.push(chip);
-                    }
+                        var enabledChip:ChipInfo = grid[z][y][x];
 
+                        if (enabledChip.chipType != EChipType.ETB_EMPTY && enabledChip.isEnabled)
+                        {
+//                            ChipInfo.getCloneWithType(enabledChip, EChipType.ETB_EMPTY);
+                            enabledChips.push(enabledChip);
+
+                        }
+                    }
                 }
             }
 
-            for each(var enabledChip:ChipInfo in enabledChips)
+            for each(var chipEmpty:ChipInfo in enabledChips)
             {
-                //set type
-                //remove from grid and push to _grid
+                chipEmpty = ChipInfo.getCloneWithType(enabledChip, EChipType.ETB_EMPTY);
             }
 
+            UtilsArray.shuffle(enabledChips);
+
+
+            var currentChipType:uint = EChipType.getRandomType();
+
+            for (var index:uint = 0; index < enabledChips.length; index++)
+            {
+                var chipEnabled:ChipInfo = enabledChips[index];
+
+                UtilsArray.removeValue(enabledChips, chipEnabled);
+
+                if ((index % 2) == 0)
+                {
+                    currentChipType = EChipType.getRandomType();
+                }
+
+                var newChip:ChipInfo = ChipInfo.getCloneWithType(chipEnabled, currentChipType);
+
+                newChip.gridOwner = result;
+
+                result[chipEnabled.z][chipEnabled.y][chipEnabled.x] = newChip;
+            }
+
+
+
         } while (enabledChips.length > 0);
+
+
+        return result;
+    }
+
+    private static function getChipsEmpty(grid:Array):Array
+    {
+        var result:Array = [];
+
+        for each(var gridZ:Array in grid)
+        {
+            var chipsEmptyZ:Array = [];
+
+            for each(var gridY:Array in gridZ)
+            {
+                var chipsEmptyY:Array = [];
+
+                for each(var chip:ChipInfo in gridY)
+                {
+                    var chipEmpty:ChipInfo = ChipInfo.getCloneWithType(chip, EChipType.ETB_EMPTY);
+
+                    chipsEmptyY.push(chipEmpty);
+                }
+                chipsEmptyZ.push(chipsEmptyY);
+            }
+            result.push(chipsEmptyZ);
+        }
+
+        return result;
     }
 
 }

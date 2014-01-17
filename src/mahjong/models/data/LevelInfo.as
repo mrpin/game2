@@ -10,15 +10,17 @@ public class LevelInfo extends LevelInfoBase
     /*
      * Fields
      */
-    private var _grid:GridInfo;
+    private var _gridCarcass:Array;
+
 
     /*
      * Properties
      */
-    public function get grid():GridInfo
+    public function get gridCarcass():Array
     {
-        return _grid;
+        return _gridCarcass;
     }
+
 
     /*
      * Methods
@@ -46,8 +48,28 @@ public class LevelInfo extends LevelInfoBase
     {
         Debug.assert(data.hasOwnProperty("grid_data"));
 
-        _grid = new GridInfo;
-        grid.deserialize(data["grid_data"]);
+        _gridCarcass = [];
+
+
+        for each(var layerZ:Array in data["grid_data"])
+        {
+            var layerY:Array = [];
+
+            for each(var layY:Array in layerZ)
+            {
+                var layerX:Array = [];
+
+                for each(var chip:Object in layY)
+                {
+                    var newChip:ChipInfo = new ChipInfo();
+
+                    newChip.deserialize(chip);
+                    layerX.push(newChip);
+                }
+                layerY.push(layerX);
+            }
+            _gridCarcass.push(layerY);
+        }
 
         super.deserialize(data);
     }

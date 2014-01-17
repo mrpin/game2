@@ -3,6 +3,8 @@
  */
 package mahjong.models.data
 {
+import utils.Utils;
+
 public class EChipType
 {
     public static const ETB_EMPTY:int = -2;
@@ -19,6 +21,11 @@ public class EChipType
     public static const ETB_7:uint = 7;
 
     public static const ETB_COUNT:uint = 8;
+
+    public static function getRandomType():uint
+    {
+        return Utils.randomFromTo(0, 7);
+    }
 
 }
 }

@@ -54,18 +54,21 @@ public class GridInfo extends DisposableObject implements ISerializable
 
         for each(var columnZ:Array in layerZ)
         {
-            var layerChips:Array = [];
+            var layerY:Array = [];
 
             for each(var columnY:Array in columnZ)
             {
+                var layerX:Array = [];
+
                 for each(var chipData:Object in columnY)
                 {
                     var chipInfo:ChipInfo = new ChipInfo();
                     chipInfo.deserialize(chipData);
-                    layerChips.push(chipInfo);
+                    layerX.push(chipInfo);
                 }
+                layerY.push(layerX);
             }
-            _layersChips.push(layerChips);
+            _layersChips.push(layerY);
         }
     }
 }
