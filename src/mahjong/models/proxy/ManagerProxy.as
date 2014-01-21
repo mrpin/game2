@@ -71,19 +71,20 @@ public class ManagerProxy implements IManagerProxy
     {
         var grid00:Array = [];
 
-        for (var z:int = 0; z < 1; z++)
+        for (var z:int = 0; z < 5; z++)
         {
             var containerForY:Array = [];
 
-            for (var y:int = 0; y < 20; y++)
+            for (var y:int = 0; y < 14; y++)
             {
                 var containerForX:Array = [];
 
-                for (var x:int = 0; x < 20; x++)
+                for (var x:int = 0; x < 14; x++)
                 {
                     var chipData:Object =
                     {
-                        chip_type: EChipType.ETB_STUB,// (x > 5 && x < 10) ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
+                        chip_type: ((x % 2) == 0 && (y % 2) == 0) ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
+//                        chip_type: EChipType.ETB_STUB,
                         x: x,
                         y: y,
                         z: z

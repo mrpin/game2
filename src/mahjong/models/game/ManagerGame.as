@@ -3,6 +3,8 @@
  */
 package mahjong.models.game
 {
+import mahjong.controllers.EControllerUpdateType;
+import mahjong.controllers.game.ControllerChip;
 import mahjong.models.data.ChipInfo;
 import mahjong.models.data.EChipType;
 import mahjong.models.data.LevelInfo;
@@ -10,8 +12,9 @@ import mahjong.models.data.LevelInfo;
 import models.implementations.game.ManagerGameBase;
 import models.interfaces.levels.ILevelInfo;
 
-import utils.Utils;
 import utils.UtilsArray;
+
+mahjong.controllers.EControllerUpdateType;
 
 public class ManagerGame extends ManagerGameBase
 {
@@ -20,7 +23,8 @@ public class ManagerGame extends ManagerGameBase
      */
     private var _currentLevel:LevelInfo;
 
-    private var _chipSelected:ChipInfo;
+    private var _chipFirstSelected:ControllerChip;
+    private var _chipSecondSelected:ControllerChip;
 
     private var _grid:Array;
 
@@ -32,6 +36,16 @@ public class ManagerGame extends ManagerGameBase
         return _currentLevel;
     }
 
+
+    public function get chipFirstSelected():ControllerChip
+    {
+        return _chipFirstSelected;
+    }
+
+    public function get chipSecondSelected():ControllerChip
+    {
+        return _chipSecondSelected;
+    }
 
     public function get grid():Array
     {
@@ -62,8 +76,9 @@ public class ManagerGame extends ManagerGameBase
     private function initGrid():void
     {
         var grid:Array = getGrid();
-        var gridMain:Array = getMainGrid(grid);
+        _grid = getMainGrid(grid);
     }
+
 
     private function getGrid():Array
     {
@@ -102,6 +117,7 @@ public class ManagerGame extends ManagerGameBase
         return result;
     }
 
+
     private static function getMainGrid(grid:Array):Array
     {
         var result:Array = getChipsEmpty(grid);
@@ -120,9 +136,7 @@ public class ManagerGame extends ManagerGameBase
 
                         if (enabledChip.chipType != EChipType.ETB_EMPTY && enabledChip.isEnabled)
                         {
-//                            ChipInfo.getCloneWithType(enabledChip, EChipType.ETB_EMPTY);
                             enabledChips.push(enabledChip);
-
                         }
                     }
                 }
@@ -130,9 +144,10 @@ public class ManagerGame extends ManagerGameBase
 
             for each(var chipEmpty:ChipInfo in enabledChips)
             {
-                chipEmpty = ChipInfo.getCloneWithType(enabledChip, EChipType.ETB_EMPTY);
+                grid[chipEmpty.z][chipEmpty.y][chipEmpty.x] = ChipInfo.getCloneWithType(chipEmpty, EChipType.ETB_EMPTY);
             }
 
+            UtilsArray.shuffle(enabledChips);
             UtilsArray.shuffle(enabledChips);
 
 
@@ -155,7 +170,6 @@ public class ManagerGame extends ManagerGameBase
 
                 result[chipEnabled.z][chipEnabled.y][chipEnabled.x] = newChip;
             }
-
 
 
         } while (enabledChips.length > 0);
@@ -188,6 +202,51 @@ public class ManagerGame extends ManagerGameBase
         }
 
         return result;
+    }
+
+    //проверка совпадения фишек
+    public function verificationCoincidenceChips(controller:ControllerChip):void
+    {
+        if (_chipFirstSelected != controller)
+        {
+            if (_chipFirstSelected == null)
+            {
+                _chipFirstSelected = controller;
+
+                GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_SELECT_CHIP);
+            }
+            else
+            {
+                if (_chipFirstSelected.typeChip == controller.typeChip)
+                {
+                    _chipSecondSelected = controller;
+
+                    GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_CHIPS_REMOVE);
+
+                    _grid[_chipFirstSelected.entry.z][_chipFirstSelected.entry.y][_chipFirstSelected.entry.x] = ChipInfo.getChipEmpty(_grid);
+                    _grid[_chipSecondSelected.entry.z][_chipSecondSelected.entry.y][_chipSecondSelected.entry.x] = ChipInfo.getChipEmpty(_grid);
+
+                    _chipFirstSelected = null;
+                    _chipSecondSelected = null;
+
+                }
+                else
+                {
+                    GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
+
+                    _chipFirstSelected = controller;
+
+                    GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_SELECT_CHIP);
+
+                }
+            }
+        }
+        else
+        {
+             GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
+            _chipFirstSelected = null;
+        }
+
     }
 
 }

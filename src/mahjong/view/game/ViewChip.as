@@ -6,6 +6,9 @@ package mahjong.view.game
 import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
+import flash.display.Sprite;
+
+import mahjong.models.data.ChipInfo;
 
 import mahjong.models.data.EChipType;
 
@@ -18,6 +21,8 @@ public class ViewChip extends ViewBase
      */
     private var _source:DisplayObjectContainer;
 
+    private var _entry:ChipInfo;
+
 
     /*
      * Properties
@@ -28,14 +33,22 @@ public class ViewChip extends ViewBase
         Debug.assert(false, "Implement");
     }
 
+    public function get entry():ChipInfo
+    {
+        return _entry;
+    }
+
     /*
      * Methods
      */
-    public function ViewChip(controller:IController, chipType:int)
+    public function ViewChip(controller:IController, entry:ChipInfo)
     {
-        var sourceClass:Class = getChipViewClass(chipType);
+        var sourceClass:Class = getChipViewClass(entry["chipType"]);
         _source = new sourceClass();
+
         super(controller, _source);
+
+        _entry = entry;
 
         init();
     }
@@ -96,6 +109,12 @@ public class ViewChip extends ViewBase
             case EChipType.ETB_7:
             {
                 result = gChip7;
+
+                break;
+            }
+            case EChipType.ETB_EMPTY:
+            {
+                result = Sprite;
 
                 break;
             }
