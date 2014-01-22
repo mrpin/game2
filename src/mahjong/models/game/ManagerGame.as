@@ -126,6 +126,8 @@ public class ManagerGame extends ManagerGameBase
 
         do
         {
+            var noEnable:Boolean = false;
+
             for (var z:int = 0; z < grid.length; z++)
             {
                 for (var y:int = 0; y < grid[z].length; y++)
@@ -137,42 +139,51 @@ public class ManagerGame extends ManagerGameBase
                         if (enabledChip.chipType != EChipType.ETB_EMPTY && enabledChip.isEnabled)
                         {
                             enabledChips.push(enabledChip);
+                            noEnable = true;
                         }
                     }
                 }
             }
-
-            for each(var chipEmpty:ChipInfo in enabledChips)
+            if (noEnable)
             {
-                grid[chipEmpty.z][chipEmpty.y][chipEmpty.x] = ChipInfo.getCloneWithType(chipEmpty, EChipType.ETB_EMPTY);
-            }
-
-            UtilsArray.shuffle(enabledChips);
-            UtilsArray.shuffle(enabledChips);
-
-
-            var currentChipType:uint = EChipType.getRandomType();
-
-            for (var index:uint = 0; index < enabledChips.length; index++)
-            {
-                var chipEnabled:ChipInfo = enabledChips[index];
-
-                UtilsArray.removeValue(enabledChips, chipEnabled);
-
-                if ((index % 2) == 0)
+                for each(var chipEmpty:ChipInfo in enabledChips)
                 {
-                    currentChipType = EChipType.getRandomType();
+                    grid[chipEmpty.z][chipEmpty.y][chipEmpty.x] = ChipInfo.getCloneWithType(chipEmpty, EChipType.ETB_EMPTY);
                 }
 
-                var newChip:ChipInfo = ChipInfo.getCloneWithType(chipEnabled, currentChipType);
+                UtilsArray.shuffle(enabledChips);
+                UtilsArray.shuffle(enabledChips);
 
-                newChip.gridOwner = result;
 
-                result[chipEnabled.z][chipEnabled.y][chipEnabled.x] = newChip;
+                var currentChipType:uint = EChipType.getRandomType();
+
+                var enabledChipsCount:uint = enabledChips.length;
+
+                for (var k:uint = 0; k < enabledChipsCount; k += 2)
+                {
+                    if (enabledChips.length > 1)
+                    {
+                        var randomCurrentType:uint = EChipType.getRandomType();
+
+                        var chipSecondaryEnabled:ChipInfo = enabledChips[1];
+                        UtilsArray.removeValue(enabledChips, chipSecondaryEnabled);
+
+                        var chipFirstEnabled:ChipInfo = enabledChips[0];
+                        UtilsArray.removeValue(enabledChips, chipFirstEnabled);
+
+
+                        var newChipFirst:ChipInfo = ChipInfo.getCloneWithType(chipFirstEnabled, randomCurrentType);
+                        newChipFirst.gridOwner = result;
+                        result[chipFirstEnabled.z][chipFirstEnabled.y][chipFirstEnabled.x] = newChipFirst;
+
+                        var newChipSecondary:ChipInfo = ChipInfo.getCloneWithType(chipSecondaryEnabled, randomCurrentType);
+                        newChipSecondary.gridOwner = result;
+                        result[chipSecondaryEnabled.z][chipSecondaryEnabled.y][chipSecondaryEnabled.x] = newChipSecondary;
+                    }
+                }
             }
 
-
-        } while (enabledChips.length > 0);
+        } while (noEnable);
 
 
         return result;
@@ -243,9 +254,14 @@ public class ManagerGame extends ManagerGameBase
         }
         else
         {
-             GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
+            GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
             _chipFirstSelected = null;
         }
+
+    }
+
+    public function shuffleChips():void
+    {
 
     }
 

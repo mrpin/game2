@@ -61,6 +61,9 @@ public class ViewFieldChips extends ViewBase
         var startPositionX:int = 0;
         var startPositionY:int = 0;
 
+        var intervalOnX:int = 2;
+        var intervalOnY:int = 2;
+
         for each (var chipsViewZ:Array in _viewsChips)
         {
             var xPosition:int = startPositionX;
@@ -75,9 +78,9 @@ public class ViewFieldChips extends ViewBase
                     chipView.x = positionX;
                     chipView.y = yPosition;
 
-                    positionX += chipView.entry.x % 2 ? 42 : 21;
+                    positionX += chipView.entry.x % 2 ? 42 + intervalOnX : 21 + intervalOnX;
                 }
-                yPosition += chipView.entry.y % 2 ? 60 : 30;
+                yPosition += chipView.entry.y % 2 ? 60 + intervalOnY : 30 +intervalOnY;
             }
             startPositionX -= 5;
             startPositionY -= 5;

@@ -7,6 +7,7 @@ import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
+import flash.filters.GlowFilter;
 
 import mahjong.models.data.ChipInfo;
 
@@ -38,6 +39,11 @@ public class ViewChip extends ViewBase
         return _entry;
     }
 
+    public function set filter(value:Array):void
+    {
+        _source.filters = value;
+    }
+
     /*
      * Methods
      */
@@ -49,6 +55,8 @@ public class ViewChip extends ViewBase
         super(controller, _source);
 
         _entry = entry;
+
+
 
         init();
     }
