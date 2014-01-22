@@ -94,7 +94,12 @@ public class ControllerChip extends Controller
                      inner:Boolean=false – если задать значение true, то свечение направляется внутрь объекта
                      knockout:Boolean=false – если задать значение true, то визуальный объект становится не видимым, видно только само свечение.
                      */
-                    var glow:GlowFilter = new GlowFilter(00000000, 0.3, 70, 70, 50, 1, true);
+
+//                       _view.viewFace.filter = [];
+
+                    var glow:GlowFilter = new GlowFilter(0x000000, 0.3, 70, 70, 50, 1, true);
+//                    var glow:GlowFilter = new GlowFilter(0xff0000 , 1, 6, 6, 2, 3, true, true);
+
                     _view.filter = [glow];
                 }
 

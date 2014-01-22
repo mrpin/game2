@@ -14,8 +14,6 @@ import models.interfaces.levels.ILevelInfo;
 
 import utils.UtilsArray;
 
-mahjong.controllers.EControllerUpdateType;
-
 public class ManagerGame extends ManagerGameBase
 {
     /*
@@ -23,6 +21,7 @@ public class ManagerGame extends ManagerGameBase
      */
     private var _currentLevel:LevelInfo;
 
+    //TODO: change controller to ChipInfo
     private var _chipFirstSelected:ControllerChip;
     private var _chipSecondSelected:ControllerChip;
 
@@ -31,12 +30,6 @@ public class ManagerGame extends ManagerGameBase
     /*
      * Properties
      */
-    public function get currentLevel():LevelInfo
-    {
-        return _currentLevel;
-    }
-
-
     public function get chipFirstSelected():ControllerChip
     {
         return _chipFirstSelected;
@@ -154,8 +147,6 @@ public class ManagerGame extends ManagerGameBase
                 UtilsArray.shuffle(enabledChips);
                 UtilsArray.shuffle(enabledChips);
 
-
-                var currentChipType:uint = EChipType.getRandomType();
 
                 var enabledChipsCount:uint = enabledChips.length;
 
