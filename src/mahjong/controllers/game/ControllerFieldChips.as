@@ -79,9 +79,7 @@ public class ControllerFieldChips extends Controller
     {
         switch (type)
         {
-            case EControllerUpdateType.ECUT_USER_SELECT_CHIP:
             case EControllerUpdateType.ECUT_CHIPS_REMOVE:
-            case EControllerUpdateType.ECUT_USER_DESELECT_CHIP:
             {
                 for each(var chipsZ:Array in _chips)
                 {

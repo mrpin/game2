@@ -35,11 +35,6 @@ public class ManagerGame extends ManagerGameBase
         return _chipFirstSelected;
     }
 
-    public function get chipSecondSelected():ControllerChip
-    {
-        return _chipSecondSelected;
-    }
-
     public function get grid():Array
     {
         return _grid;
@@ -209,13 +204,19 @@ public class ManagerGame extends ManagerGameBase
     //проверка совпадения фишек
     public function verificationCoincidenceChips(controller:ControllerChip):void
     {
-        if (_chipFirstSelected != controller)
+        if (_chipFirstSelected == controller)
+        {
+            _chipFirstSelected.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
+
+            _chipFirstSelected = null;
+        }
+        else
         {
             if (_chipFirstSelected == null)
             {
                 _chipFirstSelected = controller;
 
-                GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_SELECT_CHIP);
+                _chipFirstSelected.update(EControllerUpdateType.ECUT_USER_SELECT_CHIP);
             }
             else
             {
@@ -223,7 +224,8 @@ public class ManagerGame extends ManagerGameBase
                 {
                     _chipSecondSelected = controller;
 
-                    GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_CHIPS_REMOVE);
+                    _chipFirstSelected.update(EControllerUpdateType.ECUT_CHIPS_REMOVE);
+                    _chipSecondSelected.update(EControllerUpdateType.ECUT_CHIPS_REMOVE);
 
                     _grid[_chipFirstSelected.entry.z][_chipFirstSelected.entry.y][_chipFirstSelected.entry.x] = ChipInfo.getChipEmpty(_grid);
                     _grid[_chipSecondSelected.entry.z][_chipSecondSelected.entry.y][_chipSecondSelected.entry.x] = ChipInfo.getChipEmpty(_grid);
@@ -234,19 +236,14 @@ public class ManagerGame extends ManagerGameBase
                 }
                 else
                 {
-                    GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
+                    _chipFirstSelected.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
 
                     _chipFirstSelected = controller;
 
-                    GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_SELECT_CHIP);
+                    _chipFirstSelected.update(EControllerUpdateType.ECUT_USER_SELECT_CHIP);
 
                 }
             }
-        }
-        else
-        {
-            GameInfoBase.instance.managerStates.currentState.update(EControllerUpdateType.ECUT_USER_DESELECT_CHIP);
-            _chipFirstSelected = null;
         }
 
     }

@@ -7,10 +7,8 @@ import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
-import flash.filters.GlowFilter;
 
 import mahjong.models.data.ChipInfo;
-
 import mahjong.models.data.EChipType;
 
 import views.implementations.ViewBase;
@@ -18,53 +16,8 @@ import views.implementations.ViewBase;
 public class ViewChip extends ViewBase
 {
     /*
-     * Fields
+     * Static
      */
-    private var _source:DisplayObjectContainer;
-
-    private var _entry:ChipInfo;
-
-
-    /*
-     * Properties
-     */
-    public function set enabled(value:Boolean):void
-    {
-        //TODO:Implement!
-        Debug.assert(false, "Implement");
-    }
-
-    public function get entry():ChipInfo
-    {
-        return _entry;
-    }
-
-    public function set filter(value:Array):void
-    {
-        _source.filters = value;
-    }
-
-    /*
-     * Methods
-     */
-    public function ViewChip(controller:IController, entry:ChipInfo)
-    {
-        var sourceClass:Class = getChipViewClass(entry["chipType"]);
-        _source = new sourceClass();
-
-        super(controller, _source);
-
-        _entry = entry;
-
-
-
-        init();
-    }
-
-    private function init():void
-    {
-
-    }
 
     private static function getChipViewClass(index:int):Class
     {
@@ -137,6 +90,58 @@ public class ViewChip extends ViewBase
         return result;
     }
 
+    /*
+     * Fields
+     */
+    private var _source:DisplayObjectContainer;
+
+    private var _offsetX:Number;
+    private var _offsetY:Number;
+
+    /*
+     * Properties
+     */
+    public function get offsetX():Number
+    {
+        return _offsetX;
+    }
+
+    public function get offsetY():Number
+    {
+        return _offsetY;
+    }
+
+    public function set enabled(value:Boolean):void
+    {
+        //TODO:Implement!
+        Debug.assert(false, "Implement");
+    }
+
+    public function set filter(value:Array):void
+    {
+        _source.filters = value;
+    }
+
+    /*
+     * Methods
+     */
+    public function ViewChip(controller:IController, entry:ChipInfo)
+    {
+        var sourceClass:Class = getChipViewClass(entry.chipType);
+        _source = new sourceClass();
+
+        super(controller, _source);
+
+        _offsetX = (entry.x % 2 == 0) ? 42 : 21;
+        _offsetY = (entry.y % 2 == 0) ? 60 : 30;
+
+        init();
+    }
+
+    private function init():void
+    {
+
+    }
 
     /*
      * IDisposable

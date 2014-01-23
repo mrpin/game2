@@ -47,15 +47,8 @@ public class ViewFieldChips extends ViewBase
         _source = new Sprite();
         super(controller, _source);
 
-        init();
     }
 
-    private function init():void
-    {
-
-    }
-
-//TODO:доделать placeViews
     override public function placeViews(fullscreen:Boolean):void
     {
         var startPositionX:int = 0;
@@ -78,10 +71,11 @@ public class ViewFieldChips extends ViewBase
                     chipView.x = positionX;
                     chipView.y = yPosition;
 
-                    positionX += chipView.entry.x % 2 ? 42 + intervalOnX : 21 + intervalOnX;
+                    positionX += chipView.offsetX;
                 }
-                yPosition += chipView.entry.y % 2 ? 60 + intervalOnY : 30 +intervalOnY;
+                yPosition += chipView.offsetY;
             }
+
             startPositionX -= 5;
             startPositionY -= 5;
         }

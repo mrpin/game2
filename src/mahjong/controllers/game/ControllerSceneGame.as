@@ -45,9 +45,8 @@ public class ControllerSceneGame extends ControllerSceneBase
     {
         switch (type)
         {
-            case EControllerUpdateType.ECUT_USER_SELECT_CHIP:
+            //TODO: saves for purchase "show disabled"
             case EControllerUpdateType.ECUT_CHIPS_REMOVE:
-            case EControllerUpdateType.ECUT_USER_DESELECT_CHIP:
             {
                 _controllerFieldChips.update(type);
 

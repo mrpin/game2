@@ -75,15 +75,10 @@ public class ControllerChip extends Controller
 
     override public function update(type:String):void
     {
-        var chipFirstSelected:ControllerChip = GameInfo.instance.managerGame.chipFirstSelected;
-        var chipSecondSelected:ControllerChip = GameInfo.instance.managerGame.chipSecondSelected;
-
         switch (type)
         {
             case EControllerUpdateType.ECUT_USER_SELECT_CHIP:
             {
-                if (this == chipFirstSelected)
-                {
                     /*
                      color:uint=0xFF0000 – цвет свечения, по умолчанию красный
                      alpha:Number=1 – прозрачность, по умолчанию не прозрачное свечение
@@ -101,27 +96,18 @@ public class ControllerChip extends Controller
 //                    var glow:GlowFilter = new GlowFilter(0xff0000 , 1, 6, 6, 2, 3, true, true);
 
                     _view.filter = [glow];
-                }
 
                 break;
             }
             case EControllerUpdateType.ECUT_USER_DESELECT_CHIP:
             {
-
-                if (this == chipFirstSelected)
-                {
                     _view.filter = [];
-                }
 
                 break;
             }
             case EControllerUpdateType.ECUT_CHIPS_REMOVE:
             {
-
-                if (chipFirstSelected == this || chipSecondSelected == this)
-                {
-                    _view.source.visible = false;
-                }
+                _view.source.visible = false;
 
                 break;
             }
