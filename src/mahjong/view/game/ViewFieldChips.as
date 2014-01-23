@@ -81,6 +81,25 @@ public class ViewFieldChips extends ViewBase
         }
     }
 
+   public function subViewRemove():void
+   {
+       for each(var chipsViewZ:Array in _viewsChips)
+       {
+           for each(var chipsViewY:Array in chipsViewZ)
+           {
+               for each(var chipView:IView in chipsViewY)
+               {
+                   _source.removeChild(chipView.source);
+                   chipView = null;
+               }
+           }
+       }
+
+       _viewsChips = null;
+   }
+
+
+
     /*
      * IDisposable
      */

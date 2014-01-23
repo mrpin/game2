@@ -3,7 +3,7 @@
  */
 package mahjong.controllers.game
 {
-import mahjong.controllers.EControllerUpdateType;
+import mahjong.controllers.EControllerUpdate;
 import mahjong.controllers.base.ControllerSceneBase;
 import mahjong.view.game.ViewSceneGame;
 
@@ -46,7 +46,8 @@ public class ControllerSceneGame extends ControllerSceneBase
         switch (type)
         {
             //TODO: saves for purchase "show disabled"
-            case EControllerUpdateType.ECUT_CHIPS_REMOVE:
+            case EControllerUpdate.ECUT_CHIPS_REMOVE:
+            case EControllerUpdate.ECUT_CHIPS_SHUFFLE:
             {
                 _controllerFieldChips.update(type);
 

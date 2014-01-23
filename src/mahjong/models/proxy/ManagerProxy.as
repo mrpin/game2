@@ -71,7 +71,7 @@ public class ManagerProxy implements IManagerProxy
     {
         var grid00:Array = [];
 
-        for (var z:int = 0; z < 4; z++)
+        for (var z:int = 0; z < 2; z++)
         {
             var containerForY:Array = [];
 

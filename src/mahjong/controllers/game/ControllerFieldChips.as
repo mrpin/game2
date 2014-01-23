@@ -8,7 +8,7 @@ import controllers.implementations.Controller;
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
-import mahjong.controllers.EControllerUpdateType;
+import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
 import mahjong.view.game.ViewFieldChips;
 
@@ -79,7 +79,7 @@ public class ControllerFieldChips extends Controller
     {
         switch (type)
         {
-            case EControllerUpdateType.ECUT_CHIPS_REMOVE:
+            case EControllerUpdate.ECUT_CHIPS_REMOVE:
             {
                 for each(var chipsZ:Array in _chips)
                 {
@@ -91,6 +91,46 @@ public class ControllerFieldChips extends Controller
                         }
                     }
                 }
+
+                break;
+            }
+            case EControllerUpdate.ECUT_CHIPS_SHUFFLE:
+            {
+                _view.subViewRemove();
+
+                var gridChips:Array = GameInfo.instance.managerGame.grid;
+
+                var chipsViews:Array = [];
+                var chips:Array = [];
+
+                for each(var cellZ:Array in gridChips)
+                {
+                    var chipZ:Array = [];
+                    var chipsViewZ:Array = [];
+
+                    for each(var cellY:Array in cellZ)
+                    {
+                        var chipY:Array = [];
+                        var chipsViewY:Array = [];
+
+                        for each(var chipEntry:ChipInfo in cellY)
+                        {
+                            var chipNew:ControllerChip = new ControllerChip(chipEntry);
+
+                            chipY.push(chipNew);
+                            chipsViewY.push(chipNew.view);
+                        }
+                        chipZ.push(chipY);
+                        chipsViewZ.push(chipsViewY);
+                    }
+                    chips.push(chipZ);
+                    chipsViews.push(chipsViewZ);
+                }
+
+                _chips = chips;
+                _view.viewsChips = chipsViews;
+
+                _view.placeViews(false);
 
                 break;
             }

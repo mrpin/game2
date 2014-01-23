@@ -9,7 +9,7 @@ import flash.events.MouseEvent;
 import flash.filters.GlowFilter;
 
 import mahjong.GameInfo;
-import mahjong.controllers.EControllerUpdateType;
+import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
 import mahjong.view.game.ViewChip;
 
@@ -52,6 +52,7 @@ public class ControllerChip extends Controller
         super(_view);
 
         _entry = entry;
+        _entry.controller = this;
 
         init();
     }
@@ -66,7 +67,7 @@ public class ControllerChip extends Controller
     {
         if (entry.isEnabled)
         {
-            GameInfo.instance.managerGame.verificationCoincidenceChips(this);
+            GameInfo.instance.managerGame.verificationCoincidenceChips(_entry);
         }
 
 
@@ -77,7 +78,7 @@ public class ControllerChip extends Controller
     {
         switch (type)
         {
-            case EControllerUpdateType.ECUT_USER_SELECT_CHIP:
+            case EControllerUpdate.ECUT_USER_SELECT_CHIP:
             {
                     /*
                      color:uint=0xFF0000 – цвет свечения, по умолчанию красный
@@ -99,19 +100,18 @@ public class ControllerChip extends Controller
 
                 break;
             }
-            case EControllerUpdateType.ECUT_USER_DESELECT_CHIP:
+            case EControllerUpdate.ECUT_USER_DESELECT_CHIP:
             {
                     _view.filter = [];
 
                 break;
             }
-            case EControllerUpdateType.ECUT_CHIPS_REMOVE:
+            case EControllerUpdate.ECUT_CHIPS_REMOVE:
             {
                 _view.source.visible = false;
 
                 break;
             }
-
             default:
             {
                 Debug.assert(false);

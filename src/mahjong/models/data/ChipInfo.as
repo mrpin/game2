@@ -4,6 +4,8 @@
 package mahjong.models.data
 {
 
+import controllers.IController;
+
 import core.DisposableObject;
 
 import serialization.ISerializable;
@@ -51,10 +53,26 @@ public class ChipInfo extends DisposableObject implements ISerializable
 
     private var _gridOwner:Array;
 
+    private var _controller:IController;
+
 
     /*
      * Properties
      */
+    public function set controller(value:IController):void
+    {
+        if(_controller == value)
+            return;
+
+        _controller = value;
+    }
+
+
+    public function get controller():IController
+    {
+        return _controller;
+    }
+
     public function set grid(value:Array):void
     {
         //TODO: review

@@ -59,7 +59,8 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonSettings:
                 {
-                    GameInfo.instance.managerApp.fullScreenEnable = !GameInfo.instance.managerApp.fullScreenEnable;
+//                    GameInfo.instance.managerApp.fullScreenEnable = !GameInfo.instance.managerApp.fullScreenEnable;
+                    GameInfo.instance.managerGame.shuffleChips();
 
                     result = true;
 
