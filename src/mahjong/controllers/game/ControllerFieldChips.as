@@ -73,6 +73,8 @@ public class ControllerFieldChips extends Controller
 
         _view.viewsChips = chipsViews;
 
+        //TODO:удалить после тестирования
+       GameInfo.instance.managerGame.onShowChipsDisable = true;
     }
 
     override public function update(type:String):void
@@ -96,6 +98,7 @@ public class ControllerFieldChips extends Controller
             }
             case EControllerUpdate.ECUT_CHIPS_SHUFFLE:
             {
+                //TODO:бывает при перетасовке замыкается for
                 _view.subViewRemove();
 
                 var gridChips:Array = GameInfo.instance.managerGame.grid;

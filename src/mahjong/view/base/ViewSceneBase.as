@@ -82,12 +82,14 @@ public class ViewSceneBase extends ViewBase
 //        _source.addChild(_buttonTOP.source);
 
         var buttonSetting:gButtonSetting = new gButtonSetting();
-
+//
         _buttonSettings = new ViewButton(controller, buttonSetting.button);
         _source.addChild(_buttonSettings.source);
 
-//        _buttonSound = new ViewButton(controller /*TODO:вставить графику*/);
-//        _source.addChild(_buttonSound.source);
+        var buttonSound:gButtonSound = new gButtonSound();
+
+        _buttonSound = new ViewButton(controller, buttonSound.button);
+        _source.addChild(_buttonSound.source);
 
 //        _buttonFullScreen = new ViewButton(controller /*TODO:вставить графику*/);
 //        _source.addChild(_buttonFullScreen.source);
@@ -109,6 +111,10 @@ public class ViewSceneBase extends ViewBase
 
         _buttonSettings.x = targetScale - 100;
         _buttonSettings.y = 100;
+
+        _buttonSound.x = targetScale - 100;
+        _buttonSound.y = 250;
+
     }
 
     /*

@@ -112,6 +112,14 @@ public class ControllerChip extends Controller
 
                 break;
             }
+            case EControllerUpdate.ECUT_SHOW_CHIPS_DISABLE:
+            {
+                var glowColor:GlowFilter = new GlowFilter(0x000000, 0.8, 70, 70, 50, 1, true);
+
+                _view.filter = _entry.isEnabled ? [] : [glowColor];
+
+                break;
+            }
             default:
             {
                 Debug.assert(false);

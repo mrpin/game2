@@ -68,6 +68,8 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonSound:
                 {
+                    GameInfo.instance.managerGame.onShowChipsDisable = true;
+
                     result = true;
 
                     break;

@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfa91c1-555f-4a4e-a96b-0d331748df5d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdateType.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/graphics.swc" afterPath="$PROJECT_DIR$/assets/graphics.swc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" afterPath="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as" afterPath="$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/ManagerLevelsBase.as" afterPath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/ManagerLevelsBase.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" afterPath="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/Utils.as" afterPath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/Utils.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as" afterPath="$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mahjong.iws" />
@@ -77,41 +77,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ManagerGame.as" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ManagerGame.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="24" selection-start="3893" selection-end="3893" vertical-scroll-proportion="-3.3441558" vertical-offset="4525" max-vertical-offset="5715">
-              <folding>
-                <element signature="e#75#120#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LevelInfo.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/LevelInfo.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1245">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StateGame.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/states/game/StateGame.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="1440">
+            <state line="40" column="0" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="6000">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StateMahjongBase.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as">
+      <file leaf-file-name="ControllerFieldChips.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="445" max-vertical-offset="1215">
+            <state line="107" column="0" selection-start="2602" selection-end="2602" vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="2310">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerChip.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="123" column="13" selection-start="3276" selection-end="3276" vertical-scroll-proportion="0.0" vertical-offset="1055" max-vertical-offset="2055">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewSceneBase.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="28" selection-start="2999" selection-end="2999" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="2415">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EControllerUpdate.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="83" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -126,52 +131,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StateBase.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/states/base/StateBase.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="5070">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ControllerSceneBase.as" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="1590">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameInfo.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/GameInfo.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1605">
+            <state line="70" column="76" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="1740">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EControllerUpdate.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
+      <file leaf-file-name="ChipInfo.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+            <state line="138" column="38" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.5140562" vertical-offset="1656" max-vertical-offset="3690">
               <folding>
-                <marker date="1390474312000" expanded="true" signature="74:425" placeholder="{...}" />
+                <element signature="e#76#107#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChipInfo.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
+      <file leaf-file-name="ViewChip.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="0" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.0" vertical-offset="1184" max-vertical-offset="3420">
+            <state line="135" column="16" selection-start="2605" selection-end="2605" vertical-scroll-proportion="0.0" vertical-offset="1563" max-vertical-offset="2310">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManagerProxy.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="107" column="42" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0" vertical-offset="1251" max-vertical-offset="4590">
               <folding>
-                <element signature="e#76#107#0" expanded="true" />
+                <element signature="e#76#114#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,26 +193,27 @@
         <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/ManagerLevelsBase.as" />
         <option value="$PROJECT_DIR$/src/mahjong/models/data/LevelInfo.as" />
         <option value="$PROJECT_DIR$/src/mahjong/models/data/EChipType.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" />
         <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewSceneGame.as" />
         <option value="$PROJECT_DIR$/src/mahjong/states/game/StateGame.as" />
         <option value="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdateType.as" />
         <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" />
         <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" />
         <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" />
         <option value="$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="282" />
     <option name="y" value="22" />
-    <option name="width" value="1860" />
+    <option name="width" value="1640" />
     <option name="height" value="1178" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -364,6 +359,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,8 +628,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -925,12 +950,15 @@
       <workItem from="1390301019757" duration="43432000" />
       <workItem from="1390404277238" duration="46000" />
       <workItem from="1390404369109" duration="2055000" />
-      <workItem from="1390463636810" duration="25525000" />
+      <workItem from="1390463636810" duration="41483000" />
+      <workItem from="1390567257879" duration="15000" />
+      <workItem from="1390567317331" duration="81000" />
+      <workItem from="1390567656171" duration="10894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300552000" />
+    <option name="totallyTimeSpent" value="327500000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -953,7 +981,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1860" height="1178" extended-state="6" />
+    <frame x="282" y="22" width="1640" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -969,19 +997,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19086021" sideWeight="0.50045085" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32797733" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272059" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20022002" sideWeight="0.73345935" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22778474" sideWeight="0.73345935" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32797733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1001,10 +1029,37 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as</url>
+          <line>43</line>
+          <option name="timeStamp" value="300" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as</url>
+          <line>49</line>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as</url>
+          <line>40</line>
+          <option name="timeStamp" value="304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as</url>
+          <line>128</line>
+          <option name="timeStamp" value="306" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as</url>
+          <line>148</line>
+          <option name="timeStamp" value="307" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="273" />
+      <option name="time" value="308" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1012,33 +1067,159 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/IController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/ViewBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="0" selection-start="3867" selection-end="3867" vertical-scroll-proportion="0.0" vertical-offset="2445" max-vertical-offset="6720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/buttons/ViewButton.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/LevelInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="83" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../sdks-flash/flex/4.6/frameworks/libs/player/11.1/playerglobal.swc!/library.swf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="21" selection-start="8065" selection-end="8065" vertical-scroll-proportion="0.0" vertical-offset="2583" max-vertical-offset="144420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="76" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="1740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="28" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="3360">
+          <folding>
+            <element signature="e#76#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="190" column="0" selection-start="5105" selection-end="5105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="28" selection-start="2999" selection-end="2999" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="2415">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/IController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/ViewBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="0" selection-start="3867" selection-end="3867" vertical-scroll-proportion="0.0" vertical-offset="2445" max-vertical-offset="6720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/buttons/ViewButton.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/LevelInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="83" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../sdks-flash/flex/4.6/frameworks/libs/player/11.1/playerglobal.swc!/library.swf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="21" selection-start="8065" selection-end="8065" vertical-scroll-proportion="0.0" vertical-offset="2583" max-vertical-offset="144420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="76" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="1740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="28" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="3360">
+          <folding>
+            <element signature="e#76#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="29" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3930">
-          <folding>
-            <element signature="e#75#120#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/UtilsArray.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="975">
-          <folding />
-        </state>
+        <state line="47" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="975" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/Debug.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="630">
-          <folding />
-        </state>
+        <state line="25" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="33" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="4170">
-          <folding />
+          <folding>
+            <element signature="e#76#114#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,156 +1246,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="1500">
-          <folding>
-            <element signature="e#75#106#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="77" column="0" selection-start="1805" selection-end="1805" vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="1500" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="53" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1290">
-          <folding>
-            <element signature="e#80#125#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="47" column="53" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="1290" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/Controller.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="20" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/Debug.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/UtilsArray.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="16" selection-start="2605" selection-end="2605" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
+        <state line="85" column="20" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/EChipType.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="770">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/IController.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.44805196" vertical-offset="765" max-vertical-offset="4080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding>
-            <marker date="1390474312000" expanded="true" signature="74:425" placeholder="{...}" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/states/game/StateGame.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="1440">
-          <folding />
-        </state>
+        <state line="78" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.0" vertical-offset="670" max-vertical-offset="1440" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/states/base/StateBase.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0" vertical-offset="591" max-vertical-offset="5070">
-          <folding />
-        </state>
+        <state line="76" column="0" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0" vertical-offset="591" max-vertical-offset="5070" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1215">
-          <folding />
-        </state>
+        <state line="62" column="0" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1215" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1275">
-          <folding>
-            <element signature="e#80#125#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="43" column="0" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="1275" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/GameInfo.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="0" selection-start="1504" selection-end="1504" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="1590">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="2273" selection-end="2273" vertical-scroll-proportion="0.93636364" vertical-offset="704" max-vertical-offset="1785">
-          <folding>
-            <element signature="e#75#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.22077923" vertical-offset="1165" max-vertical-offset="2265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/LevelInfo.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="2966" selection-end="2966" vertical-scroll-proportion="0.8831169" vertical-offset="850" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
@@ -1226,20 +1302,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="0" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.0" vertical-offset="1184" max-vertical-offset="3420">
+        <state line="65" column="13" selection-start="1457" selection-end="1457" vertical-scroll-proportion="0.46363637" vertical-offset="588" max-vertical-offset="1785" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/ViewBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="0" selection-start="3867" selection-end="3867" vertical-scroll-proportion="0.0" vertical-offset="1826" max-vertical-offset="6345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/buttons/ViewButton.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="2370">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/Debug.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.3815261" vertical-offset="0" max-vertical-offset="747" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/UtilsArray.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.7188755" vertical-offset="138" max-vertical-offset="885" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="83" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/IController.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="28" selection-start="2999" selection-end="2999" vertical-scroll-proportion="0.0" vertical-offset="1371" max-vertical-offset="2235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="76" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/LevelInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="0" selection-start="2602" selection-end="2602" vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="2310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="16" selection-start="2605" selection-end="2605" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="13" selection-start="3276" selection-end="3276" vertical-scroll-proportion="0.0" vertical-offset="1055" max-vertical-offset="2055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="42" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0" vertical-offset="1251" max-vertical-offset="4590">
           <folding>
-            <element signature="e#76#107#0" expanded="true" />
+            <element signature="e#76#114#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="24" selection-start="3893" selection-end="3893" vertical-scroll-proportion="-3.3441558" vertical-offset="4525" max-vertical-offset="5715">
+        <state line="40" column="0" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="6000">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="38" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.5140562" vertical-offset="1656" max-vertical-offset="3690">
           <folding>
-            <element signature="e#75#120#0" expanded="true" />
+            <element signature="e#76#107#0" expanded="true" />
           </folding>
         </state>
       </provider>

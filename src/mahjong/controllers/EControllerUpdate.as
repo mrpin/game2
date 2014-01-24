@@ -9,7 +9,7 @@ public class EControllerUpdate
     public static const ECUT_USER_DESELECT_CHIP:String = "ECUT_USER_DESELECT_CHIP";
     public static const ECUT_CHIPS_REMOVE:String = "ECUT_CHIPS_REMOVE";
     public static const ECUT_CHIPS_SHUFFLE:String = "ECUT_CHIPS_SHUFFLE";
-
+    public static const ECUT_SHOW_CHIPS_DISABLE:String = "ECUT_SHOW_CHIPS_DISABLE";
 
 
 }

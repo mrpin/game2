@@ -117,8 +117,6 @@ public class ManagerGame extends ManagerGameBase
     }
 
 
-
-
     /*
      * Fields
      */
@@ -128,13 +126,15 @@ public class ManagerGame extends ManagerGameBase
 
     private var _grid:Array;
 
-    //TODO: implement
     // contains only enabled chips
     private var _chipsEnabled:Array;
 
-    //TODO: implement
     // contains all chips except empty
     private var _chipsAll:Array;
+
+    private var _onShowChipsDisable:Boolean;
+
+
     /*
      * Properties
      */
@@ -197,6 +197,14 @@ public class ManagerGame extends ManagerGameBase
         }
     }
 
+    public function set onShowChipsDisable(value:Boolean):void
+    {
+        _onShowChipsDisable = value;
+
+        _onShowChipsDisable ? showChipsDisable() : null;
+    }
+
+
     /*
      * Methods
      */
@@ -211,13 +219,18 @@ public class ManagerGame extends ManagerGameBase
 
     private function init():void
     {
+        _onShowChipsDisable = false;
+
         //init grid
         var grid:Array = getGrid();
         _grid = getMainGrid(grid);
 
         _chipsAll = getChips([EChipType.ETB_EMPTY]);
         updateEnabledChips();
+
+
     }
+
 
     private function getGrid():Array
     {
@@ -275,6 +288,16 @@ public class ManagerGame extends ManagerGameBase
                 if (_chipSelected.chipType == chip.chipType)
                 {
                     onUserSelectSameChip(chip);
+
+                    _onShowChipsDisable ? showChipsDisable() : null;
+
+                    if (!isHasCombination && _chipsEnabled.length > 2)
+                    {
+                        do
+                        {
+                            shuffleChips();
+                        } while (!isHasCombination);
+                    }
                 }
                 else
                 {
@@ -343,19 +366,12 @@ public class ManagerGame extends ManagerGameBase
         var chipsForShuffle:Array = [];
         var chipsTypeForShuffle:Array = [];
 
-        for each(var gridZ:Array in _grid)
+        for each(var chip:ChipInfo in _chipsAll)
         {
-            for each(var gridY:Array in gridZ)
+            if (chip.chipType != EChipType.ETB_EMPTY)
             {
-                for each(var chip:ChipInfo in gridY)
-                {
-                    if (chip.chipType != EChipType.ETB_EMPTY)
-                    {
-                        chipsForShuffle.push(chip);
-                        chipsTypeForShuffle.push(chip.chipType);
-                    }
-
-                }
+                chipsForShuffle.push(chip);
+                chipsTypeForShuffle.push(chip.chipType);
             }
         }
 
@@ -370,8 +386,19 @@ public class ManagerGame extends ManagerGameBase
 
             _grid[chipShuffle.z][chipShuffle.y][chipShuffle.x] = chipCurrent;
         }
+        _chipsAll = getChips([EChipType.ETB_EMPTY]);
 
         _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
+
+        _onShowChipsDisable ? showChipsDisable() : null;
+    }
+
+    public function showChipsDisable():void
+    {
+        for each (var chip:ChipInfo in _chipsAll)
+        {
+            chip.controller.update(EControllerUpdate.ECUT_SHOW_CHIPS_DISABLE);
+        }
     }
 
 }
