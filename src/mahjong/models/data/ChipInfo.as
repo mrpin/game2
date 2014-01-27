@@ -119,11 +119,11 @@ public class ChipInfo extends DisposableObject implements ISerializable
 
             neighborTopYRightXRight = ((_y < _gridOwner[0].length - 1) && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z + 1][_y + 1][_x + 1] : null;
 
-            neighborTopYLeftXRight = (_y > 0 && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z][_y][_x] : null;
+            neighborTopYLeftXRight = (_y > 0 && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z + 1][_y - 1][_x + 1] : null;
 
-            neighborTopXLeftYLeft = (_x > 0 && _y > 0) ? _gridOwner[_z][_y][_x] : null;
+            neighborTopXLeftYLeft = (_x > 0 && _y > 0) ? _gridOwner[_z + 1][_y - 1][_x - 1] : null;
 
-            neighborTopXLeftYRight = (_x > 0 && (_y < _gridOwner[0].length - 1)) ? _gridOwner[_z][_y][_x] : null;
+            neighborTopXLeftYRight = (_x > 0 && (_y < _gridOwner[0].length - 1)) ? _gridOwner[_z + 1][_y + 1][_x - 1] : null;
         }
 
         neighborYLeft = _y > 1 ? _gridOwner[_z][_y - 2][_x] : null;

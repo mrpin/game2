@@ -73,8 +73,6 @@ public class ControllerFieldChips extends Controller
 
         _view.viewsChips = chipsViews;
 
-        //TODO:удалить после тестирования
-       GameInfo.instance.managerGame.onShowChipsDisable = true;
     }
 
     override public function update(type:String):void

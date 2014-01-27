@@ -71,33 +71,7 @@ public class ManagerProxy implements IManagerProxy
     {
         var grid00:Array = [];
 
-//        for (var z:int = 0; z < 4; z++)
-//        {
-//            var containerForY:Array = [];
-//
-//            for (var y:int = 0; y < 10; y++)
-//            {
-//                var containerForX:Array = [];
-//
-//                for (var x:int = 0; x < 10; x++)
-//                {
-//                    var chipData:Object =
-//                    {
-//                        chip_type: ((x % 2) == 0 && (y % 2) == 0) ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
-////                        chip_type: EChipType.ETB_STUB,
-//                        x: x,
-//                        y: y,
-//                        z: z
-//                    };
-//
-//                    containerForX.push(chipData);
-//                }
-//                containerForY.push(containerForX)
-//            }
-//            grid00.push(containerForY);
-//        }
-
-        for (var z:int = 0; z < 2; z++)
+        for (var z:int = 0; z < 4; z++)
         {
             var containerForY:Array = [];
 
@@ -109,11 +83,7 @@ public class ManagerProxy implements IManagerProxy
                 {
                     var chipData:Object =
                     {
-                        chip_type: ((x == 2) &&  y == 2  && z == 0) ||
-                                  (((x == 4) &&  y == 2  && z == 0)) ||
-                                  (((x == 3) &&  y == 1  && z == 1)) ||
-                                  (((x == 8) &&  y == 0  && z == 1))
-                                ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
+                        chip_type: ((x % 2) == 0 && (y % 2) == 0) ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
 //                        chip_type: EChipType.ETB_STUB,
                         x: x,
                         y: y,
@@ -126,6 +96,36 @@ public class ManagerProxy implements IManagerProxy
             }
             grid00.push(containerForY);
         }
+
+//        for (var z:int = 0; z < 2; z++)
+//        {
+//            var containerForY:Array = [];
+//
+//            for (var y:int = 0; y < 10; y++)
+//            {
+//                var containerForX:Array = [];
+//
+//                for (var x:int = 0; x < 10; x++)
+//                {
+//                    var chipData:Object =
+//                    {
+//                        chip_type: ((x == 2) &&  y == 2  && z == 0) ||
+//                                  (((x == 4) &&  y == 2  && z == 0)) ||
+//                                  (((x == 3) &&  y == 2  && z == 1)) ||
+//                                  (((x == 8) &&  y == 0  && z == 1))
+//                                ? EChipType.ETB_STUB : EChipType.ETB_EMPTY,
+////                        chip_type: EChipType.ETB_STUB,
+//                        x: x,
+//                        y: y,
+//                        z: z
+//                    };
+//
+//                    containerForX.push(chipData);
+//                }
+//                containerForY.push(containerForX)
+//            }
+//            grid00.push(containerForY);
+//        }
 
 ////////////////////// LEVELS_CONTAINER_0 /////////////////////
         var level0Container0:Object =
