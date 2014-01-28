@@ -291,12 +291,11 @@ public class ManagerGame extends ManagerGameBase
 
                     _onShowChipsDisable ? showChipsDisable() : null;
 
-                    if (!isHasCombination && _chipsEnabled.length > 2)
+                    updateEnabledChips();
+                    while (!isHasCombination && _chipsEnabled.length > 2)
                     {
-                        do
-                        {
-                            shuffleChips();
-                        } while (!isHasCombination);
+                        shuffleChips();
+                        _chipSelected = null;
                     }
                 }
                 else
@@ -304,6 +303,13 @@ public class ManagerGame extends ManagerGameBase
                     this.chipSelected = chip;
                 }
             }
+        }
+
+        updateEnabledChips();
+        while (!isHasCombination && _chipsEnabled.length >= 2)
+        {
+            shuffleChips();
+            _chipSelected = null;
         }
     }
 
@@ -391,6 +397,8 @@ public class ManagerGame extends ManagerGameBase
         _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
 
         _onShowChipsDisable ? showChipsDisable() : null;
+
+        updateEnabledChips();
     }
 
     public function showChipsDisable():void

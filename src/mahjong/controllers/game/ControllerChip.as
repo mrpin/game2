@@ -24,7 +24,6 @@ public class ControllerChip extends Controller
 
     private var _entry:ChipInfo;
 
-
     /*
      * Properties
      */
@@ -40,6 +39,7 @@ public class ControllerChip extends Controller
         return _entry["chipType"];
     }
 
+
     /*
      * Methods
      */
@@ -47,7 +47,7 @@ public class ControllerChip extends Controller
     {
         _view = new ViewChip(this, entry);
 
-        _view.handleEvents(true);
+        _view.chipView.handleEvents(true);
 
         super(_view);
 
@@ -70,7 +70,6 @@ public class ControllerChip extends Controller
             GameInfo.instance.managerGame.verificationCoincidenceChips(_entry);
         }
 
-
         return super.onViewClicked(view, e);
     }
 
@@ -80,35 +79,40 @@ public class ControllerChip extends Controller
         {
             case EControllerUpdate.ECUT_USER_SELECT_CHIP:
             {
-                    /*
-                     color:uint=0xFF0000 – цвет свечения, по умолчанию красный
-                     alpha:Number=1 – прозрачность, по умолчанию не прозрачное свечение
-                     blurX:Number=6 – размытие по X, значение по умолчанию 6
-                     blurY:Number=6 – размытие по Y, значение по умолчанию 6
-                     strength:Number=2 – степень вдавливания. Может принимать значения от 0 до 255. Чем выше значение, тем сильнее контраст тени фильтра.
-                     quality:int=1 – сколько раз применить фильтр. Может принимать значения от 1 до 3.
-                     inner:Boolean=false – если задать значение true, то свечение направляется внутрь объекта
-                     knockout:Boolean=false – если задать значение true, то визуальный объект становится не видимым, видно только само свечение.
-                     */
+                /*
+                 color:uint=0xFF0000 – цвет свечения, по умолчанию красный
+                 alpha:Number=1 – прозрачность, по умолчанию не прозрачное свечение
+                 blurX:Number=6 – размытие по X, значение по умолчанию 6
+                 blurY:Number=6 – размытие по Y, значение по умолчанию 6
+                 strength:Number=2 – степень вдавливания. Может принимать значения от 0 до 255. Чем выше значение, тем сильнее контраст тени фильтра.
+                 quality:int=1 – сколько раз применить фильтр. Может принимать значения от 1 до 3.
+                 inner:Boolean=false – если задать значение true, то свечение направляется внутрь объекта
+                 knockout:Boolean=false – если задать значение true, то визуальный объект становится не видимым, видно только само свечение.
+                 */
 
 //                       _view.viewFace.filter = [];
 
-                    var glow:GlowFilter = new GlowFilter(0x000000, 0.3, 70, 70, 50, 1, true);
+                var glow:GlowFilter = new GlowFilter(0x000000, 0.3, 70, 70, 50, 1, true);
 //                    var glow:GlowFilter = new GlowFilter(0xff0000 , 1, 6, 6, 2, 3, true, true);
 
-                    _view.filter = [glow];
+
+                _view.filter = [glow];
 
                 break;
             }
             case EControllerUpdate.ECUT_USER_DESELECT_CHIP:
             {
-                    _view.filter = [];
+                _view.filter = [];
 
                 break;
             }
             case EControllerUpdate.ECUT_CHIPS_REMOVE:
             {
                 _view.source.visible = false;
+
+//                var pixelExplosion:PixelExplosion = new PixelExplosion(20, _view.source as DisplayObjectContainer, 8, 0.1, 0, 4, 0.5, 2);
+//                _view.visibleSubViews(false);
+
 
                 break;
             }

@@ -68,16 +68,18 @@ public class ViewFieldChips extends ViewBase
 
                 for each(var chipView:ViewChip in chipsViewY)
                 {
+                    chipView.placeViews(fullscreen);
+
                     chipView.x = positionX;
                     chipView.y = yPosition;
 
-                    positionX += chipView.offsetX;
+                    positionX -= chipView.offsetX;
                 }
-                yPosition += chipView.offsetY;
+                yPosition += chipView.offsetY + 3;
             }
 
-            startPositionX -= 5;
-            startPositionY -= 5;
+            startPositionX += 4;
+            startPositionY -= 4;
         }
     }
 

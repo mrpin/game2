@@ -56,7 +56,7 @@ public class ViewSceneGame extends ViewSceneBase
 
     override public function placeViews(fullscreen:Boolean):void
     {
-        _viewFieldChips.x = 200;
+        _viewFieldChips.x = 400;
         _viewFieldChips.y = 200;
 
         _viewFieldChips.placeViews(fullscreen);
