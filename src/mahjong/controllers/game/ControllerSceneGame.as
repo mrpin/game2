@@ -3,9 +3,13 @@
  */
 package mahjong.controllers.game
 {
+import flash.events.MouseEvent;
+
 import mahjong.controllers.EControllerUpdate;
 import mahjong.controllers.base.ControllerSceneBase;
 import mahjong.view.game.ViewSceneGame;
+
+import views.IView;
 
 public class ControllerSceneGame extends ControllerSceneBase
 {
@@ -40,6 +44,50 @@ public class ControllerSceneGame extends ControllerSceneBase
         _view.viewFieldChips = _controllerFieldChips.view;
     }
 
+
+    override public function onViewClicked(view:IView, e:MouseEvent):Boolean
+    {
+        var result:Boolean = super.onViewClicked(view, e);
+
+        if (!result)
+        {
+            switch (view)
+            {
+                case _view.button0:
+                {
+                    result = true;
+
+                    break;
+                }
+                case _view.button1:
+                {
+                    result = true;
+
+                    break;
+                }
+                case _view.button2:
+                {
+                    result = true;
+
+                    break;
+                }
+                case _view.button3:
+                {
+
+                    break;
+                }
+
+                default:
+                {
+                    Debug.assert(false);
+
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
 
     override public function update(type:String):void
     {

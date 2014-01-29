@@ -231,8 +231,9 @@
 //}
 
 
-package
+package effects
 {
+import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.DisplayObjectContainer;
 import flash.display.Shape;
@@ -241,7 +242,6 @@ import flash.events.Event;
 
 public class PixelExplosion extends Sprite
 {
-    private var _overAlpha:Number;  //Прозрачность при курсоре на изображении
     private var _outAlpha:Number;  //Прозрачность при курсоре вне изображения
     private var _V:Number;    //Скорость полета частиц
     private var _K:Number;    //Параметр, отвечающий за случайный полет частиц
@@ -265,13 +265,14 @@ public class PixelExplosion extends Sprite
     private var _deadPixel:uint;  // Количество пропавших пикселей после взрыва
     private var _pixelsAllCount:uint;	// Количество всех пикселей
 
-    private var _pixelsCount:uint = 2;
+    private var _pixelsCount:uint;
 
-    public function PixelExplosion(rate:uint, sprite:DisplayObjectContainer, V:Number = 8, K:Number = 0.1, xA:Number = 0, yA:Number = 4, minPixelLife:Number = 1.5, maxPixelLife:Number = 3, overAlpha:Number = 1.0, outAlpha:Number = 0.8)
+    public function PixelExplosion(rate:uint, sprite:DisplayObjectContainer, V:Number = 8, K:Number = 0.1, xA:Number = 0, yA:Number = 4, minPixelLife:Number = 1.5, maxPixelLife:Number = 3, outAlpha:Number = 0.8, pixelsCount:uint = 1)
     {
 
         // Пересчитываем для данной частоты кадров и сохранаяем передаваемые параметры в параметры класса
-        this._overAlpha = overAlpha;
+        _pixelsCount = pixelsCount > 0 ? pixelsCount : 1;
+
         this._outAlpha = outAlpha;
 
         this._V = V / rate;
@@ -289,6 +290,7 @@ public class PixelExplosion extends Sprite
         _h = _sprite.height - 10;
 
         _img = new BitmapData(_w, _h);
+        _img.draw(_sprite);
 
 
         // Считаем общее количество пикселей

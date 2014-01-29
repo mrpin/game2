@@ -3,7 +3,13 @@
  */
 package mahjong.controllers.game
 {
+import com.greensock.TweenLite;
+
 import controllers.implementations.Controller;
+
+import effects.PixelExplosion;
+
+import flash.display.DisplayObjectContainer;
 
 import flash.events.MouseEvent;
 import flash.filters.GlowFilter;
@@ -67,7 +73,7 @@ public class ControllerChip extends Controller
     {
         if (entry.isEnabled)
         {
-            GameInfo.instance.managerGame.verificationCoincidenceChips(_entry);
+            GameInfo.instance.managerGame.checkCoincidenceChips(_entry);
         }
 
         return super.onViewClicked(view, e);
@@ -92,17 +98,19 @@ public class ControllerChip extends Controller
 
 //                       _view.viewFace.filter = [];
 
-                var glow:GlowFilter = new GlowFilter(0x000000, 0.3, 70, 70, 50, 1, true);
-//                    var glow:GlowFilter = new GlowFilter(0xff0000 , 1, 6, 6, 2, 3, true, true);
+//                var glow:GlowFilter = new GlowFilter(0x000000, 0.3, 70, 70, 50, 1, true);
+                    var glow:GlowFilter = new GlowFilter(0xff0000 , 1, 6, 6, 100, 1, true);
 
 
                 _view.filter = [glow];
+//                _view.chipFace.filters = [glow];
 
                 break;
             }
             case EControllerUpdate.ECUT_USER_DESELECT_CHIP:
             {
                 _view.filter = [];
+//                _view.chipFace.filters = [];
 
                 break;
             }
@@ -110,7 +118,7 @@ public class ControllerChip extends Controller
             {
                 _view.source.visible = false;
 
-//                var pixelExplosion:PixelExplosion = new PixelExplosion(20, _view.source as DisplayObjectContainer, 8, 0.1, 0, 4, 0.5, 2);
+//                var pixelExplosion:PixelExplosion = new PixelExplosion(20, _view.source as DisplayObjectContainer, 2, 0.1, 0, 4, 0.5, 0.5, 1, 2);
 //                _view.visibleSubViews(false);
 
 

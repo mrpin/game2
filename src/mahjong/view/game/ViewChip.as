@@ -5,8 +5,6 @@ package mahjong.view.game
 {
 import controllers.IController;
 
-import flash.display.DisplayObject;
-
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 
@@ -220,7 +218,7 @@ public class ViewChip extends ViewBase
     private var _chipView:IView;
     private var _shadow:IView;
 
-    private var _chipFace:IView;
+    private var _chipFace:DisplayObjectContainer;
 
     /*
      * Properties
@@ -252,7 +250,7 @@ public class ViewChip extends ViewBase
         return _chipView;
     }
 
-    public function get chipFace():IView
+    public function get chipFace():DisplayObjectContainer
     {
         return _chipFace;
     }
@@ -266,7 +264,7 @@ public class ViewChip extends ViewBase
 
         _source = new Sprite();
 
-        if(_type != EChipType.ETB_EMPTY)
+        if (_type != EChipType.ETB_EMPTY)
         {
             _shadow = new ViewBase(controller, new gChipShadow());
             _source.addChild(_shadow.source);
@@ -279,10 +277,12 @@ public class ViewChip extends ViewBase
         _chipView = new ViewBase(controller, new sourceClass);
         _source.addChild(_chipView.source);
 
-//        if(_type != EChipType.ETB_EMPTY)
+//        if (_type != EChipType.ETB_EMPTY)
 //        {
-//            _chipFace = new ViewBase(controller, new gChipFace());
-//            _source.addChild(_chipFace.source);
+//            _chipFace = new gChipFace();
+//            _chipFace.mouseEnabled = false;
+//
+//            _source.addChild(_chipFace);
 //        }
 
         super(controller, _source);
@@ -295,7 +295,6 @@ public class ViewChip extends ViewBase
 
     private function init():void
     {
-
 
 
     }
@@ -318,12 +317,12 @@ public class ViewChip extends ViewBase
 
     override public function placeViews(fullscreen:Boolean):void
     {
-        if(_type != EChipType.ETB_EMPTY)
+        if (_type != EChipType.ETB_EMPTY)
         {
             _shadow.x = 20;
             _shadow.y = 65;
 
-//            _chipFace.x = 0;
+//            _chipFace.x = 300;
 //            _chipFace.y = 0;
         }
 

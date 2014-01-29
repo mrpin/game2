@@ -76,6 +76,7 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonFullScreen:
                 {
+                    result = true;
 
                     break;
                 }
@@ -85,9 +86,15 @@ public class ControllerSceneBase extends Controller
 
                     break;
                 }
-                default:
+                case _view.buttonBack:
                 {
-                    Debug.assert(false);
+                    result = true;
+
+                    break;
+                }
+                case _view.buttonCurrency:
+                {
+                    result = true;
 
                     break;
                 }

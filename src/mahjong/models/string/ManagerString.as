@@ -24,13 +24,25 @@ public class ManagerString extends ManagerStringBase
     public function ManagerString(managerSocial:IManagerSocial)
     {
         super(managerSocial);
-
-        init();
     }
 
     private function init():void
     {
 
+    }
+
+    protected override function initLanguageEnglish():void
+    {
+        super.initLanguageEnglish();
+
+        _currentLanguage[EStringType.EST_MAIN_ITEM] = "{0}/{1}";
+    }
+
+    protected override function initLanguageRussian():void
+    {
+        super.initLanguageRussian();
+
+        _currentLanguage[EStringType.EST_MAIN_ITEM] = "{0}/{1}";
     }
 
 }

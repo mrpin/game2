@@ -271,7 +271,7 @@ public class ManagerGame extends ManagerGameBase
 
 
     //проверка совпадения фишек
-    public function verificationCoincidenceChips(chip:ChipInfo):void
+    public function checkCoincidenceChips(chip:ChipInfo):void
     {
         if (_chipSelected == chip)
         {

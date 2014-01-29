@@ -1,7 +1,7 @@
 /**
  * Created by evgenyyurko on 1/28/14.
  */
-package
+package effects
 {
 import flash.events.Event;
 
@@ -21,7 +21,7 @@ public class DeleteEvent extends Event
 
     public override function toString():String
     {
-        return formatToString("DeleteEvent", "type", "bubbles", "cancelable", "eventPhase");
+        return formatToString("effects.DeleteEvent", "type", "bubbles", "cancelable", "eventPhase");
     }
 
 }
