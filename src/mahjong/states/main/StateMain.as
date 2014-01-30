@@ -3,6 +3,7 @@
  */
 package mahjong.states.main
 {
+import mahjong.controllers.main.ControllerSceneMain;
 import mahjong.states.EStateType;
 import mahjong.states.base.StateMahjongBase;
 
@@ -34,6 +35,13 @@ public class StateMain extends StateMahjongBase
     private function init():void
     {
 
+    }
+
+    public override function prepareLayerScene():void
+    {
+        super.prepareLayerScene();
+
+        this.controllerScene = new ControllerSceneMain();
     }
 
 

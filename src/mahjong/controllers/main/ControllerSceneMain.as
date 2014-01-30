@@ -13,6 +13,8 @@ public class ControllerSceneMain extends ControllerSceneBase
      */
     private var _view:ViewSceneMain;
 
+    private var _mainItems:Array;
+
     /*
      * Properties
      */
@@ -32,8 +34,26 @@ public class ControllerSceneMain extends ControllerSceneBase
 
     private function init():void
     {
+        _mainItems = [];
+        var mainItemsView:Array = [];
 
+        for(var i:int = 0; i < 2; i++)
+        {
+            var items:Array = [];
+            var itemsView:Array = [];
+
+            for(var k:int = 0; k < 3; k++)
+            {
+                var item:ControllerMainItem = new ControllerMainItem();
+                items.push(item);
+                itemsView.push(item.view);
+            }
+            _mainItems.push(items);
+            mainItemsView.push(itemsView);
+        }
+          _view.items = mainItemsView;
     }
+
 
 
     /*

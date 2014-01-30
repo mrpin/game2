@@ -8,7 +8,6 @@ import controllers.implementations.Controller;
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
-
 import mahjong.view.base.ViewSceneBase;
 
 import views.IView;
@@ -59,7 +58,6 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonSettings:
                 {
-//                    GameInfo.instance.managerApp.fullScreenEnable = !GameInfo.instance.managerApp.fullScreenEnable;
                     GameInfo.instance.managerGame.shuffleChips();
 
                     result = true;
@@ -76,6 +74,8 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonFullScreen:
                 {
+                    GameInfo.instance.managerApp.fullScreenEnable = !GameInfo.instance.managerApp.fullScreenEnable;
+
                     result = true;
 
                     break;

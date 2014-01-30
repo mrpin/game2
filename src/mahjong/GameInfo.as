@@ -14,6 +14,7 @@ import mahjong.models.remote.ManagerRemoteStub;
 import mahjong.models.string.ManagerString;
 import mahjong.states.EStateType;
 import mahjong.states.game.StateGame;
+import mahjong.states.main.StateMain;
 
 import models.implementations.app.ManagerAppBase;
 import models.implementations.players.ManagerPlayersBase;
@@ -88,7 +89,7 @@ public class GameInfo extends GameInfoBase
         _managerResources = new ManagerResourceBase();
 
         {   //register states
-//            _managerStates.registerState(EStateType.EST_MAIN, StateMain);
+            _managerStates.registerState(EStateType.EST_MAIN, StateMain);
             _managerStates.registerState(EStateType.EST_GAME, StateGame);
         }
 
@@ -97,15 +98,15 @@ public class GameInfo extends GameInfoBase
 
     protected override function onRemoteGameInitComplete(response:IResponse):void
     {
-//        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
 
-        var nextLevel:ILevelInfo = GameInfo.instance.managerLevels.getSavedOrIncompleteLevel();
-
-        var managerGame:IManagerGame = new ManagerGame(nextLevel);
-
-        GameInfo.instance.onGameStart(managerGame);
-
-        GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
+//        var nextLevel:ILevelInfo = GameInfo.instance.managerLevels.getSavedOrIncompleteLevel();
+//
+//        var managerGame:IManagerGame = new ManagerGame(nextLevel);
+//
+//        GameInfo.instance.onGameStart(managerGame);
+//
+//        GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
     }
 
 
