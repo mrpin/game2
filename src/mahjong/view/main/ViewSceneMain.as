@@ -7,6 +7,9 @@ import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
+import flash.geom.Point;
+
+import mahjong.GameInfo;
 
 import mahjong.view.base.ViewSceneBase;
 
@@ -22,21 +25,13 @@ public class ViewSceneMain extends ViewSceneBase
 
     private var _items:Array;
 
+    private var _columnCount:uint;
+
 
     /*
      * Properties
      */
-    public function set items(array:Array):void
-    {
-        _items = array;
-        for each(var itemsArray:Array in _items)
-        {
-            for each(var item:IView in itemsArray)
-            {
-                _source.addChild(item.source);
-            }
-        }
-    }
+
 
     /*
      * Methods
@@ -53,6 +48,8 @@ public class ViewSceneMain extends ViewSceneBase
     {
         super.buttonBack.source.visible = false;
 
+        _columnCount = 3;
+
         _items = [];
     }
 
@@ -66,21 +63,44 @@ public class ViewSceneMain extends ViewSceneBase
     {
         super.placeViews(fullscreen);
 
-        var startPositionX:int = 200;
-        var startPositionY:int = 350;
+        var appSize:Point = GameInfo.instance.managerApp.applicationSize;
 
-        for each(var itemsArray:Array in _items)
+        var rowsCount:int = _items.length / _columnCount;
+
+        var offsetX:int = 40;
+        var offsetY:int = 20;
+
+        var firstItem:IView = _items[0];
+
+        var startX:int = (appSize.x - (firstItem.source.width + offsetX) * _columnCount) / 2;
+        var startY:int = (appSize.y - (firstItem.source.width + offsetY) * rowsCount) / 2;
+
+        if (!fullscreen)
         {
-            var positionX:int = startPositionX;
+            startY += 100;
+        }
 
-            for each(var item:IView in itemsArray)
+        var currentX:int = startX;
+        var currentY:int = startY - 100;
+
+        var columnIndex:int = 0;
+
+        for each(var item:IView in _items)
+        {
+            item.source.x = currentX;
+            item.source.y = currentY;
+
+            currentX += item.source.width + offsetX;
+
+            columnIndex++;
+
+            if (columnIndex == _columnCount)
             {
-                item.x = positionX;
-                item.y = startPositionY;
+                currentX = startX;
+                currentY += item.source.height + offsetY;
 
-                positionX += 300;
+                columnIndex = 0;
             }
-            startPositionY += 250;
         }
     }
 

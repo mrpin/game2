@@ -3,8 +3,11 @@
  */
 package mahjong.controllers.main
 {
+import mahjong.GameInfo;
 import mahjong.controllers.base.ControllerSceneBase;
 import mahjong.view.main.ViewSceneMain;
+
+import models.interfaces.levels.ILevelContainer;
 
 public class ControllerSceneMain extends ControllerSceneBase
 {
@@ -34,26 +37,40 @@ public class ControllerSceneMain extends ControllerSceneBase
 
     private function init():void
     {
+        _view.buttonBack.hide();
+
         _mainItems = [];
-        var mainItemsView:Array = [];
 
-        for(var i:int = 0; i < 2; i++)
+        var items:Array = GameInfo.instance.managerLevels.items;
+
+        for (var i:uint = 0; i < items.length; i++)
         {
-            var items:Array = [];
-            var itemsView:Array = [];
+            var levelContainer:ILevelContainer = i < items.length ? items[i] : null;
 
-            for(var k:int = 0; k < 3; k++)
-            {
-                var item:ControllerMainItem = new ControllerMainItem();
-                items.push(item);
-                itemsView.push(item.view);
-            }
-            _mainItems.push(items);
-            mainItemsView.push(itemsView);
+            var item:ControllerMainItem = new ControllerMainItem(levelContainer);
+            _view.addSubView(item.view);
+            _mainItems.push(item);
         }
-          _view.items = mainItemsView;
-    }
 
+//        _mainItems = [];
+//        var mainItemsView:Array = [];
+//
+//        for (var i:int = 0; i < 1; i++)
+//        {
+//            var items:Array = [];
+//            var itemsView:Array = [];
+//
+//            for (var k:int = 0; k < 3; k++)
+//            {
+//                var item:ControllerMainItem = new ControllerMainItem(k);
+//                items.push(item);
+//                itemsView.push(item.view);
+//            }
+//            _mainItems.push(items);
+//            mainItemsView.push(itemsView);
+//        }
+//        _view.items = mainItemsView;
+    }
 
 
     /*
@@ -61,8 +78,11 @@ public class ControllerSceneMain extends ControllerSceneBase
      */
     public override function cleanup():void
     {
-        _view.cleanup();
-        _view = null;
+        for each(var item:ControllerMainItem in _mainItems)
+        {
+            item.cleanup();
+            item = null;
+        }
 
         super.cleanup();
     }

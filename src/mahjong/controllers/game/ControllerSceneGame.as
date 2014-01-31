@@ -115,9 +115,6 @@ public class ControllerSceneGame extends ControllerSceneBase
      */
     public override function cleanup():void
     {
-        _view.cleanup();
-        _view = null;
-
         _controllerFieldChips.cleanup();
         _controllerFieldChips = null;
 

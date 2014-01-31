@@ -79,7 +79,7 @@ public class ManagerProxy implements IManagerProxy
             {
                 var containerForX:Array = [];
 
-                for (var x:int = 0; x < 10; x++)
+                for (var x:int = 0; x < 20; x++)
                 {
                     var chipData:Object =
                     {
@@ -234,29 +234,29 @@ public class ManagerProxy implements IManagerProxy
             levels: [level0Container0]// level1Container0, level2Container0]
         };
 
-//        var container1:Object =
-//        {
-//            id: "",
-//            number: 4,
-//            name: "name",
-//            description: "",
-//            requirements: [],
-//            levels: [level0Container1, level1Container1, level2Container1]
-//        };
-//
-//        var container2:Object =
-//        {
-//            id: "",
-//            number: 4,
-//            name: "name",
-//            description: "",
-//            requirements: [],
-//            levels: [level0Container2, level1Container2, level2Container2]
-//        };
+        var container1:Object =
+        {
+            id: "",
+            number: 4,
+            name: "name",
+            description: "",
+            requirements: [],
+            levels: [level0Container0] //, level1Container1, level2Container1]
+        };
+
+        var container2:Object =
+        {
+            id: "",
+            number: 4,
+            name: "name",
+            description: "",
+            requirements: [],
+            levels: [level0Container0]//, level1Container2, level2Container2]
+        };
 ///////////////////////////////////////////////////////
         var result:Object =
         {
-            level_containers: [container0], // container1, container2],
+            level_containers: [container0, container1, container2, container0, container1, container2],
             level_progress: null,
             level_complete_ids: []
         };

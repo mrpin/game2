@@ -332,6 +332,18 @@ public class ViewChip extends ViewBase
     {
         _source = null;
 
+        _chipView.cleanup();
+        _chipView = null;
+
+        if(_type != EChipType.ETB_EMPTY)
+        {
+            _chipFace = null;
+
+            _shadow.cleanup();
+            _shadow = null;
+        }
+
+
         super.cleanup();
     }
 

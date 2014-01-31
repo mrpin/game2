@@ -147,6 +147,8 @@ public class ControllerChip extends Controller
      */
     public override function cleanup():void
     {
+        _view = null;
+
         super.cleanup();
     }
 

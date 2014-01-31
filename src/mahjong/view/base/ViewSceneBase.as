@@ -25,8 +25,8 @@ public class ViewSceneBase extends ViewBase
     private var _background:IView;
 
     private var _buttonTOP:IViewButton;
-    private var _buttonSettings:IViewButton;
-    private var _buttonSound:IViewButton;
+//    private var _buttonSettings:IViewButton;
+//    private var _buttonSound:IViewButton;
     private var _buttonFullScreen:IViewButton;
     private var _buttonHelp:IViewButton;
     private var _buttonBack:IViewButton;
@@ -46,15 +46,15 @@ public class ViewSceneBase extends ViewBase
         return _buttonTOP;
     }
 
-    public function get buttonSettings():IViewButton
-    {
-        return _buttonSettings;
-    }
+//    public function get buttonSettings():IViewButton
+//    {
+//        return _buttonSettings;
+//    }
 
-    public function get buttonSound():IViewButton
-    {
-        return _buttonSound;
-    }
+//    public function get buttonSound():IViewButton
+//    {
+//        return _buttonSound;
+//    }
 
     public function get buttonFullScreen():IViewButton
     {
@@ -192,11 +192,11 @@ public class ViewSceneBase extends ViewBase
         _buttonTOP.cleanup();
         _buttonTOP = null;
 
-        _buttonSettings.cleanup();
-        _buttonSettings = null;
+//        _buttonSettings.cleanup();
+//        _buttonSettings = null;
 
-        _buttonSound.cleanup();
-        _buttonSound = null;
+//        _buttonSound.cleanup();
+//        _buttonSound = null;
 
         _buttonFullScreen.cleanup();
         _buttonFullScreen = null;

@@ -7,6 +7,9 @@ import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
+import flash.geom.Point;
+
+import mahjong.GameInfo;
 
 import mahjong.view.base.ViewSceneBase;
 
@@ -23,7 +26,7 @@ public class ViewSceneGame extends ViewSceneBase
      */
     private var _source:DisplayObjectContainer;
 
-    private var _viewFieldChips:IView;
+    private var _viewFieldChips:ViewFieldChips;
 //TODO: переименовать buttons
     private var _button0:IViewButtonLabeled;
     private var _button1:IViewButtonLabeled;
@@ -35,7 +38,7 @@ public class ViewSceneGame extends ViewSceneBase
      */
     public function set viewFieldChips(value:IView):void
     {
-        _viewFieldChips = value;
+        _viewFieldChips = value as ViewFieldChips;
         _source.addChild(_viewFieldChips.source);
     }
 
@@ -94,8 +97,11 @@ public class ViewSceneGame extends ViewSceneBase
 
     override public function placeViews(fullscreen:Boolean):void
     {
-        _viewFieldChips.x = 800;
-        _viewFieldChips.y = 300;
+        var appSize:Point = GameInfo.instance.managerApp.applicationSize;
+
+        _viewFieldChips.x =   (appSize.x / 2) + (_viewFieldChips.width / 2); // 700 : 900;
+        _viewFieldChips.y =  (appSize.y / 2) - (_viewFieldChips.height / 2);// 300 : 600;
+
 
         _button0.x = 130;
         _button0.y = 180;
@@ -119,6 +125,9 @@ public class ViewSceneGame extends ViewSceneBase
      */
     public override function cleanup():void
     {
+//        _viewFieldChips.cleanup();
+//        _viewFieldChips = null;
+
         _button0.cleanup();
         _button0 = null;
 

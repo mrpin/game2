@@ -7,7 +7,13 @@ import controllers.implementations.Controller;
 
 import flash.events.MouseEvent;
 
+import mahjong.GameInfo;
+import mahjong.models.game.ManagerGame;
+import mahjong.states.EStateType;
 import mahjong.view.main.ViewMainItem;
+
+import models.interfaces.IManagerGame;
+import models.interfaces.levels.ILevelContainer;
 
 import views.IView;
 
@@ -18,6 +24,7 @@ public class ControllerMainItem extends Controller
      */
     private var _view:ViewMainItem;
 
+    private var _entry:ILevelContainer;
 
 
     /*
@@ -28,9 +35,11 @@ public class ControllerMainItem extends Controller
     /*
      * Methods
      */
-    public function ControllerMainItem()
+    public function ControllerMainItem(entry:ILevelContainer)
     {
-        _view = new ViewMainItem(this);
+        _entry = entry;
+
+        _view = new ViewMainItem(this, _entry);
         super(_view);
 
         init();
@@ -48,7 +57,11 @@ public class ControllerMainItem extends Controller
 
         if (!result)
         {
+            var managerGame:IManagerGame = new ManagerGame(_entry.firstIncompleteLevel);
 
+            GameInfo.instance.onGameStart(managerGame);
+
+            GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
         }
 
         return result;
@@ -60,7 +73,7 @@ public class ControllerMainItem extends Controller
 
         if (!result)
         {
-
+            _view.startAnimation();
         }
 
         return result;
@@ -72,7 +85,7 @@ public class ControllerMainItem extends Controller
 
         if (!result)
         {
-
+            _view.stopAnimation();
         }
 
         return result;
@@ -84,8 +97,6 @@ public class ControllerMainItem extends Controller
      */
     public override function cleanup():void
     {
-        _view.cleanup();
-
         super.cleanup();
     }
 

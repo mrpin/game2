@@ -7,6 +7,9 @@ import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
+import flash.geom.Point;
+
+import mahjong.GameInfo;
 
 import views.IView;
 import views.implementations.ViewBase;
@@ -19,6 +22,7 @@ public class ViewFieldChips extends ViewBase
     private var _source:DisplayObjectContainer;
 
     private var _viewsChips:Array;
+
 
     /*
      * Properties
@@ -39,6 +43,20 @@ public class ViewFieldChips extends ViewBase
         }
     }
 
+    public function get width():uint
+    {
+        var result:uint = _viewsChips[0][0].length;
+
+        return result * 35;
+    }
+
+    public function get height():uint
+    {
+        var result:uint = _viewsChips[0].length;
+
+        return result* 15;
+    }
+
     /*
      * Methods
      */
@@ -53,9 +71,6 @@ public class ViewFieldChips extends ViewBase
     {
         var startPositionX:int = 0;
         var startPositionY:int = 0;
-
-        var intervalOnX:int = 2;
-        var intervalOnY:int = 2;
 
         for each (var chipsViewZ:Array in _viewsChips)
         {
@@ -81,25 +96,25 @@ public class ViewFieldChips extends ViewBase
             startPositionX += 4;
             startPositionY -= 4;
         }
+
     }
 
-   public function subViewRemove():void
-   {
-       for each(var chipsViewZ:Array in _viewsChips)
-       {
-           for each(var chipsViewY:Array in chipsViewZ)
-           {
-               for each(var chipView:IView in chipsViewY)
-               {
-                   _source.removeChild(chipView.source);
-                   chipView = null;
-               }
-           }
-       }
+    public function subViewRemove():void
+    {
+        for each(var chipsViewZ:Array in _viewsChips)
+        {
+            for each(var chipsViewY:Array in chipsViewZ)
+            {
+                for each(var chipView:IView in chipsViewY)
+                {
+                    _source.removeChild(chipView.source);
+                    chipView = null;
+                }
+            }
+        }
 
-       _viewsChips = null;
-   }
-
+        _viewsChips = null;
+    }
 
 
     /*

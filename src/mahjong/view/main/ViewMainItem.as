@@ -5,9 +5,11 @@ package mahjong.view.main
 {
 import controllers.IController;
 
-import views.implementations.ViewBase;
+import mahjong.GameInfo;
 
-import views.implementations.buttons.ViewButton;
+import models.interfaces.levels.ILevelContainer;
+
+import views.implementations.ViewBase;
 
 public class ViewMainItem extends ViewBase
 {
@@ -15,7 +17,6 @@ public class ViewMainItem extends ViewBase
      * Fields
      */
     private var _source:gSceneMainItem;
-
 
 
     /*
@@ -26,14 +27,27 @@ public class ViewMainItem extends ViewBase
     /*
      * Methods
      */
-    public function ViewMainItem(controller:IController)
+    public function ViewMainItem(controller:IController, entry:ILevelContainer)
     {
         _source = new gSceneMainItem();
         super(controller, _source);
 
+
+        var index:int = -1;
+
+        if (entry != null)
+        {
+            index = GameInfo.instance.managerLevels.items.indexOf(entry);
+        }
+        else
+        {
+//            _source.viewLabel.visible = false;
+        }
+
         _source.art.gotoAndStop(1);
 
-        _source.art.item.gotoAndStop(1);
+        _source.art.item.stop();
+        _source.qwe.stop();
 
         this.handleEvents(true, false, false, false, false, true, true);
 
@@ -45,13 +59,25 @@ public class ViewMainItem extends ViewBase
 
     }
 
+    public function startAnimation():void
+    {
+        _source.art.item.play();
+        _source.qwe.gotoAndPlay(1);
+    }
 
+    public function stopAnimation():void
+    {
+        _source.art.item.stop();
+//        _source.qwe.stop();
+    }
 
     /*
      * IDisposable
      */
     public override function cleanup():void
     {
+        _source = null;
+
         super.cleanup();
     }
 

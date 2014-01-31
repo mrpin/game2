@@ -8,6 +8,7 @@ import controllers.implementations.Controller;
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
+import mahjong.states.EStateType;
 import mahjong.view.base.ViewSceneBase;
 
 import views.IView;
@@ -56,22 +57,22 @@ public class ControllerSceneBase extends Controller
 
                     break;
                 }
-                case _view.buttonSettings:
-                {
-                    GameInfo.instance.managerGame.shuffleChips();
-
-                    result = true;
-
-                    break;
-                }
-                case _view.buttonSound:
-                {
-                    GameInfo.instance.managerGame.onShowChipsDisable = true;
-
-                    result = true;
-
-                    break;
-                }
+//                case _view.buttonSettings:
+//                {
+//                    GameInfo.instance.managerGame.shuffleChips();
+//
+//                    result = true;
+//
+//                    break;
+//                }
+//                case _view.buttonSound:
+//                {
+//                    GameInfo.instance.managerGame.onShowChipsDisable = true;
+//
+//                    result = true;
+//
+//                    break;
+//                }
                 case _view.buttonFullScreen:
                 {
                     GameInfo.instance.managerApp.fullScreenEnable = !GameInfo.instance.managerApp.fullScreenEnable;
@@ -88,6 +89,10 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonBack:
                 {
+                    GameInfo.instance.onGameEnd();
+
+                    GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+
                     result = true;
 
                     break;

@@ -5,8 +5,6 @@ package mahjong.controllers.game
 {
 import controllers.implementations.Controller;
 
-import flash.events.MouseEvent;
-
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
@@ -87,7 +85,7 @@ public class ControllerFieldChips extends Controller
                     {
                         for each(var chip:ControllerChip in chipsY)
                         {
-                           chip.update(type);
+                            chip.update(type);
                         }
                     }
                 }
@@ -149,6 +147,17 @@ public class ControllerFieldChips extends Controller
      */
     public override function cleanup():void
     {
+       for each(var z:Array in _chips)
+       {
+           for each(var y:Array in z)
+           {
+               for each(var chip:ControllerChip in y)
+               {
+                   chip.cleanup();
+                   chip = null;
+               }
+           }
+       }
         super.cleanup();
     }
 
