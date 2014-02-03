@@ -8,6 +8,7 @@ import controllers.implementations.Controller;
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
+import mahjong.controllers.popups.EPopupType;
 import mahjong.states.EStateType;
 import mahjong.view.base.ViewSceneBase;
 
@@ -99,6 +100,8 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonCurrency:
                 {
+                    GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_BANK);
+
                     result = true;
 
                     break;

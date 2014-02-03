@@ -5,6 +5,8 @@ package mahjong.states.base
 {
 import controllers.IControllerPopup;
 
+import mahjong.controllers.popups.popupBank.ControllerPopupBank;
+
 import models.implementations.states.base.StateBase;
 
 import views.EViewPosition;
@@ -54,7 +56,7 @@ public class StateMahjongBase extends StateBase
         super.prepareLayerPopups();
 
         {//register popups
-
+            registerPopup(new ControllerPopupBank());
         }
     }
 
