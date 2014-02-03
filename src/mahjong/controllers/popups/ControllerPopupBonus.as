@@ -7,7 +7,7 @@ import controllers.implementations.ControllerPopup;
 
 import mahjong.view.popup.ViewPopupBonus;
 
-public class PopupBonus extends ControllerPopup
+public class ControllerPopupBonus extends ControllerPopup
 {
     /*
      * Fields
@@ -25,7 +25,7 @@ public class PopupBonus extends ControllerPopup
     /*
      * Methods
      */
-    public function PopupBonus()
+    public function ControllerPopupBonus()
     {
         _view = new ViewPopupBonus(this);
         super (_view);
