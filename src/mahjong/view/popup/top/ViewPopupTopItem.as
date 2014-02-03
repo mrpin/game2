@@ -1,18 +1,16 @@
 /**
  * Created by evgenyyurko on 03.02.14.
  */
-package mahjong.view.popup
+package mahjong.view.popup.top
 {
-import controllers.IControllerPopup;
+import views.implementations.ViewBase;
 
-import views.implementations.ViewPopup;
-
-public class ViewPopupBonus extends ViewPopup
+public class ViewPopupTopItem extends ViewBase
 {
     /*
      * Fields
      */
-      private var _source:gPopupBonus;
+
 
     /*
      * Properties
@@ -22,10 +20,9 @@ public class ViewPopupBonus extends ViewPopup
     /*
      * Methods
      */
-    public function ViewPopupBonus(controller:IControllerPopup)
+    public function ViewPopupTopItem()
     {
-       _source = new gPopupBonus();
-        super (controller, _source);
+
 
         init();
     }

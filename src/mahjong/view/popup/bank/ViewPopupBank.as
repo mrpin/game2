@@ -1,7 +1,7 @@
 /**
  * Created by evgenyyurko on 03.02.14.
  */
-package mahjong.view.popup.popupBank
+package mahjong.view.popup.bank
 {
 import controllers.IControllerPopup;
 
