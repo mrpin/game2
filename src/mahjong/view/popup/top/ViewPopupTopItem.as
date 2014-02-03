@@ -3,6 +3,9 @@
  */
 package mahjong.view.popup.top
 {
+import controllers.IController;
+
+import views.IView;
 import views.implementations.ViewBase;
 
 public class ViewPopupTopItem extends ViewBase
@@ -10,6 +13,8 @@ public class ViewPopupTopItem extends ViewBase
     /*
      * Fields
      */
+    private var _source:gPopupTopItem;
+
 
 
     /*
@@ -20,9 +25,10 @@ public class ViewPopupTopItem extends ViewBase
     /*
      * Methods
      */
-    public function ViewPopupTopItem()
+    public function ViewPopupTopItem(controller:IController)
     {
-
+        _source = new gPopupTopItem();
+        super(controller, _source);
 
         init();
     }
@@ -31,6 +37,11 @@ public class ViewPopupTopItem extends ViewBase
     {
 
     }
+
+
+
+
+
 
 
     /*

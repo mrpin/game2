@@ -10,6 +10,7 @@ import flash.display.Sprite;
 import flash.geom.Point;
 
 import mahjong.GameInfo;
+import mahjong.models.string.EStringType;
 
 import mahjong.view.base.ViewSceneBase;
 

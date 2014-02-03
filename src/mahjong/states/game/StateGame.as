@@ -4,7 +4,7 @@
 package mahjong.states.game
 {
 import mahjong.controllers.game.ControllerSceneGame;
-import mahjong.controllers.popups.popupBank.ControllerPopupBank;
+import mahjong.controllers.popups.bonus.ControllerPopupBonus;
 import mahjong.states.EStateType;
 import mahjong.states.base.StateMahjongBase;
 

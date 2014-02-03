@@ -115,10 +115,10 @@ public class ManagerString extends ManagerStringBase
 //        _currentLanguage[EStringType.EST_MAP_WIDGET_STARS_CROSSWORDS_TOTAL] = "Всего кроссвордов";
 
         //purchases
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE0] = "открыть кусочек картинки";
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE1] = "открыть букву";
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE2] = "открыть слово";
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE3] = "открыть все слова";
+//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE0] = "покупка 1";
+//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE1] = "покупка 2";
+//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE2] = "покупка 3";
+//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE3] = "покупка 4";
     }
 
 }

@@ -4,6 +4,7 @@
 package mahjong.states.main
 {
 import mahjong.controllers.main.ControllerSceneMain;
+import mahjong.controllers.popups.bonus.ControllerPopupBonus;
 import mahjong.states.EStateType;
 import mahjong.states.base.StateMahjongBase;
 
@@ -44,6 +45,14 @@ public class StateMain extends StateMahjongBase
         this.controllerScene = new ControllerSceneMain();
     }
 
+    override public function prepareLayerPopups():void
+    {
+        super.prepareLayerPopups();
+
+        {//register popups
+            registerPopup(new ControllerPopupBonus());
+        }
+    }
 
     /*
      * IDisposable

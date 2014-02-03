@@ -41,6 +41,8 @@ public class LevelInfo extends LevelInfoBase
     override public function serialize():Object
     {
         return super.serialize();
+
+
     }
 
 

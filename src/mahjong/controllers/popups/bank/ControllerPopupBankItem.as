@@ -7,7 +7,7 @@ import controllers.implementations.Controller;
 
 import flash.events.MouseEvent;
 
-import mahjong.view.popup.popupBank.ViewPopupBankItem;
+import mahjong.view.popup.bank.ViewPopupBankItem;
 
 import views.IView;
 
@@ -51,6 +51,12 @@ public class ControllerPopupBankItem extends Controller
                 case  _view.buttonBuy:
                 {
                     result = true;
+
+                    break;
+                }
+                default :
+                {
+                    Debug.assert(false);
 
                     break;
                 }

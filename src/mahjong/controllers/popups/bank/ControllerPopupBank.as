@@ -6,7 +6,7 @@ package mahjong.controllers.popups.bank
 import controllers.implementations.ControllerPopup;
 
 import mahjong.controllers.popups.*;
-import mahjong.view.popup.popupBank.ViewPopupBank;
+import mahjong.view.popup.bank.ViewPopupBank;
 
 import views.IViewPopup;
 

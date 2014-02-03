@@ -46,8 +46,8 @@ public class ViewMainItem extends ViewBase
 
         _source.art.gotoAndStop(1);
 
-        _source.art.item.stop();
-        _source.qwe.stop();
+//        _source.art.item.stop();
+//        _source.qwe.stop();
 
         this.handleEvents(true, false, false, false, false, true, true);
 
@@ -68,7 +68,7 @@ public class ViewMainItem extends ViewBase
     public function stopAnimation():void
     {
         _source.art.item.stop();
-//        _source.qwe.stop();
+        _source.qwe.stop();
     }
 
     /*

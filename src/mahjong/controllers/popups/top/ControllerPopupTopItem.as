@@ -3,11 +3,17 @@
  */
 package mahjong.controllers.popups.top
 {
-public class ControllerPopupTopItem
+import controllers.implementations.Controller;
+
+import mahjong.view.popup.top.ViewPopupTopItem;
+
+public class ControllerPopupTopItem extends Controller
 {
     /*
      * Fields
      */
+    private var _view:ViewPopupTopItem;
+
 
 
     /*
@@ -20,7 +26,8 @@ public class ControllerPopupTopItem
      */
     public function ControllerPopupTopItem()
     {
-
+        _view = new ViewPopupTopItem(this);
+        super(_view);
 
         init();
     }
@@ -36,6 +43,8 @@ public class ControllerPopupTopItem
      */
     public override function cleanup():void
     {
+
+
         super.cleanup();
     }
 

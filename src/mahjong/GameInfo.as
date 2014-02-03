@@ -5,6 +5,8 @@ package mahjong
 {
 import flash.display.Stage;
 
+import mahjong.controllers.popups.EPopupType;
+
 import mahjong.models.data.LevelInfo;
 
 import mahjong.models.game.ManagerGame;
@@ -99,6 +101,8 @@ public class GameInfo extends GameInfoBase
     protected override function onRemoteGameInitComplete(response:IResponse):void
     {
         GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+
+//        GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_BONUS);
 
 //        var nextLevel:ILevelInfo = GameInfo.instance.managerLevels.getSavedOrIncompleteLevel();
 //

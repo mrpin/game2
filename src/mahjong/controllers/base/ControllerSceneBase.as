@@ -54,6 +54,8 @@ public class ControllerSceneBase extends Controller
             {
                 case _view.buttonTOP:
                 {
+                    GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_TOP);
+
                     result = true;
 
                     break;
@@ -88,19 +90,19 @@ public class ControllerSceneBase extends Controller
 
                     break;
                 }
-                case _view.buttonBack:
+                case _view.buttonCurrency:
                 {
-                    GameInfo.instance.onGameEnd();
-
-                    GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+                    GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_BANK);
 
                     result = true;
 
                     break;
                 }
-                case _view.buttonCurrency:
+                case _view.buttonBack:
                 {
-                    GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_BANK);
+                    GameInfo.instance.onGameEnd();
+
+                    GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
 
                     result = true;
 

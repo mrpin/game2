@@ -52,24 +52,6 @@ public class ControllerSceneMain extends ControllerSceneBase
             _mainItems.push(item);
         }
 
-//        _mainItems = [];
-//        var mainItemsView:Array = [];
-//
-//        for (var i:int = 0; i < 1; i++)
-//        {
-//            var items:Array = [];
-//            var itemsView:Array = [];
-//
-//            for (var k:int = 0; k < 3; k++)
-//            {
-//                var item:ControllerMainItem = new ControllerMainItem(k);
-//                items.push(item);
-//                itemsView.push(item.view);
-//            }
-//            _mainItems.push(items);
-//            mainItemsView.push(itemsView);
-//        }
-//        _view.items = mainItemsView;
     }
 
 

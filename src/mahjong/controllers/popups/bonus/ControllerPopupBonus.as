@@ -9,7 +9,7 @@ import controllers.implementations.ControllerPopup;
 
 import flash.events.MouseEvent;
 
-import mahjong.view.popup.ViewPopupBonus;
+import mahjong.view.popup.bonus.ViewPopupBonus;
 
 import views.IView;
 
