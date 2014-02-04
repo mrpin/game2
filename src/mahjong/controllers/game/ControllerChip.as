@@ -53,7 +53,7 @@ public class ControllerChip extends Controller
     {
         _view = new ViewChip(this, entry);
 
-        _view.chipView.handleEvents(true);
+        _view.chipView.handleEvents(true, true);
 
         super(_view);
 
@@ -78,6 +78,7 @@ public class ControllerChip extends Controller
 
         return super.onViewClicked(view, e);
     }
+
 
     override public function update(type:String):void
     {

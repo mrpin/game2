@@ -42,14 +42,31 @@ public class EStringType
 //    public static const EST_MAP_WIDGET_FRIENDS_POSITION_FORMAT:String = "EST_MAP_WIDGET_FRIENDS_POSITION_FORMAT";
 //
 //
-//    /*
-//     * map widget top
-//     */
-//    public static const EST_MAP_WIDGET_TOP_TITLE:String = "EST_MAP_WIDGET_TOP_TITLE";
-//    public static const EST_MAP_WIDGET_TOP_BUTTON:String = "EST_MAP_WIDGET_TOP_BUTTON";
-//    public static const EST_MAP_WIDGET_TOP_BUTTON_SHARE:String = "EST_MAP_WIDGET_TOP_BUTTON_SHARE";
-//    public static const EST_MAP_WIDGET_TOP_POSITION_FORMAT:String = "EST_MAP_WIDGET_TOP_POSITION_FORMAT";
+//    /*/
+//    /*/ popup top
+//    /*/
+    public static const EST_POPUP_TOP_WIDGET_TITLE:String = "EST_POPUP_TOP_WIDGET_TITLE";
+    public static const EST_POPUP_TOP_BUTTON:String = "EST_POPUP_TOP_BUTTON";
+    public static const EST_POPUP_TOP_BOTTOM_LABEL_MY_PHOTO:String = "EST_POPUP_TOP_BOTTOM_LABEL_MY_PHOTO";
+    public static const EST_POPUP_TOP_BOTTOM_LABEL_FRIEND:String = "EST_POPUP_TOP_BOTTOM_LABEL_FRIEND";
+    public static const EST_POPUP_TOP_UP_LABEL_FRIEND:String = "EST_POPUP_TOP_UP_LABEL_FRIEND";
 //
+    /*
+     * popup bank
+     */
+    public static const EST_POPUP_BANK_WIDGET_TITLE:String = "EST_POPUP_BANK_WIDGET_TITLE";
+    public static const EST_POPUP_BANK_ITEM_BUTTON_BUY:String = "EST_POPUP_BANK_ITEM_BUTTON_BUY";
+    public static const EST_POPUP_BANK_ITEM_CONTENT_COUNT0:String = "EST_POPUP_BANK_ITEM_CONTENT_COUNT0";
+    public static const EST_POPUP_BANK_ITEM_CONTENT_COUNT1:String = "EST_POPUP_BANK_ITEM_CONTENT_COUNT1";
+
+    /*
+     * popup bonus
+     */
+    public static const EST_POPUP_BONUS_WIDGET_TITLE:String = "EST_POPUP_BONUS_WIDGET_TITLE";
+    public static const EST_POPUP_BONUS_LABEL_BONUS:String = "EST_POPUP_BONUS_LABEL_BONUS";
+    public static const EST_POPUP_BONUS_TEXT:String = "EST_POPUP_BONUS_TEXT";
+    public static const EST_POPUP_BONUS_BUTTON_CLOSE:String = "EST_POPUP_BONUS_BUTTON_CLOSE";
+
 //    /*
 //     * map widget stars
 //     */

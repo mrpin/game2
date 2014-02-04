@@ -3,6 +3,8 @@
  */
 package mahjong.models.string
 {
+import bwf.models.string.EStringTypeBWF;
+
 import flash.utils.Dictionary;
 
 import models.implementations.string.ManagerStringBase;
@@ -63,8 +65,8 @@ public class ManagerString extends ManagerStringBase
         super.initLanguageRussian();
 
         {//overrides
-//            _currentLanguage[EStringTypeBWF.EST_SOCIAL_WALLPOST_TEXT_SHARE] = 'Еще один кроссворд разгадан! Я жду вас на моей станции. Игра "Станция кроссвордов"';
-//            _currentLanguage[EStringTypeBWF.EST_SOCIAL_WALLPOST_TEXT_HELP] = 'Помоги мне разгадать кроссворд! Заходи и играй вместе со мной!';
+            _currentLanguage[EStringTypeBWF.EST_SOCIAL_WALLPOST_TEXT_SHARE] = 'Еще один кроссворд разгадан! Я жду вас на моей станции. Игра "Станция кроссвордов"';
+            _currentLanguage[EStringTypeBWF.EST_SOCIAL_WALLPOST_TEXT_HELP] = 'Помоги мне разгадать кроссворд! Заходи и играй вместе со мной!';
 
         }
 
@@ -114,11 +116,32 @@ public class ManagerString extends ManagerStringBase
 //        _currentLanguage[EStringType.EST_MAP_WIDGET_STARS_TITLE] = "Кроссвордов угадано";
 //        _currentLanguage[EStringType.EST_MAP_WIDGET_STARS_CROSSWORDS_TOTAL] = "Всего кроссвордов";
 
+        {//popups
+            //popup top
+            _currentLanguage[EStringType.EST_POPUP_TOP_WIDGET_TITLE] = "Название";
+            _currentLanguage[EStringType.EST_POPUP_TOP_BUTTON] = "Зарисовка";
+            _currentLanguage[EStringType.EST_POPUP_TOP_BOTTOM_LABEL_MY_PHOTO] = "Федя";
+            _currentLanguage[EStringType.EST_POPUP_TOP_BOTTOM_LABEL_FRIEND] = "Степа";
+            _currentLanguage[EStringType.EST_POPUP_TOP_UP_LABEL_FRIEND] = "чувак";
+
+            //popup bank
+            _currentLanguage[EStringType.EST_POPUP_BANK_WIDGET_TITLE] = "Магазин";
+            _currentLanguage[EStringType.EST_POPUP_BANK_ITEM_BUTTON_BUY] = "купить";
+            _currentLanguage[EStringType.EST_POPUP_BANK_ITEM_CONTENT_COUNT0] = "покупка";
+            _currentLanguage[EStringType.EST_POPUP_BANK_ITEM_CONTENT_COUNT1] = "покупка";
+
+            //popup bonus
+            _currentLanguage[EStringType.EST_POPUP_BONUS_WIDGET_TITLE] = "Название";
+            _currentLanguage[EStringType.EST_POPUP_BONUS_LABEL_BONUS] = "бонус";
+            _currentLanguage[EStringType.EST_POPUP_BONUS_TEXT] = "Бонус дается раз в сутки при входе в игру.";
+            _currentLanguage[EStringType.EST_POPUP_BONUS_BUTTON_CLOSE] = "Далее";
+        }
+
         //purchases
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE0] = "покупка 1";
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE1] = "покупка 2";
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE2] = "покупка 3";
-//            _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE3] = "покупка 4";
+        _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE0] = "покупка 1";
+        _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE1] = "покупка 2";
+        _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE2] = "покупка 3";
+        _currentLanguage[EStringType.EST_GAME_BUTTON_PURCHASE3] = "покупка 4";
     }
 
 }

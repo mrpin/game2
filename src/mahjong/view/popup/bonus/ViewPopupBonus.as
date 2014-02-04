@@ -5,6 +5,11 @@ package mahjong.view.popup.bonus
 {
 import controllers.IControllerPopup;
 
+import mahjong.GameInfo;
+import mahjong.models.string.EStringType;
+
+import models.interfaces.string.IManagerString;
+
 import views.IViewButtonLabeled;
 import views.implementations.ViewPopup;
 import views.implementations.buttons.ViewButtonLabeled;
@@ -34,8 +39,15 @@ public class ViewPopupBonus extends ViewPopup
 
     private function init():void
     {
+        var managerString:IManagerString = GameInfo.instance.managerString;
+
         var buttonClose:IViewButtonLabeled = new ViewButtonLabeled(controller, _source.buttonClose);
+        buttonClose.text = (managerString.localizedString(EStringType.EST_POPUP_BONUS_BUTTON_CLOSE));
         setButtonClose(buttonClose);
+
+        _source.labelTitle.text = (managerString.localizedString(EStringType.EST_POPUP_BONUS_WIDGET_TITLE));
+        _source.labelBonus.text = (managerString.localizedString(EStringType.EST_POPUP_BONUS_LABEL_BONUS));
+        _source.labelText.text =  (managerString.localizedString(EStringType.EST_POPUP_BONUS_TEXT));
     }
 
 

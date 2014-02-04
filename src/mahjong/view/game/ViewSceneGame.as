@@ -14,6 +14,10 @@ import mahjong.models.string.EStringType;
 
 import mahjong.view.base.ViewSceneBase;
 
+import models.interfaces.string.IManagerString;
+
+import views.EViewPosition;
+
 import views.IView;
 import views.IViewButton;
 import views.IViewButtonLabeled;
@@ -28,11 +32,16 @@ public class ViewSceneGame extends ViewSceneBase
     private var _source:DisplayObjectContainer;
 
     private var _viewFieldChips:ViewFieldChips;
+
+    private var _viewTimer:gTimer;
+
 //TODO: переименовать buttons
     private var _button0:IViewButtonLabeled;
     private var _button1:IViewButtonLabeled;
     private var _button2:IViewButtonLabeled;
     private var _button3:IViewButtonLabeled;
+
+    private var _appSize:Point;
 
     /*
      * Properties
@@ -76,16 +85,25 @@ public class ViewSceneGame extends ViewSceneBase
 
     private function init():void
     {
+        _viewTimer = new gTimer();
+        _source.addChild(_viewTimer);
+
+        var managerString:IManagerString = GameInfo.instance.managerString;
+
         _button0 = new ViewButtonLabeled(controller, new gButtonPurchase());
+        _button0.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE0));
         _source.addChild(_button0.source);
 
         _button1 = new ViewButtonLabeled(controller, new gButtonPurchase());
+        _button1.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE1));
         _source.addChild(_button1.source);
 
         _button2 = new ViewButtonLabeled(controller, new gButtonPurchase());
+        _button2.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE2));
         _source.addChild(_button2.source);
 
         _button3 = new ViewButtonLabeled(controller, new gButtonPurchase());
+        _button3.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE3));
         _source.addChild(_button3.source);
     }
 
@@ -100,9 +118,18 @@ public class ViewSceneGame extends ViewSceneBase
     {
         var appSize:Point = GameInfo.instance.managerApp.applicationSize;
 
-        _viewFieldChips.x =   (appSize.x / 2) + (_viewFieldChips.width / 2); // 700 : 900;
-        _viewFieldChips.y =  (appSize.y / 2) - (_viewFieldChips.height / 2);// 300 : 600;
 
+
+        _viewTimer.x =  ((appSize.x / 2) - (_viewTimer.width / 2));
+        _viewTimer.y = 100;
+
+        _viewFieldChips.placeViews(fullscreen);
+
+        var w:int = _viewFieldChips.source.width; //772
+        var h:int = _viewFieldChips.source.height;//496
+
+        _viewFieldChips.x =  appSize.x + w;//_viewFieldChips.width + (appSize.x / 2) - (_viewFieldChips.width / 2); // 700 : 900;
+        _viewFieldChips.y =  310;//107 + (appSize.y / 2) - (_viewFieldChips.height / 2);// 300 : 600;
 
         _button0.x = 130;
         _button0.y = 180;
@@ -116,7 +143,6 @@ public class ViewSceneGame extends ViewSceneBase
         _button3.x = 130;
         _button3.y = 420;
 
-        _viewFieldChips.placeViews(fullscreen);
 
         super.placeViews(fullscreen);
     }

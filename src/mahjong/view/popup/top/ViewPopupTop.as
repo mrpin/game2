@@ -5,6 +5,11 @@ package mahjong.view.popup.top
 {
 import controllers.IControllerPopup;
 
+import mahjong.GameInfo;
+import mahjong.models.string.EStringType;
+
+import models.interfaces.string.IManagerString;
+
 import views.IView;
 
 import views.IViewButton;
@@ -51,7 +56,14 @@ public class ViewPopupTop extends ViewPopup
         var buttonClose:IViewButton = new ViewButton(controller, _source.buttonClose);
         setButtonClose(buttonClose);
 
+        var managerString:IManagerString = GameInfo.instance.managerString;
+
         _button = new ViewButtonLabeled(controller, _source.button);
+        _button.text = (managerString.localizedString(EStringType.EST_POPUP_TOP_BUTTON));
+
+        _source.labelTitle.text = (managerString.localizedString(EStringType.EST_POPUP_TOP_WIDGET_TITLE));
+
+        _source.labelContentCount.text = (managerString.localizedString(EStringType.EST_POPUP_TOP_BOTTOM_LABEL_MY_PHOTO));
     }
 
     override public function addSubView(view:IView):void

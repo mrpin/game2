@@ -5,6 +5,13 @@ package mahjong.view.popup.bank
 {
 import controllers.IControllerPopup;
 
+import mahjong.GameInfo;
+import mahjong.models.string.EStringType;
+
+import mahjong.models.string.ManagerString;
+
+import models.interfaces.string.IManagerString;
+
 import views.IView;
 
 import views.IViewButton;
@@ -42,6 +49,10 @@ public class ViewPopupBank extends ViewPopup
         setButtonClose(buttonClose);
 
         _viewsPopupsBankItems = [];
+
+        var managerString:IManagerString = GameInfo.instance.managerString;
+
+        _source.labelTitle.text = (managerString.localizedString(EStringType.EST_POPUP_BANK_WIDGET_TITLE));
     }
 
 

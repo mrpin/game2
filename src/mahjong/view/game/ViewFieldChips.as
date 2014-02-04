@@ -45,16 +45,14 @@ public class ViewFieldChips extends ViewBase
 
     public function get width():uint
     {
-        var result:uint = _viewsChips[0][0].length;
-
-        return result * 35;
+        var result:uint = _viewsChips[0][0].length / 2;
+        return result * 65;
     }
 
     public function get height():uint
     {
-        var result:uint = _viewsChips[0].length;
-
-        return result* 15;
+        var result:uint = _viewsChips[0].length / 2;
+        return result * 100;
     }
 
     /*

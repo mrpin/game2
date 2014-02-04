@@ -6,9 +6,6 @@ package mahjong.view.base
 import controllers.IController;
 
 import flash.display.DisplayObjectContainer;
-import flash.geom.Point;
-
-import mahjong.GameInfo;
 
 import views.IView;
 import views.IViewButton;
@@ -24,9 +21,9 @@ public class ViewSceneBase extends ViewBase
 
     private var _background:IView;
 
-    private var _buttonTOP:IViewButton;
 //    private var _buttonSettings:IViewButton;
 //    private var _buttonSound:IViewButton;
+    private var _buttonTOP:IViewButton;
     private var _buttonFullScreen:IViewButton;
     private var _buttonHelp:IViewButton;
     private var _buttonBack:IViewButton;
@@ -36,16 +33,9 @@ public class ViewSceneBase extends ViewBase
     private var _viewEnergy:IView;
     private var _viewPoints:IView;
 
-    private var _appSize:Point;
-
     /*
      * Properties
      */
-    public function get buttonTOP():IViewButton
-    {
-        return _buttonTOP;
-    }
-
 //    public function get buttonSettings():IViewButton
 //    {
 //        return _buttonSettings;
@@ -55,6 +45,11 @@ public class ViewSceneBase extends ViewBase
 //    {
 //        return _buttonSound;
 //    }
+
+    public function get buttonTOP():IViewButton
+    {
+        return _buttonTOP;
+    }
 
     public function get buttonFullScreen():IViewButton
     {
@@ -90,8 +85,6 @@ public class ViewSceneBase extends ViewBase
 
     private function init():void
     {
-        _appSize = GameInfo.instance.managerApp.applicationSize;
-
         _background = new ViewBase(controller, new gViewBackground());
         _source.addChild(_background.source);
 
@@ -109,14 +102,15 @@ public class ViewSceneBase extends ViewBase
         _viewPoints = new ViewBase(controller, new gViewPoints);
         _source.addChild(_viewPoints.source);
 
-        _buttonTOP = new ViewButton(controller, new gButtonTop());
-        _source.addChild(_buttonTOP.source);
 
 //        _buttonSettings = new ViewButton(controller, new gButtonSetting());
 //        _source.addChild(_buttonSettings.source);
 
 //        _buttonSound = new ViewButton(controller, new gButtonSound());
 //        _source.addChild(_buttonSound.source);
+
+        _buttonTOP = new ViewButton(controller, new gButtonTop());
+        _source.addChild(_buttonTOP.source);
 
         _buttonFullScreen = new ViewButton(controller, new gButtonFullscreen());
         _source.addChild(_buttonFullScreen.source);
@@ -133,25 +127,17 @@ public class ViewSceneBase extends ViewBase
 
     override public function placeViews(fullscreen:Boolean):void
     {
-        //TODO:доделать фуллскрин
-//        var targetScale:Number = fullscreen ?  _background.source.width / _appSize.x : 1.0;
-        var targetScale:Number = fullscreen ? _background.source.width : _appSize.x;
+//        _background.x = 5;
 
-        Debug.log(_appSize.x.toString());
-        Debug.log(_background.source.width.toString());
+        _viewCurrency.x = fullscreen ? 304 + 460 : 304;
+        _viewCurrency.y = fullscreen ? 55 : 55;
 
-        _viewCurrency.x = 304;
-        _viewCurrency.y = 55;
+        _viewEnergy.x = fullscreen ? 504 + 460 : 504;
+        _viewEnergy.y = fullscreen ? 60 : 60;
 
-        _viewEnergy.x = 504;
-        _viewEnergy.y = 60;
+        _viewPoints.x = fullscreen ? 704 + 460 : 704;
+        _viewPoints.y = fullscreen ? 53 : 53;
 
-        _viewPoints.x = 704;
-        _viewPoints.y = 53;
-
-
-        _buttonTOP.x = 885;
-        _buttonTOP.y = 55;
 
 //        _buttonSettings.x = targetScale - 100;
 //        _buttonSettings.y = 100;
@@ -159,14 +145,17 @@ public class ViewSceneBase extends ViewBase
 //        _buttonSound.x = targetScale - 100;
 //        _buttonSound.y = 250;
 
-        _buttonFullScreen.x = 955;
-        _buttonFullScreen.y = 55;
+        _buttonTOP.x = fullscreen ? 885 + 890 : 885;
+        _buttonTOP.y = fullscreen ? 55 : 55;
 
-        _buttonHelp.x = 955;
-        _buttonHelp.y = 120;
+        _buttonFullScreen.x = fullscreen ? 955 + 890 : 955;
+        _buttonFullScreen.y = fullscreen ? 55 : 55;
 
-        _buttonBack.x = 55;
-        _buttonBack.y = 55;
+        _buttonHelp.x = fullscreen ? 955 + 890 : 955;
+        _buttonHelp.y = fullscreen ? 120 : 120;
+
+        _buttonBack.x = fullscreen ? 55 : 55;
+        _buttonBack.y = fullscreen ? 55 : 55;
     }
 
     /*
@@ -189,14 +178,14 @@ public class ViewSceneBase extends ViewBase
         _buttonCurrency.cleanup();
         _buttonCurrency = null;
 
-        _buttonTOP.cleanup();
-        _buttonTOP = null;
-
 //        _buttonSettings.cleanup();
 //        _buttonSettings = null;
 
 //        _buttonSound.cleanup();
 //        _buttonSound = null;
+
+        _buttonTOP.cleanup();
+        _buttonTOP = null;
 
         _buttonFullScreen.cleanup();
         _buttonFullScreen = null;
@@ -207,16 +196,9 @@ public class ViewSceneBase extends ViewBase
         _buttonBack.cleanup();
         _buttonBack = null;
 
-        _appSize = null;
-
         _source = null;
 
         super.cleanup();
-    }
-
-    public function set appSize(value:Point):void
-    {
-        _appSize = value;
     }
 }
 }

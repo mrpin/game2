@@ -46,8 +46,8 @@ public class ViewMainItem extends ViewBase
 
         _source.art.gotoAndStop(1);
 
-//        _source.art.item.stop();
-//        _source.qwe.stop();
+        _source.art.item.stop();
+        _source.lightning.stop();
 
         this.handleEvents(true, false, false, false, false, true, true);
 
@@ -62,13 +62,13 @@ public class ViewMainItem extends ViewBase
     public function startAnimation():void
     {
         _source.art.item.play();
-        _source.qwe.gotoAndPlay(1);
+        _source.lightning.gotoAndPlay(1);
     }
 
     public function stopAnimation():void
     {
         _source.art.item.stop();
-        _source.qwe.stop();
+        _source.lightning.stop();
     }
 
     /*

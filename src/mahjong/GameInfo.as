@@ -100,17 +100,17 @@ public class GameInfo extends GameInfoBase
 
     protected override function onRemoteGameInitComplete(response:IResponse):void
     {
-        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+//        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
 
 //        GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_BONUS);
 
-//        var nextLevel:ILevelInfo = GameInfo.instance.managerLevels.getSavedOrIncompleteLevel();
-//
-//        var managerGame:IManagerGame = new ManagerGame(nextLevel);
-//
-//        GameInfo.instance.onGameStart(managerGame);
-//
-//        GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
+        var nextLevel:ILevelInfo = GameInfo.instance.managerLevels.getSavedOrIncompleteLevel();
+
+        var managerGame:IManagerGame = new ManagerGame(nextLevel);
+
+        GameInfo.instance.onGameStart(managerGame);
+
+        GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
     }
 
 
