@@ -125,11 +125,14 @@ public class ViewSceneGame extends ViewSceneBase
 
         _viewFieldChips.placeViews(fullscreen);
 
-        var w:int = _viewFieldChips.source.width; //772
-        var h:int = _viewFieldChips.source.height;//496
+        var w:int = _viewFieldChips.source.width;//_viewFieldChips.source.width; //772
+        var h:int = 0;//_viewFieldChips.source.height;//496
 
-        _viewFieldChips.x =  appSize.x + w;//_viewFieldChips.width + (appSize.x / 2) - (_viewFieldChips.width / 2); // 700 : 900;
-        _viewFieldChips.y =  310;//107 + (appSize.y / 2) - (_viewFieldChips.height / 2);// 300 : 600;
+        Debug.log(_viewFieldChips.x.toString());
+        Debug.log(_viewFieldChips.y.toString());
+
+        _viewFieldChips.source.x =  w - 80 + (appSize.x / 2) - (_viewFieldChips.source.width / 2); // 700 : 900;
+        _viewFieldChips.source.y =  (appSize.y / 2) - (_viewFieldChips.source.height / 2);// 300 : 600;
 
         _button0.x = 130;
         _button0.y = 180;

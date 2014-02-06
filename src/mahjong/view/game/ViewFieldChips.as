@@ -83,8 +83,8 @@ public class ViewFieldChips extends ViewBase
                 {
                     chipView.placeViews(fullscreen);
 
-                    chipView.x = positionX;
-                    chipView.y = yPosition;
+                    chipView.source.x = positionX;
+                    chipView.source.y = yPosition;
 
                     positionX -= chipView.offsetX;
                 }

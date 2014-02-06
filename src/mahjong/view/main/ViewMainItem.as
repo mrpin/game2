@@ -3,6 +3,9 @@
  */
 package mahjong.view.main
 {
+import com.greensock.TweenMax;
+import com.greensock.easing.Bounce;
+
 import controllers.IController;
 
 import mahjong.GameInfo;
@@ -56,7 +59,8 @@ public class ViewMainItem extends ViewBase
 
     private function init():void
     {
-
+        _source.scaleX = 0.5;
+        _source.scaleY = 0.5;
     }
 
     public function startAnimation():void
@@ -69,6 +73,11 @@ public class ViewMainItem extends ViewBase
     {
         _source.art.item.stop();
         _source.lightning.stop();
+    }
+
+    public function setBounce():void
+    {
+        TweenMax.to(_source, 1, {scaleX:1, scaleY:1, ease:Bounce.easeIn});
     }
 
     /*
