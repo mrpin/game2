@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="offline.debug">
+  <component name="FlexBuildConfigurationManager" active="none.debug">
     <configurations>
-      <configuration name="offline.debug" pure-as="true" main-class="Main" output-file="offline_debug.swf" output-folder="$MODULE_DIR$/bin">
+      <configuration name="none.debug" pure-as="true" main-class="Main" output-file="offline_debug.swf" output-folder="$MODULE_DIR$/bin">
         <dependencies target-player="11.1">
           <entries>
             <entry library-name="game-sdk-assets" library-level="application">
@@ -18,7 +18,7 @@
           <sdk name="4.6" />
         </dependencies>
         <compiler-options>
-          <option name="additionalOptions" value="-define+=SOCIAL::FACEBOOK,false -define+=SOCIAL::VK,false -define+=SOCIAL::OK,false -define+=SOCIAL::MM,false -define+=SOCIAL::OFFLINE,true -define+=CONFIG::DEBUG,true" />
+          <option name="additionalOptions" value="-define+=SOCIAL::FACEBOOK,false -define+=SOCIAL::VK,false -define+=SOCIAL::OK,false -define+=SOCIAL::MM,false -define+=SOCIAL::NONE,true -define+=CONFIG::DEBUG,true" />
         </compiler-options>
         <packaging-air-desktop />
         <packaging-android />

@@ -1,9 +1,16 @@
 /**
  * Created by evgenyyurko on 1/6/14.
  */
-package mahjong.models.data
+package mahjong.models.level
 {
+import mahjong.models.data.*;
+
+import core.implementations.Debug;
+
 import models.implementations.levels.LevelInfoBase;
+import models.implementations.levels.LevelProgressBase;
+import models.interfaces.levels.ILevelContainer;
+import models.interfaces.levels.ILevelProgress;
 
 public class LevelInfo extends LevelInfoBase
 {
@@ -11,6 +18,8 @@ public class LevelInfo extends LevelInfoBase
      * Fields
      */
     private var _gridCarcass:Array;
+
+    private var _progress:ILevelProgress;
 
 
     /*
@@ -25,16 +34,11 @@ public class LevelInfo extends LevelInfoBase
     /*
      * Methods
      */
-    public function LevelInfo()
+    public function LevelInfo(levelContainer:ILevelContainer)
     {
+        _progress = new LevelProgressBase(this);
 
-
-        init();
-    }
-
-    private function init():void
-    {
-
+        super(levelContainer);
     }
 
 

@@ -5,6 +5,8 @@ package mahjong.controllers.game
 {
 import controllers.implementations.Controller;
 
+import core.implementations.Debug;
+
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;

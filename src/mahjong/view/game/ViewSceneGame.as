@@ -5,6 +5,8 @@ package mahjong.view.game
 {
 import controllers.IController;
 
+import core.implementations.Debug;
+
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 import flash.geom.Point;

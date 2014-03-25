@@ -3,9 +3,11 @@
  */
 package mahjong.models.remote
 {
-import bwf.models.proxy.IManagerProxy;
+import mahjong.Constants;
+import mahjong.GameInfo;
 
 import models.implementations.remote.ManagerRemoteBase;
+import models.interfaces.social.IManagerSocial;
 
 public class ManagerRemoteStub extends ManagerRemoteBase
 {
@@ -22,15 +24,18 @@ public class ManagerRemoteStub extends ManagerRemoteBase
     /*
      * Methods
      */
-    public function ManagerRemoteStub(serverURL:String, proxy:IManagerProxy)
+    public function ManagerRemoteStub(serverURL:String, managerSocial:IManagerSocial)
     {
-        super("http://google.com", proxy);
+        super("http://google.com", managerSocial, Constants.SECRET_KEY);
     }
 
     public override function update(type:String, data:Object, onComplete:Function = null):void
     {
         if (onComplete != null)
-            onComplete(null);
+            onComplete(GameInfo.instance.response);
+
+
+//        super.update(type, data, onComplete);
     }
 
 }

@@ -6,7 +6,7 @@ package mahjong.models.game
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
 import mahjong.models.data.EChipType;
-import mahjong.models.data.LevelInfo;
+import mahjong.models.level.LevelInfo;
 
 import models.implementations.game.ManagerGameBase;
 import models.interfaces.levels.ILevelInfo;

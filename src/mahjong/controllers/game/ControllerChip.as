@@ -7,6 +7,8 @@ import com.greensock.TweenLite;
 
 import controllers.implementations.Controller;
 
+import core.implementations.Debug;
+
 import effects.PixelExplosion;
 
 import flash.display.DisplayObjectContainer;

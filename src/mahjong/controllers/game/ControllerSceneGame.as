@@ -3,11 +3,15 @@
  */
 package mahjong.controllers.game
 {
+import core.implementations.Debug;
+
 import flash.events.MouseEvent;
 
 import mahjong.controllers.EControllerUpdate;
 import mahjong.controllers.base.ControllerSceneBase;
 import mahjong.view.game.ViewSceneGame;
+
+import views.EControllerUpdateBase;
 
 import views.IView;
 
@@ -98,6 +102,11 @@ public class ControllerSceneGame extends ControllerSceneBase
             case EControllerUpdate.ECUT_CHIPS_SHUFFLE:
             {
                 _controllerFieldChips.update(type);
+
+                break;
+            }
+            case EControllerUpdateBase.ECUT_STATE_ENTER:
+            {
 
                 break;
             }

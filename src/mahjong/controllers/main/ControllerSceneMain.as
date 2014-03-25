@@ -54,6 +54,10 @@ public class ControllerSceneMain extends ControllerSceneBase
 
     }
 
+    override public function update(type:String):void
+    {
+       super.update(type);
+    }
 
     /*
      * IDisposable

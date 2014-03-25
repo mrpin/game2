@@ -114,6 +114,11 @@ public class ControllerSceneBase extends Controller
         return result;
     }
 
+    override public function update(type:String):void
+    {
+
+    }
+
     /*
      * IDisposable
      */

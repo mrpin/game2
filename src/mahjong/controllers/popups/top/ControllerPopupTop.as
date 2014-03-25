@@ -6,6 +6,8 @@ package mahjong.controllers.popups.top
 
 import controllers.implementations.ControllerPopup;
 
+import core.implementations.Debug;
+
 import flash.events.MouseEvent;
 
 import mahjong.controllers.popups.EPopupType;

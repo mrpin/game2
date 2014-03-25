@@ -5,6 +5,8 @@ package mahjong.controllers.popups.bank
 {
 import controllers.implementations.Controller;
 
+import core.implementations.Debug;
+
 import flash.events.MouseEvent;
 
 import mahjong.view.popup.bank.ViewPopupBankItem;

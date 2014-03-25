@@ -3,6 +3,8 @@
  */
 package mahjong.controllers.popups.bonus
 {
+import core.implementations.Debug;
+
 import mahjong.controllers.popups.*;
 
 import controllers.implementations.ControllerPopup;
