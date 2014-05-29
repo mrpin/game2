@@ -3,17 +3,16 @@
  */
 package mahjong.controllers.popups.bonus
 {
-import core.implementations.Debug;
-
-import mahjong.controllers.popups.*;
-
 import controllers.implementations.ControllerPopup;
+
+import core.implementations.Debug;
 
 import flash.events.MouseEvent;
 
+import mahjong.controllers.popups.*;
 import mahjong.view.popup.bonus.ViewPopupBonus;
 
-import views.IView;
+import views.interfaces.IView;
 
 public class ControllerPopupBonus extends ControllerPopup
 {

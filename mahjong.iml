@@ -8,10 +8,10 @@
             <entry library-name="game-sdk-assets" library-level="application">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-name="greensock" library-level="application">
+            <entry library-name="assets" library-level="project">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-name="assets" library-level="project">
+            <entry library-name="vendors" library-level="application">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -40,6 +40,7 @@
     <orderEntry type="library" exported="" name="game-sdk-assets" level="application" />
     <orderEntry type="library" exported="" name="greensock" level="application" />
     <orderEntry type="library" exported="" name="assets" level="project" />
+    <orderEntry type="library" exported="" name="vendors" level="application" />
   </component>
 </module>
 

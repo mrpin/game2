@@ -50,7 +50,7 @@ public class StateMain extends StateMahjongBase
         super.prepareLayerPopups();
 
         {//register popups
-            registerPopup(new ControllerPopupBonus());
+//            registerPopup(new ControllerPopupBonus());
         }
     }
 

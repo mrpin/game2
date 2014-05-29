@@ -8,13 +8,16 @@ import com.greensock.easing.Bounce;
 
 import controllers.IController;
 
+import fl.motion.Color;
+
 import mahjong.GameInfo;
 
 import models.interfaces.levels.ILevelContainer;
 
 import views.implementations.ViewBase;
+import views.implementations.buttons.ViewButton;
 
-public class ViewMainItem extends ViewBase
+public class ViewMainItem extends ViewButton
 {
     /*
      * Fields
@@ -27,30 +30,35 @@ public class ViewMainItem extends ViewBase
      */
 
 
+    public function set nameLevelContainer(value:String):void
+    {
+        _source.labelLevel.text = value;
+    }
+
+    public function set isOpen(value:Boolean):void
+    {
+        _source.viewFence.visible = !value;
+        _source.viewLock.visible = !value;
+
+        if (!value)
+        {
+            var color:Color = new Color();
+
+                color.brightness = -0.5;
+
+            _source.transform.colorTransform = color;
+
+            this.handleEvents();
+        }
+    }
+
     /*
      * Methods
      */
-    public function ViewMainItem(controller:IController, entry:ILevelContainer)
+    public function ViewMainItem(controller:IController)
     {
         _source = new gSceneMainItem();
         super(controller, _source);
-
-
-        var index:int = -1;
-
-        if (entry != null)
-        {
-            index = GameInfo.instance.managerLevels.items.indexOf(entry);
-        }
-        else
-        {
-//            _source.viewLabel.visible = false;
-        }
-
-        _source.art.gotoAndStop(1);
-
-        _source.art.item.stop();
-        _source.lightning.stop();
 
         this.handleEvents(true, false, false, false, false, true, true);
 
@@ -59,26 +67,9 @@ public class ViewMainItem extends ViewBase
 
     private function init():void
     {
-        _source.scaleX = 0.5;
-        _source.scaleY = 0.5;
+
     }
 
-    public function startAnimation():void
-    {
-        _source.art.item.play();
-        _source.lightning.gotoAndPlay(1);
-    }
-
-    public function stopAnimation():void
-    {
-        _source.art.item.stop();
-        _source.lightning.stop();
-    }
-
-    public function setBounce():void
-    {
-        TweenMax.to(_source, 1, {scaleX:1, scaleY:1, ease:Bounce.easeIn});
-    }
 
     /*
      * IDisposable

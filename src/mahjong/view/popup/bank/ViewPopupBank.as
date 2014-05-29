@@ -8,15 +8,12 @@ import controllers.IControllerPopup;
 import mahjong.GameInfo;
 import mahjong.models.string.EStringType;
 
-import mahjong.models.string.ManagerString;
-
 import models.interfaces.string.IManagerString;
 
-import views.IView;
-
-import views.IViewButton;
 import views.implementations.ViewPopup;
 import views.implementations.buttons.ViewButton;
+import views.interfaces.IView;
+import views.interfaces.buttons.IViewButton;
 
 public class ViewPopupBank extends ViewPopup
 {
@@ -68,8 +65,8 @@ public class ViewPopupBank extends ViewPopup
         var yPosition:int = 173;
         for each(var item:IView in _viewsPopupsBankItems)
         {
-            item.x = 340;
-            item.y = yPosition;
+            item.source.x = 340;
+            item.source.y = yPosition;
 
             yPosition += 84;
         }

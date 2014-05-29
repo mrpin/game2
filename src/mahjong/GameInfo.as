@@ -7,19 +7,22 @@ import core.implementations.Debug;
 
 import flash.display.Stage;
 
-import mahjong.models.level.LevelInfo;
 import mahjong.models.game.ManagerGame;
-import mahjong.models.level.ManagerLevels;
+import mahjong.models.level.LevelInfo;
+import mahjong.models.plaeyr.PlayerInfo;
 import mahjong.models.proxy.ManagerProxy;
 import mahjong.models.remote.ManagerRemoteStub;
 import mahjong.models.response.Response;
+import mahjong.models.sounds.ManagerSounds;
 import mahjong.models.string.ManagerString;
 import mahjong.states.EStateType;
 import mahjong.states.game.StateGame;
 import mahjong.states.main.StateMain;
+import mahjong.states.selectionLevel.StateSelectionLevel;
 
 import models.implementations.app.ManagerAppBase;
 import models.implementations.bonus.ManagerBonusBase;
+import models.implementations.levels.LevelContainerBase;
 import models.implementations.levels.ManagerLevelsBase;
 import models.implementations.players.ManagerPlayersBase;
 import models.implementations.players.PlayerInfoBase;
@@ -27,6 +30,7 @@ import models.implementations.purchases.ManagerPurchasesBase;
 import models.implementations.purchases.PurchaseItemBase;
 import models.implementations.resources.ManagerResourceBase;
 import models.implementations.states.ManagerStatesBase;
+import models.implementations.views.ManagerViewsBase;
 import models.interfaces.IManagerGame;
 import models.interfaces.levels.ILevelInfo;
 import models.interfaces.remote.ERemoteResponseTypeBase;
@@ -79,13 +83,13 @@ public class GameInfo extends GameInfoBase
     }
 
     /*
-     * Methods
+     * Events
      */
-    public function GameInfo(stageValue:Stage)
+    override public function onInitCurrentLanguage(languageType:String):void
     {
-        super(stageValue);
+        Debug.assert(_managerString == null, 'manager string already established');
 
-        initSocialManager();
+        _managerString = new ManagerString(languageType);
     }
 
     protected override function onInitSocialComplete():void
@@ -113,12 +117,10 @@ public class GameInfo extends GameInfoBase
 
         _managerStates = new ManagerStatesBase();
 
-        _managerString = new ManagerString(_managerSocial);
-
-        _managerPlayers = new ManagerPlayersBase(PlayerInfoBase);
+        _managerPlayers = new ManagerPlayersBase(PlayerInfo);
         _managerPlayers.deserialize(_response.entry["players"]);
 
-        _managerLevels = new ManagerLevelsBase(LevelInfo);
+        _managerLevels = new ManagerLevelsBase(LevelContainerBase, LevelInfo);
         _managerLevels.deserialize(_response.entry["levels"]);
 
         _managerPurchases = new ManagerPurchasesBase(PurchaseItemBase);
@@ -127,19 +129,46 @@ public class GameInfo extends GameInfoBase
         _managerBonus = new ManagerBonusBase();
         _managerBonus.deserialize(_response.entry["bonus"]);
 
+        _managerSounds = new ManagerSounds();
+
+        _managerViews = new ManagerViewsBase();
+
 
         {   //register states
             _managerStates.registerState(EStateType.EST_MAIN, StateMain);
+            _managerStates.registerState(EStateType.EST_SELECT_LEVEL, StateSelectionLevel);
             _managerStates.registerState(EStateType.EST_GAME, StateGame);
         }
 
 
-//        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+//        GameInfo.instance.managerStates.setState(EStateType.EST_SELECT_LEVEL);
 
-        startStubGame();
+//        startStubGame();
 
 
         super.onRemoteGameInitComplete(_response);
+    }
+
+
+    public override function onGameStart(value:IManagerGame):void
+    {
+        super.onGameStart(value);
+
+        Debug.assert(value is ManagerGame);
+
+        _managerGame = value as ManagerGame;
+    }
+
+
+    /*
+     * Methods
+     */
+    public function GameInfo(stageValue:Stage)
+    {
+        super(stageValue);
+
+        initSocialManager();
     }
 
     private function startStubGame():void
@@ -170,16 +199,6 @@ public class GameInfo extends GameInfoBase
 
                     });
         }
-    }
-
-
-    public override function onGameStart(value:IManagerGame):void
-    {
-        super.onGameStart(value);
-
-        Debug.assert(value is ManagerGame);
-
-        _managerGame = value as ManagerGame;
     }
 }
 }

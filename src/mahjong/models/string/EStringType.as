@@ -5,7 +5,21 @@ package mahjong.models.string
 {
 public class EStringType
 {
+    //scene base ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene base
 
+    //scene lounge ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene lounge
+    public static const EST_LOBBY_BUTTON_GET_TIME_BONUS:String = "EST_LOUNGE_BUTTON_GET_TIME_BONUS";
+
+    //scene main ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene main
+
+    //scene selection level ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene selection level
+
+    //scene game ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene game
+
+
+    /*
+     * popup top
+     */
     public static const EST_POPUP_TOP_WIDGET_TITLE:String = "EST_POPUP_TOP_WIDGET_TITLE";
     public static const EST_POPUP_TOP_BUTTON:String = "EST_POPUP_TOP_BUTTON";
     public static const EST_POPUP_TOP_BOTTOM_LABEL_MY_PHOTO:String = "EST_POPUP_TOP_BOTTOM_LABEL_MY_PHOTO";

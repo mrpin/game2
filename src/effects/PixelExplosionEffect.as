@@ -3,6 +3,7 @@
  */
 package effects
 {
+import com.greensock.TweenMax;
 import com.greensock.easing.Circ;
 import com.greensock.easing.Strong;
 

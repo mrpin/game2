@@ -3,9 +3,9 @@
  */
 package mahjong.models.level
 {
-import mahjong.models.data.*;
-
 import core.implementations.Debug;
+
+import mahjong.models.data.*;
 
 import models.implementations.levels.LevelInfoBase;
 import models.implementations.levels.LevelProgressBase;
@@ -21,6 +21,8 @@ public class LevelInfo extends LevelInfoBase
 
     private var _progress:ILevelProgress;
 
+    private var _typeAdvanced:String;
+
 
     /*
      * Properties
@@ -28,6 +30,11 @@ public class LevelInfo extends LevelInfoBase
     public function get gridCarcass():Array
     {
         return _gridCarcass;
+    }
+
+    public function get typeAdvanced():String
+    {
+        return _typeAdvanced;
     }
 
 
@@ -53,6 +60,7 @@ public class LevelInfo extends LevelInfoBase
     override public function deserialize(data:Object):void
     {
         Debug.assert(data.hasOwnProperty("grid_data"));
+        _typeAdvanced = Debug.assertProperty(data, "type_complication");
 
         _gridCarcass = [];
 
@@ -79,5 +87,7 @@ public class LevelInfo extends LevelInfoBase
 
         super.deserialize(data);
     }
+
+
 }
 }

@@ -10,9 +10,8 @@ import core.implementations.Debug;
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
+import mahjong.models.data.EChipType;
 import mahjong.view.game.ViewFieldChips;
-
-import views.IView;
 
 public class ControllerFieldChips extends Controller
 {
@@ -96,42 +95,52 @@ public class ControllerFieldChips extends Controller
             }
             case EControllerUpdate.ECUT_CHIPS_SHUFFLE:
             {
-                //TODO:бывает при перетасовке замыкается for
-                _view.subViewRemove();
-
-                var gridChips:Array = GameInfo.instance.managerGame.grid;
-
-                var chipsViews:Array = [];
-                var chips:Array = [];
-
-                for each(var cellZ:Array in gridChips)
+//                subViewRemove();
+//
+//                var gridChips:Array = GameInfo.instance.managerGame.grid;
+//
+//                var chipsViews:Array = [];
+//                var chips:Array = [];
+//
+//                for each(var cellZ:Array in gridChips)
+//                {
+//                    var chipZ:Array = [];
+//                    var chipsViewZ:Array = [];
+//
+//                    for each(var cellY:Array in cellZ)
+//                    {
+//                        var chipY:Array = [];
+//                        var chipsViewY:Array = [];
+//
+//                        for each(var chipEntry:ChipInfo in cellY)
+//                        {
+//                            var chipNew:ControllerChip = new ControllerChip(chipEntry);
+//
+//                            chipY.push(chipNew);
+//                            chipsViewY.push(chipNew.view);
+//                        }
+//                        chipZ.push(chipY);
+//                        chipsViewZ.push(chipsViewY);
+//                    }
+//                    chips.push(chipZ);
+//                    chipsViews.push(chipsViewZ);
+//                }
+//
+//                _chips = chips;
+//                _view.viewsChips = chipsViews;
+//
+//                _view.placeViews(false);
+//
+                for each(var z:Array in _chips)
                 {
-                    var chipZ:Array = [];
-                    var chipsViewZ:Array = [];
-
-                    for each(var cellY:Array in cellZ)
+                    for each(var y:Array in z)
                     {
-                        var chipY:Array = [];
-                        var chipsViewY:Array = [];
-
-                        for each(var chipEntry:ChipInfo in cellY)
+                        for each(var chipController:ControllerChip in y)
                         {
-                            var chipNew:ControllerChip = new ControllerChip(chipEntry);
-
-                            chipY.push(chipNew);
-                            chipsViewY.push(chipNew.view);
+                            chipController.update(type);
                         }
-                        chipZ.push(chipY);
-                        chipsViewZ.push(chipsViewY);
                     }
-                    chips.push(chipZ);
-                    chipsViews.push(chipsViewZ);
                 }
-
-                _chips = chips;
-                _view.viewsChips = chipsViews;
-
-                _view.placeViews(false);
 
                 break;
             }
@@ -144,22 +153,42 @@ public class ControllerFieldChips extends Controller
         }
     }
 
+    public function subViewRemove():void
+    {
+        for each(var z:Array in _chips)
+        {
+            for each(var y:Array in z)
+            {
+                for each(var chip:ControllerChip in y)
+                {
+                    if (chip.typeChip != EChipType.ETB_EMPTY)
+                    {
+                        chip.view.source.parent.removeChild(chip.view.source);
+                        chip.cleanup();
+                        chip = null;
+                    }
+                }
+            }
+        }
+    }
+
+
     /*
      * IDisposable
      */
     public override function cleanup():void
     {
-       for each(var z:Array in _chips)
-       {
-           for each(var y:Array in z)
-           {
-               for each(var chip:ControllerChip in y)
-               {
-                   chip.cleanup();
-                   chip = null;
-               }
-           }
-       }
+        for each(var z:Array in _chips)
+        {
+            for each(var y:Array in z)
+            {
+                for each(var chip:ControllerChip in y)
+                {
+                    chip.cleanup();
+                    chip = null;
+                }
+            }
+        }
         super.cleanup();
     }
 

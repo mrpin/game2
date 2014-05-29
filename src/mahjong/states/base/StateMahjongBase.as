@@ -8,9 +8,9 @@ import controllers.IControllerPopup;
 import mahjong.controllers.popups.bank.ControllerPopupBank;
 import mahjong.controllers.popups.top.ControllerPopupTop;
 
-import models.implementations.states.base.StateBase;
+import states.StateBase;
 
-import views.EViewPosition;
+import views.interfaces.EViewPosition;
 
 public class StateMahjongBase extends StateBase
 {
@@ -57,8 +57,8 @@ public class StateMahjongBase extends StateBase
         super.prepareLayerPopups();
 
         {//register popups
-            registerPopup(new ControllerPopupBank());
-            registerPopup(new ControllerPopupTop());
+//            registerPopup(new ControllerPopupBank());
+//            registerPopup(new ControllerPopupTop());
         }
     }
 

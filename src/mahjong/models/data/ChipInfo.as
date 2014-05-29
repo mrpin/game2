@@ -102,6 +102,15 @@ public class ChipInfo extends DisposableObject implements ISerializable
         var neighborXLeft:ChipInfo = null;
         var neighborXRight:ChipInfo = null;
 
+        var neighborYRightXRight:ChipInfo = null;
+        var neighborXRightYRight:ChipInfo = null;
+        var neighborXRightYLeft:ChipInfo = null;
+        var neighborYLeftXRight:ChipInfo = null;
+        var neighborYLeftXLeft:ChipInfo = null;
+        var neighborXLeftYLeft:ChipInfo = null;
+        var neighborXLeftYRight:ChipInfo = null;
+        var neighborYRightXLeft:ChipInfo = null;
+
         Debug.assert(_gridOwner[0][0].length > 3);
         Debug.assert(_gridOwner[0].length > 3);
 
@@ -135,6 +144,20 @@ public class ChipInfo extends DisposableObject implements ISerializable
 
         neighborXRight = _x < _gridOwner[0][0].length - 2 ? _gridOwner[_z][_y][_x + 2] : null;
 
+
+        neighborYRightXRight = ((_y < _gridOwner[0].length - 2) && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z][_y + 2][_x + 1] : null;
+        neighborXRightYRight = ((_y < _gridOwner[0].length - 1) && (_x < _gridOwner[0][0].length - 2)) ? _gridOwner[_z][_y + 1][_x + 2] : null;
+
+        neighborXRightYLeft = (_y > 0 && (_x < _gridOwner[0][0].length - 2)) ? _gridOwner[_z][_y - 1][_x + 2] : null;
+        neighborYLeftXRight = (_y > 0 && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z][_y - 2][_x + 1] : null;
+
+        neighborYLeftXLeft = (_x > 0 && _y > 0) ? _gridOwner[_z][_y - 2][_x - 1] : null;
+        neighborXLeftYLeft = (_x > 0 && _y > 0) ? _gridOwner[_z][_y - 1][_x - 2] : null;
+
+        neighborXLeftYRight = (_x > 0 && (_y < _gridOwner[0].length - 1)) ? _gridOwner[_z][_y + 1][_x - 2] : null;
+        neighborYRightXLeft = (_x > 0 && (_y < _gridOwner[0].length - 2)) ? _gridOwner[_z][_y + 2][_x - 1] : null;
+
+
         var isNeighborTopEmpty:Boolean = (neighborTop == null || neighborTop.chipType == EChipType.ETB_EMPTY);
         var isNeighborTopYLeftEmpty:Boolean = (neighborTopYLeft == null || neighborTopYLeft.chipType == EChipType.ETB_EMPTY);
         var isNeighborTopYRight:Boolean = (neighborTopYRight == null || neighborTopYRight.chipType == EChipType.ETB_EMPTY);
@@ -155,8 +178,21 @@ public class ChipInfo extends DisposableObject implements ISerializable
             var isNeighborYLeft:Boolean = neighborYLeft == null || neighborYLeft.chipType == EChipType.ETB_EMPTY;
             var isNeighborYRight:Boolean = neighborYRight == null || neighborYRight.chipType == EChipType.ETB_EMPTY;
 
-            result = ((isNeighborXLeft || isNeighborXRight) && (isNeighborYRight || isNeighborYLeft));
+            var isNeighborYRightXRight:Boolean = neighborYRightXRight == null || neighborYRightXRight.chipType == EChipType.ETB_EMPTY;
+            var isNeighborXRightYRight:Boolean = neighborXRightYRight == null || neighborXRightYRight.chipType == EChipType.ETB_EMPTY;
+            var isNeighborXRightYLeft:Boolean = neighborXRightYLeft == null || neighborXRightYLeft.chipType == EChipType.ETB_EMPTY;
+            var isNeighborYLeftXRight:Boolean = neighborYLeftXRight == null || neighborYLeftXRight.chipType == EChipType.ETB_EMPTY;
+            var isNeighborYLeftXLeft:Boolean = neighborYLeftXLeft == null || neighborYLeftXLeft.chipType == EChipType.ETB_EMPTY;
+            var isNeighborXLeftYLeft:Boolean = neighborXLeftYLeft == null || neighborXLeftYLeft.chipType == EChipType.ETB_EMPTY;
+            var isNeighborXLeftYRight:Boolean = neighborXLeftYRight == null || neighborXLeftYRight.chipType == EChipType.ETB_EMPTY;
+            var isNeighborYRightXLeft:Boolean = neighborYRightXLeft == null || neighborYRightXLeft.chipType == EChipType.ETB_EMPTY;
+
+//            result = ((isNeighborXLeft || isNeighborXRight) && (isNeighborYRight || isNeighborYLeft));
+
+            result = (((isNeighborXLeftYLeft && isNeighborXLeft && isNeighborXLeftYRight) || (isNeighborXRightYRight && isNeighborXRight && isNeighborXRightYLeft)) &&
+                    ((isNeighborYRightXRight && isNeighborYRight && isNeighborYRightXLeft) || (isNeighborYLeftXRight && isNeighborYLeft && isNeighborYLeftXLeft)));
         }
+
 
         return result;
     }
@@ -164,6 +200,11 @@ public class ChipInfo extends DisposableObject implements ISerializable
     public function get chipType():int
     {
         return _chipType;
+    }
+
+    public function set chipType(value:int):void
+    {
+        _chipType = value;
     }
 
     public function get x():int

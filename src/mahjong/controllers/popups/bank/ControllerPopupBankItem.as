@@ -11,7 +11,7 @@ import flash.events.MouseEvent;
 
 import mahjong.view.popup.bank.ViewPopupBankItem;
 
-import views.IView;
+import views.interfaces.IView;
 
 public class ControllerPopupBankItem extends Controller
 {

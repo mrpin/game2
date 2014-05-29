@@ -8,7 +8,7 @@ import controllers.implementations.ControllerPopup;
 import mahjong.controllers.popups.*;
 import mahjong.view.popup.bank.ViewPopupBank;
 
-import views.IViewPopup;
+import views.interfaces.IViewPopup;
 
 public class ControllerPopupBank extends ControllerPopup
 {

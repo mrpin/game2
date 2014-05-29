@@ -49,8 +49,6 @@ public class ManagerSounds extends ManagerSoundsBase
     override protected function initSounds():void
     {
         super.initSounds();
-
-        registerSound(new sMainItem.mp3, ESoundType.EST_MAIN_ITEM);
     }
 
 }

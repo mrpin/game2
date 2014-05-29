@@ -233,7 +233,6 @@
 
 package effects
 {
-import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.DisplayObjectContainer;
 import flash.display.Shape;
@@ -286,12 +285,11 @@ public class PixelExplosion extends Sprite
         // Создаем картинку
         _sprite = sprite;
 
-        _w = _sprite.width - 10;
-        _h = _sprite.height - 10;
+        _w = _sprite.width;
+        _h = _sprite.height;
 
         _img = new BitmapData(_w, _h);
         _img.draw(_sprite);
-
 
         // Считаем общее количество пикселей
         _pixelsAllCount = _w * _h;

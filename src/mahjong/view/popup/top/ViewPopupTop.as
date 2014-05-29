@@ -10,13 +10,12 @@ import mahjong.models.string.EStringType;
 
 import models.interfaces.string.IManagerString;
 
-import views.IView;
-
-import views.IViewButton;
-import views.IViewButtonLabeled;
 import views.implementations.ViewPopup;
 import views.implementations.buttons.ViewButton;
 import views.implementations.buttons.ViewButtonLabeled;
+import views.interfaces.IView;
+import views.interfaces.buttons.IViewButton;
+import views.interfaces.buttons.IViewButtonLabeled;
 
 public class ViewPopupTop extends ViewPopup
 {
@@ -83,8 +82,8 @@ public class ViewPopupTop extends ViewPopup
         {
             var item:IView = _itemsViews[i];
 
-            item.x = xPosition;
-            item.y = yPositionStart;
+            item.source.x = xPosition;
+            item.source.y = yPositionStart;
 
             xPosition += item.source.width + 10;
 

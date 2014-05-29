@@ -134,6 +134,8 @@ public class ManagerGame extends ManagerGameBase
 
     private var _onShowChipsDisable:Boolean;
 
+    private var _chipsCancellationTravel:Array;
+
 
     /*
      * Properties
@@ -155,6 +157,7 @@ public class ManagerGame extends ManagerGameBase
 
         for each(var currentChip:ChipInfo in _chipsEnabled)
         {
+            trace("isHasCombination");
             for each(var pairChip:ChipInfo in _chipsEnabled)
             {
                 if (currentChip == pairChip)
@@ -201,7 +204,7 @@ public class ManagerGame extends ManagerGameBase
     {
         _onShowChipsDisable = value;
 
-        _onShowChipsDisable ? showChipsDisable() : null;
+        _onShowChipsDisable ? showChipsDisable() : hideChipsDisable();
     }
 
 
@@ -228,7 +231,7 @@ public class ManagerGame extends ManagerGameBase
         _chipsAll = getChips([EChipType.ETB_EMPTY]);
         updateEnabledChips();
 
-
+        _chipsCancellationTravel = [];
     }
 
 
@@ -287,16 +290,21 @@ public class ManagerGame extends ManagerGameBase
             {
                 if (_chipSelected.chipType == chip.chipType)
                 {
+                    _chipsCancellationTravel = [];
+
+                    _chipsCancellationTravel.push(_chipSelected);
+                    _chipsCancellationTravel.push(chip);
+
                     onUserSelectSameChip(chip);
 
                     _onShowChipsDisable ? showChipsDisable() : null;
 
-                    updateEnabledChips();
-                    while (!isHasCombination && _chipsEnabled.length > 2)
-                    {
-                        shuffleChips();
-                        _chipSelected = null;
-                    }
+//                    updateEnabledChips();
+//                    while (!isHasCombination && _chipsEnabled.length > 2)
+//                    {
+//                        shuffleChips();
+//                        _chipSelected = null;
+//                    }
                 }
                 else
                 {
@@ -305,12 +313,29 @@ public class ManagerGame extends ManagerGameBase
             }
         }
 
-        updateEnabledChips();
-        while (!isHasCombination && _chipsEnabled.length >= 2)
+//        updateEnabledChips();
+//        while (!isHasCombination && _chipsEnabled.length >= 2)
+//        {
+//            shuffleChips();
+//            _chipSelected = null;
+//        }
+    }
+
+    public function cancelMove():void
+    {
+        if (_chipsCancellationTravel.length == 0)
         {
-            shuffleChips();
-            _chipSelected = null;
+            return;
         }
+
+        for each(var chip:ChipInfo in _chipsCancellationTravel)
+        {
+            _grid[chip.z][chip.y][chip.x] = chip;
+            _chipsAll.push(chip);
+            chip.controller.update(EControllerUpdate.ECUT_CHIPS_CANCEL_MOVE);
+        }
+
+        _chipsCancellationTravel = [];
     }
 
     private function onUserSelectSameChip(chip:ChipInfo):void
@@ -367,45 +392,117 @@ public class ManagerGame extends ManagerGameBase
     }
 
 
-    public function shuffleChips():void
+//    public function shuffleChips():void
+//    {
+//        _chipsCancellationTravel = [];
+//
+//        var chipsForShuffle:Array = [];
+//        var chipsTypeForShuffle:Array = [];
+//
+//        for each(var chip:ChipInfo in _chipsAll)
+//        {
+//            if (chip.chipType != EChipType.ETB_EMPTY)
+//            {
+//                chipsForShuffle.push(chip);
+//                chipsTypeForShuffle.push(chip.chipType);
+//            }
+//        }
+//
+//        UtilsArray.shuffle(chipsTypeForShuffle);
+//
+//        for (var i:int = 0; i < chipsForShuffle.length; i++)
+//        {
+//            var chipShuffle:ChipInfo = chipsForShuffle[i];
+//
+//            var chipCurrent:ChipInfo = ChipInfo.getCloneWithType(chipShuffle, chipsTypeForShuffle[i]);
+//            chipCurrent.gridOwner = _grid;
+//
+//            _grid[chipShuffle.z][chipShuffle.y][chipShuffle.x] = chipCurrent;
+//        }
+//        _chipsAll = getChips([EChipType.ETB_EMPTY]);
+//
+//        _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
+//
+//        _onShowChipsDisable ? showChipsDisable() : null;
+//
+//        updateEnabledChips();
+//    }
+
+    public function shuffle():void
     {
-        var chipsForShuffle:Array = [];
-        var chipsTypeForShuffle:Array = [];
+        _chipsCancellationTravel = [];
+
+        var arrayTypes:Array = [];
 
         for each(var chip:ChipInfo in _chipsAll)
         {
-            if (chip.chipType != EChipType.ETB_EMPTY)
+            arrayTypes.push(chip.chipType);
+        }
+
+        UtilsArray.shuffle(arrayTypes);
+
+        for (var i:int = 0; i < _chipsAll.length; i++)
+        {
+            var chipInfo:ChipInfo = _chipsAll[i];
+            chipInfo.chipType = arrayTypes[i];
+        }
+        _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
+    }
+
+    public function showCombination():Boolean
+    {
+        var result:Boolean = false;
+
+        var chips:Array = showChipsDisable();
+
+
+        for each(var chipOne:ChipInfo in chips)
+        {
+            for each(var chipTwo:ChipInfo in chips)
             {
-                chipsForShuffle.push(chip);
-                chipsTypeForShuffle.push(chip.chipType);
+                if (chipOne.chipType == chipTwo.chipType && chipOne != chipTwo)
+                {
+                    chipOne.controller.update(EControllerUpdate.ECUT_CHIP_SHOW_COMBINATION);
+                    chipTwo.controller.update(EControllerUpdate.ECUT_CHIP_SHOW_COMBINATION);
+                    result = true;
+                    break;
+                }
+            }
+            if (chipOne.chipType == chipTwo.chipType && chipOne != chipTwo)
+            {
+                break;
             }
         }
 
-        UtilsArray.shuffle(chipsTypeForShuffle);
-
-        for (var i:int = 0; i < chipsForShuffle.length; i++)
-        {
-            var chipShuffle:ChipInfo = chipsForShuffle[i];
-
-            var chipCurrent:ChipInfo = ChipInfo.getCloneWithType(chipShuffle, chipsTypeForShuffle[i]);
-            chipCurrent.gridOwner = _grid;
-
-            _grid[chipShuffle.z][chipShuffle.y][chipShuffle.x] = chipCurrent;
-        }
-        _chipsAll = getChips([EChipType.ETB_EMPTY]);
-
-        _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
-
-        _onShowChipsDisable ? showChipsDisable() : null;
-
-        updateEnabledChips();
+        return result;
     }
 
-    public function showChipsDisable():void
+    public function showChipsDisable():Array
+    {
+        var result:Array = [];
+
+        for each (var chip:ChipInfo in _chipsAll)
+        {
+            if (!chip.isEnabled)
+            {
+//                chip.controller.update(EControllerUpdate.ECUT_SHOW_CHIPS_DISABLE);
+            }
+            else
+            {
+                result.push(chip);
+            }
+        }
+        return result;
+    }
+
+    public function hideChipsDisable():void
     {
         for each (var chip:ChipInfo in _chipsAll)
         {
-            chip.controller.update(EControllerUpdate.ECUT_SHOW_CHIPS_DISABLE);
+            if (!chip.isEnabled)
+            {
+                chip.controller.update(EControllerUpdate.ECUT_HIDE_CHIPS_DISABLE);
+            }
         }
     }
 

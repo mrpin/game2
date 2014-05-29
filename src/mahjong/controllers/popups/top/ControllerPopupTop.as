@@ -13,7 +13,7 @@ import flash.events.MouseEvent;
 import mahjong.controllers.popups.EPopupType;
 import mahjong.view.popup.top.ViewPopupTop;
 
-import views.IView;
+import views.interfaces.IView;
 
 public class ControllerPopupTop extends ControllerPopup
 {

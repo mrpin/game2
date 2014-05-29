@@ -3,14 +3,9 @@
  */
 package mahjong.models.string
 {
-import bwf.models.string.EStringTypeBWF;
-
 import core.implementations.Debug;
 
-import flash.utils.Dictionary;
-
 import models.implementations.string.ManagerStringBase;
-import models.interfaces.social.IManagerSocial;
 import models.interfaces.string.ELanguageType;
 
 public class ManagerString extends ManagerStringBase
@@ -28,16 +23,14 @@ public class ManagerString extends ManagerStringBase
     /*
      * Methods
      */
-    public function ManagerString(managerSocial:IManagerSocial)
+    public function ManagerString(languageType:String)
     {
-        super(managerSocial);
+        super(languageType);
     }
 
-    protected override function initCurrentLanguage(managerSocial:IManagerSocial):void
+    protected override function initCurrentLanguage(languageType:String):void
     {
-        _currentLanguage = new Dictionary(true);
-
-        switch (managerSocial.currentLanguage)
+        switch (languageType)
         {
             case ELanguageType.ELT_ENGLISH:
             case ELanguageType.ELT_BELORUSSIAN:
@@ -65,6 +58,18 @@ public class ManagerString extends ManagerStringBase
     protected override function initLanguageRussian():void
     {
         super.initLanguageRussian();
+
+        //scene base ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene base
+
+        //scene lobby ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene lobby
+        _currentLanguage[EStringType.EST_LOBBY_BUTTON_GET_TIME_BONUS] = "забрать бонус";
+
+        //scene main ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene main
+
+        //scene selection level ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene selection level
+
+        //scene game ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ scene game
+
 
         {//popups
             //popup top

@@ -10,9 +10,9 @@ import mahjong.models.string.EStringType;
 
 import models.interfaces.string.IManagerString;
 
-import views.IViewButtonLabeled;
 import views.implementations.ViewPopup;
 import views.implementations.buttons.ViewButtonLabeled;
+import views.interfaces.buttons.IViewButtonLabeled;
 
 public class ViewPopupBonus extends ViewPopup
 {
@@ -47,7 +47,7 @@ public class ViewPopupBonus extends ViewPopup
 
         _source.labelTitle.text = (managerString.localizedString(EStringType.EST_POPUP_BONUS_WIDGET_TITLE));
         _source.labelBonus.text = (managerString.localizedString(EStringType.EST_POPUP_BONUS_LABEL_BONUS));
-        _source.labelText.text =  (managerString.localizedString(EStringType.EST_POPUP_BONUS_TEXT));
+        _source.labelText.text = (managerString.localizedString(EStringType.EST_POPUP_BONUS_TEXT));
     }
 
 

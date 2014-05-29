@@ -3,7 +3,8 @@
  */
 package mahjong.models.data
 {
-import core.DisposableObject;
+import core.implementations.Debug;
+import core.implementations.DisposableObject;
 
 import serialization.ISerializable;
 

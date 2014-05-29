@@ -12,19 +12,14 @@ import flash.display.Sprite;
 import flash.geom.Point;
 
 import mahjong.GameInfo;
-import mahjong.models.string.EStringType;
-
 import mahjong.view.base.ViewSceneBase;
 
 import models.interfaces.string.IManagerString;
 
-import views.EViewPosition;
-
-import views.IView;
-import views.IViewButton;
-import views.IViewButtonLabeled;
 import views.implementations.buttons.ViewButton;
-import views.implementations.buttons.ViewButtonLabeled;
+import views.interfaces.EViewPosition;
+import views.interfaces.IView;
+import views.interfaces.buttons.IViewButton;
 
 public class ViewSceneGame extends ViewSceneBase
 {
@@ -35,13 +30,14 @@ public class ViewSceneGame extends ViewSceneBase
 
     private var _viewFieldChips:ViewFieldChips;
 
-    private var _viewTimer:gTimer;
+    private var _viewMeasurePoints:IView;
 
-//TODO: переименовать buttons
-    private var _button0:IViewButtonLabeled;
-    private var _button1:IViewButtonLabeled;
-    private var _button2:IViewButtonLabeled;
-    private var _button3:IViewButtonLabeled;
+//    private var _viewTimer:gTimer;
+
+    private var _buttonBoosterDoneLevel:IViewButton;
+    private var _buttonBoosterHint:IViewButton;
+    private var _buttonBoosterUndo:IViewButton;
+    private var _buttonBoosterMix:IViewButton;
 
     private var _appSize:Point;
 
@@ -50,28 +46,46 @@ public class ViewSceneGame extends ViewSceneBase
      */
     public function set viewFieldChips(value:IView):void
     {
+        if(value == _viewFieldChips)
+        {
+            return;
+        }
+
         _viewFieldChips = value as ViewFieldChips;
         _source.addChild(_viewFieldChips.source);
     }
 
-    public function get button0():IViewButtonLabeled
+    public function set viewMeasurePoints(value:IView):void
     {
-        return _button0;
+        if(value == _viewMeasurePoints)
+        {
+            return;
+        }
+
+        _viewMeasurePoints = value as ViewMeasurePoints;
+        _viewMeasurePoints.position = EViewPosition.EVP_ABSOLUTE;
+        _viewMeasurePoints.anchorPoint = new Point(0, 1);
+        _source.addChild(_viewMeasurePoints.source);
     }
 
-    public function get button1():IViewButtonLabeled
+    public function get buttonBoosterDoneLevel():IViewButton
     {
-        return _button1;
+        return _buttonBoosterDoneLevel;
     }
 
-    public function get button2():IViewButtonLabeled
+    public function get buttonBoosterHint():IViewButton
     {
-        return _button2;
+        return _buttonBoosterHint;
     }
 
-    public function get button3():IViewButtonLabeled
+    public function get buttonBoosterUndo():IViewButton
     {
-        return _button3;
+        return _buttonBoosterUndo;
+    }
+
+    public function get buttonBoosterMix():IViewButton
+    {
+        return _buttonBoosterMix;
     }
 
     /*
@@ -87,26 +101,28 @@ public class ViewSceneGame extends ViewSceneBase
 
     private function init():void
     {
-        _viewTimer = new gTimer();
-        _source.addChild(_viewTimer);
+//        _viewTimer = new gTimer();
+//        _source.addChild(_viewTimer);
 
-        var managerString:IManagerString = GameInfo.instance.managerString;
+        _buttonBoosterDoneLevel = new ViewButton(controller, new gButtonBoosterDoneLevel());
+        _buttonBoosterDoneLevel.position = EViewPosition.EVP_ABSOLUTE;
+        _buttonBoosterDoneLevel.anchorPoint = new Point(0.5, 1);
+        _source.addChild(_buttonBoosterDoneLevel.source);
 
-        _button0 = new ViewButtonLabeled(controller, new gButtonPurchase());
-        _button0.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE0));
-        _source.addChild(_button0.source);
+        _buttonBoosterHint = new ViewButton(controller, new gButtonBoosterHint());
+        _buttonBoosterHint.position = EViewPosition.EVP_ABSOLUTE;
+        _buttonBoosterHint.anchorPoint = new Point(0.5, 1);
+        _source.addChild(_buttonBoosterHint.source);
 
-        _button1 = new ViewButtonLabeled(controller, new gButtonPurchase());
-        _button1.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE1));
-        _source.addChild(_button1.source);
+        _buttonBoosterUndo = new ViewButton(controller, new gButtonBoosterUndo());
+        _buttonBoosterUndo.position = EViewPosition.EVP_ABSOLUTE;
+        _buttonBoosterUndo.anchorPoint = new Point(0.5, 1);
+        _source.addChild(_buttonBoosterUndo.source);
 
-        _button2 = new ViewButtonLabeled(controller, new gButtonPurchase());
-        _button2.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE2));
-        _source.addChild(_button2.source);
-
-        _button3 = new ViewButtonLabeled(controller, new gButtonPurchase());
-        _button3.text = (managerString.localizedString(EStringType.EST_GAME_BUTTON_PURCHASE3));
-        _source.addChild(_button3.source);
+        _buttonBoosterMix = new ViewButton(controller, new gButtonBoosterMix());
+        _buttonBoosterMix.position = EViewPosition.EVP_ABSOLUTE;
+        _buttonBoosterMix.anchorPoint = new Point(0.5, 1);
+        _source.addChild(_buttonBoosterMix.source);
     }
 
 
@@ -120,33 +136,33 @@ public class ViewSceneGame extends ViewSceneBase
     {
         var appSize:Point = GameInfo.instance.managerApp.applicationSize;
 
-
-
-        _viewTimer.x =  ((appSize.x / 2) - (_viewTimer.width / 2));
-        _viewTimer.y = 100;
-
         _viewFieldChips.placeViews(fullscreen);
 
-        var w:int = _viewFieldChips.source.width;//_viewFieldChips.source.width; //772
-        var h:int = 0;//_viewFieldChips.source.height;//496
+        _viewFieldChips.source.x =  _viewFieldChips.source.width - 80 + (appSize.x / 2) - (_viewFieldChips.source.width / 2);
+        _viewFieldChips.source.y = (appSize.y / 2) - (_viewFieldChips.source.height / 2);
 
-        Debug.log(_viewFieldChips.x.toString());
-        Debug.log(_viewFieldChips.y.toString());
+        _viewMeasurePoints.translate(0, 1);
+        _viewMeasurePoints.source.x += 40;
+        _viewMeasurePoints.source.y += -20;
 
-        _viewFieldChips.source.x =  w - 80 + (appSize.x / 2) - (_viewFieldChips.source.width / 2); // 700 : 900;
-        _viewFieldChips.source.y =  (appSize.y / 2) - (_viewFieldChips.source.height / 2);// 300 : 600;
 
-        _button0.x = 130;
-        _button0.y = 180;
+        var offSetY:int = -18;
 
-        _button1.x = 130;
-        _button1.y = 260;
+        _buttonBoosterDoneLevel.translate(0.5, 1);
+        _buttonBoosterDoneLevel.source.x += -118;
+        _buttonBoosterDoneLevel.source.y += offSetY;
 
-        _button2.x = 130;
-        _button2.y = 340;
+        _buttonBoosterHint.translate(0.5, 1);
+        _buttonBoosterHint.source.x += -16;
+        _buttonBoosterHint.source.y += offSetY;
 
-        _button3.x = 130;
-        _button3.y = 420;
+        _buttonBoosterUndo.translate(0.5, 1);
+        _buttonBoosterUndo.source.x += 86;
+        _buttonBoosterUndo.source.y += offSetY;
+
+        _buttonBoosterMix.translate(0.5, 1);
+        _buttonBoosterMix.source.x += 186;
+        _buttonBoosterMix.source.y += offSetY;
 
 
         super.placeViews(fullscreen);
@@ -160,17 +176,17 @@ public class ViewSceneGame extends ViewSceneBase
 //        _viewFieldChips.cleanup();
 //        _viewFieldChips = null;
 
-        _button0.cleanup();
-        _button0 = null;
+        _buttonBoosterDoneLevel.cleanup();
+        _buttonBoosterDoneLevel = null;
 
-        _button1.cleanup();
-        _button1 = null;
+        _buttonBoosterHint.cleanup();
+        _buttonBoosterHint = null;
 
-        _button2.cleanup();
-        _button2 = null;
+        _buttonBoosterUndo.cleanup();
+        _buttonBoosterUndo = null;
 
-        _button3.cleanup();
-        _button3 = null;
+        _buttonBoosterMix.cleanup();
+        _buttonBoosterMix = null;
 
         super.cleanup();
     }

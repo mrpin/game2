@@ -6,14 +6,13 @@ package mahjong.view.popup.bank
 import controllers.IController;
 
 import mahjong.GameInfo;
-
 import mahjong.models.string.EStringType;
 
 import models.interfaces.string.IManagerString;
 
-import views.IViewButtonLabeled;
 import views.implementations.ViewBase;
 import views.implementations.buttons.ViewButtonLabeled;
+import views.interfaces.buttons.IViewButtonLabeled;
 
 public class ViewPopupBankItem extends ViewBase
 {
@@ -27,10 +26,10 @@ public class ViewPopupBankItem extends ViewBase
     /*
      * Properties
      */
-     public function get buttonBuy():IViewButtonLabeled
-     {
-         return _buttonBuy;
-     }
+    public function get buttonBuy():IViewButtonLabeled
+    {
+        return _buttonBuy;
+    }
 
     /*
      * Methods
