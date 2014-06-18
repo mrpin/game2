@@ -4,19 +4,15 @@
 package mahjong.controllers.game
 {
 import com.greensock.TweenMax;
+import com.greensock.easing.Linear;
 
 import controllers.implementations.Controller;
 
 import core.implementations.Debug;
 
-import flash.display.Graphics;
-import flash.display.MovieClip;
-import flash.display.Sprite;
-
 import flash.events.MouseEvent;
-import flash.events.TimerEvent;
 import flash.filters.GlowFilter;
-import flash.utils.Timer;
+import flash.geom.Point;
 
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
@@ -34,6 +30,8 @@ public class ControllerChip extends Controller
     private var _view:ViewChip;
 
     private var _entry:ChipInfo;
+
+    private var _isGlow:Boolean;
 
     /*
      * Properties
@@ -113,6 +111,8 @@ public class ControllerChip extends Controller
 
 //                       _view.viewFace.filter = [];
 
+                TweenMax.killTweensOf(_view.source);
+
                 var glow:GlowFilter = new GlowFilter(0x000000, 0.3, 70, 70, 50, 1, true);
 //                var glow:GlowFilter = new GlowFilter(0xff0000, 1, 6, 6, 100, 1, true);
 
@@ -136,11 +136,16 @@ public class ControllerChip extends Controller
             }
             case EControllerUpdate.ECUT_CHIPS_REMOVE:
             {
+                _view.filter = [];
+                TweenMax.killTweensOf(_view.source);
+
                 _view.goAnimation();
 //                rate:uint, sprite:DisplayObjectContainer, V:Number = 8, K:Number = 0.1, xA:Number = 0, yA:Number = 4, minPixelLife:Number = 1.5, maxPixelLife:Number = 3, outAlpha:Number = 0.8, pixelsCount:uint = 1)
 //                var pixelExplosion:PixelExplosion = new PixelExplosion(20, _view.source as DisplayObjectContainer, 2, 0.1, 0, 4, 0.5, 1.5, 1, 1);
 //                _view.addChild(pixelExplosion);
 
+
+                _view.moveTo(new Point(62 - _view.source.parent.x, -71 + _view.source.parent.y));
                 _view.chipVisible = false;
                 break;
             }
@@ -153,6 +158,14 @@ public class ControllerChip extends Controller
             case EControllerUpdate.ECUT_CHIP_SHOW_COMBINATION:
             {
                 _view.filter = [new GlowFilter(0x000000, 0.5, 70, 70, 50, 1, true)];
+
+                break;
+            }
+            case EControllerUpdate.ECUT_CHIP_AUTO_HINT:
+            {
+                _isGlow = false;
+                _view.filter = [];
+                glowEffect();
 
                 break;
             }
@@ -179,26 +192,32 @@ public class ControllerChip extends Controller
 
     }
 
-    function drawPieMask(graphics:Graphics, percentage:Number, radius:Number = 50, x:Number = 0, y:Number = 0, rotation:Number = 0, sides:int = 6):void
+    private function glowEffect():void
     {
-        // graphics should have its beginFill function already called by now
-        graphics.moveTo(x, y);
-        if (sides < 3) sides = 3; // 3 sides minimum
-        // Increase the length of the radius to cover the whole target
-        radius /= Math.cos(1 / sides * Math.PI);
-        // Shortcut function
-        var lineToRadians:Function = function (rads:Number):void
+        _isGlow = !_isGlow;
+
+        var valueBlur:uint = _isGlow ? 20 : 0;
+        var scale:Number = _isGlow ? 1.03 : 1;
+
+        var time:Number = ConstantsBase.ANIMATION_DURATION * 2;
+
+        var tweenParam:Object =
         {
-            graphics.lineTo(Math.cos(rads) * radius + x, Math.sin(rads) * radius + y);
+            glowFilter: {
+                color   : 0xFF1414,
+                alpha   : 1,
+                blurX   : valueBlur,
+                blurY   : valueBlur,
+                strength: 2
+            },
+            scaleX    : scale,
+            scaleY    : scale,
+            ease      : Linear.easeNone,
+            onComplete: glowEffect
         };
-        // Find how many sides we have to draw
-        var sidesToDraw:int = Math.floor(percentage * sides);
-        for (var i:int = 0; i <= sidesToDraw; i++)
-            lineToRadians((i / sides) * (Math.PI * 2) + rotation);
-        // Draw the last fractioned side
-        if (percentage * sides != sidesToDraw)
-            lineToRadians(percentage * (Math.PI * 2) + rotation);
+        TweenMax.to(_view.source, time, tweenParam);
     }
+
 
 //    function drawCircle(centerX:Number, centerY:Number, radius:Number, increment:Number, timeIncrement:Number, container:MovieClip){
 //

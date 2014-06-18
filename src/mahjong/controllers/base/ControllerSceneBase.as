@@ -7,6 +7,7 @@ import controllers.EControllerUpdateBase;
 import controllers.implementations.Controller;
 
 import flash.events.MouseEvent;
+import flash.geom.Point;
 
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
@@ -25,6 +26,8 @@ public class ControllerSceneBase extends Controller
     private var _view:ViewSceneBase;
 
     private var _managerSounds:IManagerSounds;
+
+    private var _controllerEnergy:ControllerIconEnergy;
 
     /*
      * Properties
@@ -102,13 +105,6 @@ public class ControllerSceneBase extends Controller
 
                     break;
                 }
-                case _view.buttonEnergy:
-                {
-
-                    result = true;
-
-                    break;
-                }
                 default:
                 {
 
@@ -119,6 +115,15 @@ public class ControllerSceneBase extends Controller
         }
 
         return result;
+    }
+
+    override public function onViewMouseMoved(view:IView, e:MouseEvent):Boolean
+    {
+        var result:Boolean = super.onViewMouseMoved(view, e);
+
+        _view.coordinatesMouse = new Point(e.stageX, e.stageY);
+
+        return  result;
     }
 
     /*
@@ -135,7 +140,9 @@ public class ControllerSceneBase extends Controller
 
     private function init():void
     {
-
+        _view.handleEvents(false, true);
+        _controllerEnergy = new ControllerIconEnergy();
+        _view.viewEnergy = _controllerEnergy.view;
 
         _managerSounds = GameInfo.instance.managerSounds;
     }
@@ -146,7 +153,6 @@ public class ControllerSceneBase extends Controller
         var playerInfo:PlayerInfo = GameInfo.instance.managerPlayers.playerCurrent as PlayerInfo;
 
         switch (type)
-
         {
             case EControllerUpdateBase.ECU_STATE_ENTER:
             {
@@ -158,19 +164,19 @@ public class ControllerSceneBase extends Controller
             }
             case EControllerUpdateBase.ECU_PLAYER_CURRENCY:
             {
-                _view.viewCurrencyInfo = playerInfo.currencySoft.toString();
+                _view.viewCurrencyInfo = playerInfo.currencySoft;
 
                 break;
             }
             case EControllerUpdateBase.ECU_PLAYER_POINTS:
             {
-                _view.viewPointsInfo = playerInfo.points.toString();
+                _view.viewPointsInfo = playerInfo.points;
 
                 break;
             }
             case EControllerUpdate.ECU_PLAYER_ENERGY:
             {
-                _view.viewEnergyInfo = playerInfo.energy.toString();
+                _controllerEnergy.update(type);
 
                 break;
             }
@@ -187,6 +193,9 @@ public class ControllerSceneBase extends Controller
      */
     public override function cleanup():void
     {
+        _controllerEnergy.cleanup();
+        _controllerEnergy = null;
+
         super.cleanup();
     }
 

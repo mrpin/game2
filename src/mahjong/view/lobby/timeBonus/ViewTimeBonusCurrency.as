@@ -14,7 +14,7 @@ import views.implementations.ViewBase;
 import views.implementations.buttons.ViewButtonLabeled;
 import views.interfaces.buttons.IViewButtonLabeled;
 
-public class ViewTimeBonus extends ViewBase
+public class ViewTimeBonusCurrency extends ViewBase
 {
     /*
      * Fields
@@ -40,7 +40,7 @@ public class ViewTimeBonus extends ViewBase
     /*
      * Methods
      */
-    public function ViewTimeBonus(controller:IController)
+    public function ViewTimeBonusCurrency(controller:IController)
     {
         _source = new gTimerBonus();
         super(controller, _source);

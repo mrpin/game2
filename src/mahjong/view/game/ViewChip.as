@@ -3,12 +3,14 @@
  */
 package mahjong.view.game
 {
+import com.greensock.TweenMax;
+
 import controllers.IController;
 
 import flash.display.Bitmap;
-
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
+import flash.geom.Point;
 
 import views.implementations.ViewBase;
 
@@ -90,8 +92,21 @@ public class ViewChip extends ViewBase
 
     public function goAnimation():void
     {
-       _viewAnimation.visible = true;
-       _viewAnimation.play();
+        _viewAnimation.visible = true;
+        _viewAnimation.play();
+    }
+
+    public function moveTo(point:Point):void
+    {
+        var time:Number = ConstantsBase.ANIMATION_DURATION * 4;
+
+        var tweenParam:Object =
+        {
+            x: point.x,
+            y: point.y
+        };
+
+        TweenMax.to(_source, time, tweenParam);
     }
 
     override public function placeViews(fullscreen:Boolean):void

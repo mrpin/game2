@@ -3,15 +3,23 @@
  */
 package mahjong.models.game
 {
+import flash.events.TimerEvent;
+import flash.utils.Timer;
+
+import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
 import mahjong.models.data.EChipType;
+import mahjong.models.level.ELevelMode;
 import mahjong.models.level.LevelInfo;
+import mahjong.states.EStateType;
 
 import models.implementations.game.ManagerGameBase;
 import models.interfaces.levels.ILevelInfo;
 
+import utils.Utils;
 import utils.UtilsArray;
+import utils.memory.UtilsMemory;
 
 public class ManagerGame extends ManagerGameBase
 {
@@ -136,10 +144,32 @@ public class ManagerGame extends ManagerGameBase
 
     private var _chipsCancellationTravel:Array;
 
+    private var _isErrorInMove:Boolean;
+
+    private var _countChips:uint;
+    private var _completedPercentageLevel:Number;
+
+    private var _isAutoHint:Boolean;
+    private var _isMadePurchase:Boolean;
+
+
+    private var _timer:Timer;
+    private var _timeLeft:Number;
+
+    private var _timerForAutoHint:Timer;
 
     /*
      * Properties
      */
+    public function get timeLeft():Number
+    {
+        return _timeLeft;
+    }
+
+    public function get completedPercentageLevel():Number
+    {
+        return _completedPercentageLevel;
+    }
 
     public function get grid():Array
     {
@@ -157,7 +187,6 @@ public class ManagerGame extends ManagerGameBase
 
         for each(var currentChip:ChipInfo in _chipsEnabled)
         {
-            trace("isHasCombination");
             for each(var pairChip:ChipInfo in _chipsEnabled)
             {
                 if (currentChip == pairChip)
@@ -200,13 +229,15 @@ public class ManagerGame extends ManagerGameBase
         }
     }
 
-    public function set onShowChipsDisable(value:Boolean):void
+    public function get currentLevel():LevelInfo
     {
-        _onShowChipsDisable = value;
-
-        _onShowChipsDisable ? showChipsDisable() : hideChipsDisable();
+        return _currentLevel;
     }
 
+    public function set isMadePurchase(value:Boolean):void
+    {
+        _isMadePurchase = value;
+    }
 
     /*
      * Methods
@@ -232,6 +263,43 @@ public class ManagerGame extends ManagerGameBase
         updateEnabledChips();
 
         _chipsCancellationTravel = [];
+        _isErrorInMove = false;
+        _countChips = _chipsAll.length;
+        _completedPercentageLevel = 0;
+        _isAutoHint = false;
+        _isMadePurchase = false;
+    }
+
+
+    override public function onGameStart():void
+    {
+        super.onGameStart();
+
+        _timeLeft = 0;
+
+        if (_currentLevel.typeAdvanced == ELevelMode.ELM_TIME)
+        {
+            _timer = new Timer(ConstantsBase.ANIMATION_DURATION * 4 * 1000);
+            UtilsMemory.registerEventListener(_timer, TimerEvent.TIMER, this, onTimerComplete);
+            _timer.start();
+        }
+    }
+
+    private function onTimerComplete(e:TimerEvent):void
+    {
+        _timeLeft++;
+        trace(_timeLeft);
+
+        _stateGame.update(EControllerUpdate.ECU_UPDATE_TIME);
+
+        if (_timeLeft == _currentLevel.timeLeft)
+        {
+            tryCleanupTimer();
+
+            GameInfo.instance.onGameEnd();
+            //TODO: вызов попапа время закончилось
+            GameInfo.instance.managerStates.setState(EStateType.EST_SELECT_LEVEL)
+        }
     }
 
 
@@ -295,33 +363,46 @@ public class ManagerGame extends ManagerGameBase
                     _chipsCancellationTravel.push(_chipSelected);
                     _chipsCancellationTravel.push(chip);
 
-                    onUserSelectSameChip(chip);
+                    removeCoupleIdenticalChips(chip);
 
                     _onShowChipsDisable ? showChipsDisable() : null;
 
-//                    updateEnabledChips();
-//                    while (!isHasCombination && _chipsEnabled.length > 2)
-//                    {
-//                        shuffleChips();
-//                        _chipSelected = null;
-//                    }
+                    var countCompleteChips:uint = _countChips - _chipsAll.length;
+
+                    _completedPercentageLevel = countCompleteChips / _countChips * 100;
+
+                    _stateGame.update(EControllerUpdate.ECUT_DESTROYED_COUPLE_CHIPS);
+
+                    if (_isAutoHint)
+                    {
+                        autoHint();
+                    }
+
+                    if (_currentLevel.typeAdvanced == ELevelMode.ELM_CLASSIC)
+                    {
+                        showChipsDisable();
+                    }
+
+                    if (_chipsAll.length == 0)
+                    {
+                        isCurrentGameComplete();
+                    }
                 }
                 else
                 {
                     this.chipSelected = chip;
+
+                    if (!_currentLevel.isCompleteNoErrors)
+                    {
+                        _isErrorInMove = true;
+                    }
                 }
             }
         }
 
-//        updateEnabledChips();
-//        while (!isHasCombination && _chipsEnabled.length >= 2)
-//        {
-//            shuffleChips();
-//            _chipSelected = null;
-//        }
     }
 
-    public function cancelMove():void
+    public function cancelLastMove():void
     {
         if (_chipsCancellationTravel.length == 0)
         {
@@ -335,10 +416,17 @@ public class ManagerGame extends ManagerGameBase
             chip.controller.update(EControllerUpdate.ECUT_CHIPS_CANCEL_MOVE);
         }
 
+        showChipsDisable();
+
+        var countCompleteChips:uint = _countChips - _chipsAll.length;
+        _completedPercentageLevel = countCompleteChips / _countChips * 100;
+
+        _stateGame.update(EControllerUpdate.ECUT_DESTROYED_COUPLE_CHIPS);
+
         _chipsCancellationTravel = [];
     }
 
-    private function onUserSelectSameChip(chip:ChipInfo):void
+    private function removeCoupleIdenticalChips(chip:ChipInfo):void
     {
         _chipSelected.controller.update(EControllerUpdate.ECUT_CHIPS_REMOVE);
         _grid[_chipSelected.z][_chipSelected.y][_chipSelected.x] = ChipInfo.getChipEmpty(_grid);
@@ -392,42 +480,6 @@ public class ManagerGame extends ManagerGameBase
     }
 
 
-//    public function shuffleChips():void
-//    {
-//        _chipsCancellationTravel = [];
-//
-//        var chipsForShuffle:Array = [];
-//        var chipsTypeForShuffle:Array = [];
-//
-//        for each(var chip:ChipInfo in _chipsAll)
-//        {
-//            if (chip.chipType != EChipType.ETB_EMPTY)
-//            {
-//                chipsForShuffle.push(chip);
-//                chipsTypeForShuffle.push(chip.chipType);
-//            }
-//        }
-//
-//        UtilsArray.shuffle(chipsTypeForShuffle);
-//
-//        for (var i:int = 0; i < chipsForShuffle.length; i++)
-//        {
-//            var chipShuffle:ChipInfo = chipsForShuffle[i];
-//
-//            var chipCurrent:ChipInfo = ChipInfo.getCloneWithType(chipShuffle, chipsTypeForShuffle[i]);
-//            chipCurrent.gridOwner = _grid;
-//
-//            _grid[chipShuffle.z][chipShuffle.y][chipShuffle.x] = chipCurrent;
-//        }
-//        _chipsAll = getChips([EChipType.ETB_EMPTY]);
-//
-//        _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
-//
-//        _onShowChipsDisable ? showChipsDisable() : null;
-//
-//        updateEnabledChips();
-//    }
-
     public function shuffle():void
     {
         _chipsCancellationTravel = [];
@@ -449,22 +501,39 @@ public class ManagerGame extends ManagerGameBase
         _stateGame.update(EControllerUpdate.ECUT_CHIPS_SHUFFLE);
     }
 
-    public function showCombination():Boolean
+
+    public function showCombination():void
     {
-        var result:Boolean = false;
-
-        var chips:Array = showChipsDisable();
-
-
-        for each(var chipOne:ChipInfo in chips)
+        for each (var chip:ChipInfo in getTwoSameChips())
         {
-            for each(var chipTwo:ChipInfo in chips)
+            chip.controller.update(EControllerUpdate.ECUT_CHIP_SHOW_COMBINATION);
+        }
+    }
+
+    private function getTwoSameChips():Array
+    {
+        var result:Array = [];
+
+        var chipsEnable:Array = [];
+
+        for each (var chip:ChipInfo in _chipsAll)
+        {
+            if (chip.isEnabled)
+            {
+                chipsEnable.push(chip);
+            }
+        }
+
+
+        for each(var chipOne:ChipInfo in chipsEnable)
+        {
+            for each(var chipTwo:ChipInfo in chipsEnable)
             {
                 if (chipOne.chipType == chipTwo.chipType && chipOne != chipTwo)
                 {
-                    chipOne.controller.update(EControllerUpdate.ECUT_CHIP_SHOW_COMBINATION);
-                    chipTwo.controller.update(EControllerUpdate.ECUT_CHIP_SHOW_COMBINATION);
-                    result = true;
+                    result.push(chipOne);
+                    result.push(chipTwo);
+
                     break;
                 }
             }
@@ -477,34 +546,96 @@ public class ManagerGame extends ManagerGameBase
         return result;
     }
 
-    public function showChipsDisable():Array
+    public function showChipsDisable():void
     {
-        var result:Array = [];
-
         for each (var chip:ChipInfo in _chipsAll)
         {
             if (!chip.isEnabled)
             {
-//                chip.controller.update(EControllerUpdate.ECUT_SHOW_CHIPS_DISABLE);
+                chip.controller.update(EControllerUpdate.ECUT_SHOW_CHIPS_DISABLE);
             }
             else
-            {
-                result.push(chip);
-            }
-        }
-        return result;
-    }
-
-    public function hideChipsDisable():void
-    {
-        for each (var chip:ChipInfo in _chipsAll)
-        {
-            if (!chip.isEnabled)
             {
                 chip.controller.update(EControllerUpdate.ECUT_HIDE_CHIPS_DISABLE);
             }
         }
     }
 
+    public function autoHint():void
+    {
+        _isAutoHint = true;
+
+        tryCleanupTimerForAutoHint();
+
+        _timerForAutoHint = new Timer(ConstantsBase.ANIMATION_DURATION * 4 * 1000 * 5, 1);
+        UtilsMemory.registerEventListener(_timerForAutoHint, TimerEvent.TIMER, this, onTimerComplete);
+        _timerForAutoHint.start();
+
+        function onTimerComplete(e:TimerEvent):void
+        {
+            for each (var chip:ChipInfo in getTwoSameChips())
+            {
+                chip.controller.update(EControllerUpdate.ECUT_CHIP_AUTO_HINT);
+            }
+        }
+
+
+    }
+
+
+    private function isCurrentGameComplete():void
+    {
+        tryCleanupTimer();
+
+        _currentLevel.progressBase.complete = true;
+        _currentLevel.countPlaythroughsLevel++;
+        _currentLevel.isCompleteNoErrors = !_isErrorInMove;
+        _currentLevel.timePassing = _timeLeft;
+        if (_isMadePurchase)
+        {
+            _currentLevel.isMadePurchase(true);
+        }
+
+        Utils.performAfterDelay(ConstantsBase.ANIMATION_DURATION * 4 * 1000 * 3, function setState():void
+        {
+            onGameEnd();
+            GameInfo.instance.onGameEnd();
+
+            //TODO: вызов попапа победа
+            GameInfo.instance.managerStates.setState(EStateType.EST_SELECT_LEVEL)
+        });
+    }
+
+
+    private function tryCleanupTimer():void
+    {
+        if (_timer != null)
+        {
+            _timer.stop();
+            UtilsMemory.unregisterEventListener(_timer, TimerEvent.TIMER, this, onTimerComplete, false);
+            _timer = null;
+        }
+
+    }
+
+    private function tryCleanupTimerForAutoHint():void
+    {
+        if (_timerForAutoHint != null)
+        {
+            _timerForAutoHint.stop();
+            UtilsMemory.unregisterEventListener(_timer, TimerEvent.TIMER, this, onTimerComplete, false);
+            _timerForAutoHint = null;
+        }
+
+    }
+
+    override public function cleanup():void
+    {
+        tryCleanupTimer();
+
+        tryCleanupTimerForAutoHint();
+
+        super.cleanup();
+    }
 }
 }

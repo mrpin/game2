@@ -8,6 +8,7 @@ import core.implementations.Debug;
 import flash.display.Stage;
 
 import mahjong.models.game.ManagerGame;
+import mahjong.models.level.LevelContainer;
 import mahjong.models.level.LevelInfo;
 import mahjong.models.plaeyr.PlayerInfo;
 import mahjong.models.proxy.ManagerProxy;
@@ -22,10 +23,8 @@ import mahjong.states.selectionLevel.StateSelectionLevel;
 
 import models.implementations.app.ManagerAppBase;
 import models.implementations.bonus.ManagerBonusBase;
-import models.implementations.levels.LevelContainerBase;
 import models.implementations.levels.ManagerLevelsBase;
 import models.implementations.players.ManagerPlayersBase;
-import models.implementations.players.PlayerInfoBase;
 import models.implementations.purchases.ManagerPurchasesBase;
 import models.implementations.purchases.PurchaseItemBase;
 import models.implementations.resources.ManagerResourceBase;
@@ -120,7 +119,7 @@ public class GameInfo extends GameInfoBase
         _managerPlayers = new ManagerPlayersBase(PlayerInfo);
         _managerPlayers.deserialize(_response.entry["players"]);
 
-        _managerLevels = new ManagerLevelsBase(LevelContainerBase, LevelInfo);
+        _managerLevels = new ManagerLevelsBase(LevelContainer, LevelInfo);
         _managerLevels.deserialize(_response.entry["levels"]);
 
         _managerPurchases = new ManagerPurchasesBase(PurchaseItemBase);

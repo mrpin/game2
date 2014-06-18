@@ -7,9 +7,12 @@ import controllers.IController;
 
 import core.implementations.Debug;
 
+import fl.motion.Color;
+
 import mahjong.models.level.ELevelMode;
 
 import views.implementations.buttons.ViewButton;
+import views.interfaces.IView;
 
 public class ViewSceneSelectionLevelItem extends ViewButton
 {
@@ -17,6 +20,8 @@ public class ViewSceneSelectionLevelItem extends ViewButton
      * Fields
      */
     private var _source:gSceneSelectionLevelItem;
+
+    private var _viewStars:Array;
 
     /*
      * Properties
@@ -61,18 +66,28 @@ public class ViewSceneSelectionLevelItem extends ViewButton
         _source.labelLevel.text = value.toString();
     }
 
-    public function set isVisibleLock(value:Boolean):void
+    public function set isOpen(value:Boolean):void
     {
-        _source.viewLock.visible = value;
+        _source.viewLock.visible = !value;
+
+        if (!value)
+        {
+            var color:Color = new Color();
+
+            color.brightness = -0.5;
+
+            _source.viewItem.transform.colorTransform = color;
+            _source.labelLevel.transform.colorTransform = color;
+
+            for each(var viewStar:IView in _viewStars)
+            {
+                viewStar.source.transform.colorTransform = color;
+            }
+
+            this.handleEvents();
+        }
     }
 
-    public function set visibleTypeStar(value:String):void
-    {
-        //TODO:реализовать метод до конца
-        _source.viewStar0.visible = false;
-        _source.viewStar1.visible = false;
-        _source.viewStar2.visible = false;
-    }
 
     /*
      * Events
@@ -92,15 +107,51 @@ public class ViewSceneSelectionLevelItem extends ViewButton
 
     private function init():void
     {
+        _viewStars = [];
 
+        var countStar:int = 3;
+
+        for (var i:int = 0; i < countStar; i++)
+        {
+            var viewStar:ViewStar = new ViewStar(controller);
+            _source.addChild(viewStar.source);
+            _viewStars.push(viewStar);
+        }
     }
 
+    public function setTypeStar(typeStar:String, numberStar:uint):void
+    {
+        Debug.assert(numberStar < 3);
+
+        var viewStar:ViewStar = _viewStars[numberStar];
+        viewStar.visibleTypeStarBy = typeStar;
+    }
+
+    override public function placeViews(fullscreen:Boolean):void
+    {
+        var startPosition:int = 19;
+
+        for each(var viewStar:IView in _viewStars)
+        {
+            viewStar.source.x = startPosition;
+            viewStar.source.y = 75;
+
+            startPosition += viewStar.source.width + 5;
+        }
+    }
 
     /*
      * IDisposable
      */
     public override function cleanup():void
     {
+        for each(var viewStar:IView in _viewStars)
+        {
+            viewStar.cleanup();
+        }
+
+        _viewStars = null;
+
         super.cleanup();
     }
 

@@ -11,6 +11,7 @@ import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.data.ChipInfo;
 import mahjong.models.data.EChipType;
+import mahjong.models.level.ELevelMode;
 import mahjong.view.game.ViewFieldChips;
 
 public class ControllerFieldChips extends Controller
@@ -72,6 +73,10 @@ public class ControllerFieldChips extends Controller
 
         _view.viewsChips = chipsViews;
 
+        if(GameInfo.instance.managerGame.currentLevel.typeAdvanced == ELevelMode.ELM_CLASSIC)
+        {
+            GameInfo.instance.managerGame.showChipsDisable();
+        }
     }
 
     override public function update(type:String):void

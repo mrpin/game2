@@ -1,7 +1,8 @@
 /**
  * Created by evgenyyurko on 1/6/14.
  */
-package {
+package
+{
 
 import flash.display.Sprite;
 import flash.events.Event;

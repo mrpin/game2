@@ -12,7 +12,7 @@ import flash.events.TimerEvent;
 import flash.utils.Timer;
 
 import mahjong.GameInfo;
-import mahjong.view.lobby.timeBonus.ViewTimeBonus;
+import mahjong.view.lobby.timeBonus.ViewTimeBonusCurrency;
 
 import models.interfaces.bonus.EBonusTypeBase;
 import models.interfaces.bonus.IBonusItem;
@@ -22,16 +22,18 @@ import utils.memory.UtilsMemory;
 
 import views.interfaces.IView;
 
-public class ControllerTimeBonus extends Controller
+public class ControllerTimeBonusCurrency extends Controller
 {
     /*
      * Fields
      */
-    private var _view:ViewTimeBonus;
+    private var _view:ViewTimeBonusCurrency;
 
     private var _timer:Timer;
 
     private var _currentBonus:IBonusItem;
+
+    private var _timeLeft:Number;
 
     /*
      * Properties
@@ -49,20 +51,20 @@ public class ControllerTimeBonus extends Controller
             {
                 _view.buttonPickUpBonus.show();
             }
-            else if (_currentBonus.timeLeft > 0)
+            else if (_timeLeft > 0)
             {
                 _view.buttonPickUpBonus.hide();
                 _view.labelTime = UtilsString.toHrsMinSec(_currentBonus.timeLeft);
             }
             else
             {
-                _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusTypeBase.EBT_CURRENCY_SOFT);
+
                 onTimerTick(null);
             }
         }
         else
         {
-            _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusTypeBase.EBT_CURRENCY_SOFT);
+
 
             _view.show();
             _view.buttonPickUpBonus.enabled = false;
@@ -101,9 +103,9 @@ public class ControllerTimeBonus extends Controller
     /*
      * Methods
      */
-    public function ControllerTimeBonus()
+    public function ControllerTimeBonusCurrency()
     {
-        _view = new ViewTimeBonus(this);
+        _view = new ViewTimeBonusCurrency(this);
         super(_view);
 
         init();
@@ -112,6 +114,8 @@ public class ControllerTimeBonus extends Controller
     private function init():void
     {
         _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusTypeBase.EBT_CURRENCY_SOFT);
+
+        _timeLeft = _currentBonus.timeLeft;
 
         onTimerTick(null);
 

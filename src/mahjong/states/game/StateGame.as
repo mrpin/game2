@@ -78,8 +78,6 @@ public class StateGame extends StateMahjongBase
     override public function update(type:String):void
     {
         super.update(type);
-
-        controllerScene.update(type);
     }
 
     /*

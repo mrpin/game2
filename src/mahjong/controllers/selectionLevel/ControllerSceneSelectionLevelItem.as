@@ -5,15 +5,20 @@ package mahjong.controllers.selectionLevel
 {
 import controllers.implementations.Controller;
 
+import core.implementations.Debug;
+
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
 import mahjong.models.game.ManagerGame;
+import mahjong.models.level.ELevelMode;
+import mahjong.models.level.EStarType;
 import mahjong.models.level.LevelInfo;
 import mahjong.states.EStateType;
 import mahjong.view.selectionLevel.ViewSceneSelectionLevelItem;
 
 import models.interfaces.IManagerGame;
+import models.interfaces.levels.ILevelContainer;
 import models.interfaces.levels.ILevelInfo;
 
 import views.interfaces.IView;
@@ -84,9 +89,81 @@ public class ControllerSceneSelectionLevelItem extends Controller
     {
         _view.labelLevel = _entry.number;
         _view.typeLevelMode = _entry.typeAdvanced;
-        _view.isVisibleLock = false;
-        _view.visibleTypeStar = "";
+
+        var managerLevels:ILevelContainer = GameInfo.instance.managerLevels.currentLevelContainer;
+
+        var isPreviousLevelComplete:Boolean = false;
+
+        for each(var previousLevel:LevelInfo in managerLevels.items)
+        {
+            if (previousLevel.number == _entry.number - 1 && previousLevel.progressBase.complete)
+            {
+                isPreviousLevelComplete = true;
+                break;
+            }
+        }
+
+        _view.isOpen = _entry.number == 1 || isPreviousLevelComplete;
+
+        switch (_entry.typeAdvanced)
+        {
+            case ELevelMode.ELM_ADVANCED:
+            {
+                if(_entry.progress.complete)
+                {
+                    _view.setTypeStar(EStarType.EST_VICTORY_MODE_ADVANCED, 0);
+                }
+
+                if(_entry.isCompleteNoErrors)
+                {
+                    _view.setTypeStar(EStarType.EST_FOR_PASSING_ERROR_FREE, 2);
+                }
+
+                break;
+            }
+            case ELevelMode.ELM_CLASSIC:
+            {
+                if(_entry.progress.complete)
+                {
+                    _view.setTypeStar(EStarType.EST_VICTORY_MODE_CLASSIC, 0)
+                }
+
+                if (_entry.countPlaythroughsLevel > 1)
+                {
+                    _view.setTypeStar(EStarType.EST_FOR_PASSING_TWICE_MODE_CLASSIC, 2);
+                }
+
+                break;
+            }
+            case ELevelMode.ELM_TIME:
+            {
+                if(_entry.progress.complete)
+                {
+                    _view.setTypeStar(EStarType.EST_VICTORY_MODE_TIME, 0);
+                }
+
+                if(_entry.isStarForSpeedPassing)
+                {
+                    _view.setTypeStar(EStarType.EST_FOR_SHORT_TIME_PASSING, 2);
+                }
+
+                break;
+            }
+            default :
+            {
+                Debug.assert(false);
+
+                break;
+            }
+        }
+
+        if (_entry.progress.isStar2Received)
+        {
+            _view.setTypeStar(EStarType.EST_FOR_PURCHASE, 1);
+        }
     }
+
+
 
 
     /*

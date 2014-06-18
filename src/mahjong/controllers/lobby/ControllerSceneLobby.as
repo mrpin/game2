@@ -9,7 +9,7 @@ import mahjong.GameInfo;
 
 import mahjong.controllers.base.ControllerSceneBase;
 import mahjong.controllers.lobby.progress.ControllerProgress;
-import mahjong.controllers.lobby.timeBonus.ControllerTimeBonus;
+import mahjong.controllers.lobby.timeBonus.ControllerTimeBonusCurrency;
 import mahjong.states.EStateType;
 import mahjong.view.lobby.ViewSceneLobby;
 import mahjong.view.selectionLevel.ViewSceneSelectionLevel;
@@ -25,7 +25,7 @@ public class ControllerSceneLobby extends ControllerSceneBase
 
     private var _controllerProgress:ControllerProgress;
 
-    private var _controllerTimeBonus:ControllerTimeBonus;
+    private var _controllerTimeBonus:ControllerTimeBonusCurrency;
 
     /*
      * Properties
@@ -81,7 +81,7 @@ public class ControllerSceneLobby extends ControllerSceneBase
         _controllerProgress = new ControllerProgress();
         _view.progress = _controllerProgress.view;
 
-        _controllerTimeBonus = new ControllerTimeBonus();
+        _controllerTimeBonus = new ControllerTimeBonusCurrency();
         _view.timeBonusView = _controllerTimeBonus.view;
     }
 

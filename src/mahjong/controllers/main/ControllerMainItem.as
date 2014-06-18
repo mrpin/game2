@@ -8,11 +8,14 @@ import controllers.implementations.Controller;
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
+import mahjong.models.level.LevelContainer;
 import mahjong.states.EStateType;
 import mahjong.view.main.ViewMainItem;
 
 import models.interfaces.levels.ELevelRequirementType;
 import models.interfaces.levels.ILevelContainer;
+
+import mx.utils.StringUtil;
 
 import views.interfaces.IView;
 
@@ -23,7 +26,7 @@ public class ControllerMainItem extends Controller
      */
     private var _view:ViewMainItem;
 
-    private var _entry:ILevelContainer;
+    private var _entry:LevelContainer;
 
 
     /*
@@ -36,7 +39,7 @@ public class ControllerMainItem extends Controller
      */
     public function ControllerMainItem(entry:ILevelContainer)
     {
-        _entry = entry;
+        _entry = entry as LevelContainer;
 
         _view = new ViewMainItem(this);
         super(_view);
@@ -50,7 +53,9 @@ public class ControllerMainItem extends Controller
 
         _view.isOpen = _entry.requirementIsDone(ELevelRequirementType.ELRT_POINTS);
 
+        var allStars:uint = _entry.items.length * 3;
 
+        _view.textCountStar = StringUtil.substitute("{0}/{1}", _entry.countStarReception, allStars);
     }
 
 

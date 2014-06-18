@@ -8,6 +8,10 @@ import controllers.implementations.Controller;
 
 import core.implementations.Debug;
 
+import mahjong.GameInfo;
+
+import mahjong.controllers.EControllerUpdate;
+
 import mahjong.view.game.ViewMeasurePoints;
 
 public class ControllerMeasurePoints extends Controller
@@ -51,6 +55,17 @@ public class ControllerMeasurePoints extends Controller
             case EControllerUpdateBase.ECU_PLAYER_POINTS:
             {
 
+                break;
+            }
+            case EControllerUpdate.ECUT_DESTROYED_COUPLE_CHIPS:
+            {
+                _view.visibleProgress(GameInfo.instance.managerGame.completedPercentageLevel);
+
+                break;
+            }
+            case EControllerUpdate.ECU_UPDATE_TIME:
+            {
+                _view.moveTimer();
 
                 break;
             }

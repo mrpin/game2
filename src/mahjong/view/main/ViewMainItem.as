@@ -28,11 +28,14 @@ public class ViewMainItem extends ViewButton
     /*
      * Properties
      */
-
-
     public function set nameLevelContainer(value:String):void
     {
         _source.labelLevel.text = value;
+    }
+
+    public function set textCountStar(value:String):void
+    {
+        _source.viewItemPoints.labelPoints.text = value;
     }
 
     public function set isOpen(value:Boolean):void

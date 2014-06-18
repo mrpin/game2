@@ -6,11 +6,19 @@ package mahjong.controllers.selectionLevel
 import controllers.IController;
 import controllers.implementations.Controller;
 
+import core.implementations.Debug;
+
+import flash.events.MouseEvent;
+
 import mahjong.GameInfo;
 import mahjong.view.selectionLevel.ViewContainerLevelsItems;
 
 import models.interfaces.levels.ILevelContainer;
 import models.interfaces.levels.ILevelInfo;
+
+import mx.utils.StringUtil;
+
+import views.interfaces.IView;
 
 public class ControllerContainerLevelsItems extends Controller
 {
@@ -21,6 +29,8 @@ public class ControllerContainerLevelsItems extends Controller
 
     private var _controllersItems:Array;
 
+    private var _currentContainer:uint;
+
     /*
      * Properties
      */
@@ -29,7 +39,46 @@ public class ControllerContainerLevelsItems extends Controller
     /*
      * Events
      */
+    override public function onViewClicked(view:IView, e:MouseEvent):Boolean
+    {
+        var result:Boolean = super.onViewClicked(view, e);
 
+        switch (view)
+        {
+            case _view.buttonBack:
+            {
+                if(_currentContainer != 1 && _view.isTweenEnd)
+                {
+                    _view.moveAllItems(false);
+                    _currentContainer --
+                }
+
+                result = true;
+
+                break;
+            }
+            case _view.buttonNext:
+            {
+                if(_currentContainer < _controllersItems.length && _view.isTweenEnd)
+                {
+                    _view.moveAllItems(true);
+                    _currentContainer ++;
+                }
+
+                result = true;
+
+                break;
+            }
+            default :
+            {
+                Debug.assert(false);
+
+                break;
+            }
+        }
+
+        return result;
+    }
 
     /*
      * Methods
@@ -69,7 +118,11 @@ public class ControllerContainerLevelsItems extends Controller
             }
         }
 
+       _view.textButtonNext = StringUtil.substitute("{0}/{1}", levelContainer.completeLevelsCount, levelContainer.items.length);
+
         _view.viewsItems = viewsItems;
+
+        _currentContainer = 1;
     }
 
 

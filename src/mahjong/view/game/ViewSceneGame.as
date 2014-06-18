@@ -5,16 +5,12 @@ package mahjong.view.game
 {
 import controllers.IController;
 
-import core.implementations.Debug;
-
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 import flash.geom.Point;
 
 import mahjong.GameInfo;
 import mahjong.view.base.ViewSceneBase;
-
-import models.interfaces.string.IManagerString;
 
 import views.implementations.buttons.ViewButton;
 import views.interfaces.EViewPosition;
@@ -39,6 +35,8 @@ public class ViewSceneGame extends ViewSceneBase
     private var _buttonBoosterUndo:IViewButton;
     private var _buttonBoosterMix:IViewButton;
 
+    private var _buttonRetry:IViewButton;
+
     private var _appSize:Point;
 
     /*
@@ -46,7 +44,7 @@ public class ViewSceneGame extends ViewSceneBase
      */
     public function set viewFieldChips(value:IView):void
     {
-        if(value == _viewFieldChips)
+        if (value == _viewFieldChips)
         {
             return;
         }
@@ -57,7 +55,7 @@ public class ViewSceneGame extends ViewSceneBase
 
     public function set viewMeasurePoints(value:IView):void
     {
-        if(value == _viewMeasurePoints)
+        if (value == _viewMeasurePoints)
         {
             return;
         }
@@ -87,6 +85,12 @@ public class ViewSceneGame extends ViewSceneBase
     {
         return _buttonBoosterMix;
     }
+
+    public function get buttonRetry():IViewButton
+    {
+        return _buttonRetry;
+    }
+
 
     /*
      * Methods
@@ -123,6 +127,11 @@ public class ViewSceneGame extends ViewSceneBase
         _buttonBoosterMix.position = EViewPosition.EVP_ABSOLUTE;
         _buttonBoosterMix.anchorPoint = new Point(0.5, 1);
         _source.addChild(_buttonBoosterMix.source);
+
+        _buttonRetry = new ViewButton(controller, new gButtonRetry());
+        _buttonRetry.position = EViewPosition.EVP_ABSOLUTE;
+        _buttonRetry.anchorPoint = new Point(0, 0);
+        _source.addChild(_buttonRetry.source);
     }
 
 
@@ -138,7 +147,7 @@ public class ViewSceneGame extends ViewSceneBase
 
         _viewFieldChips.placeViews(fullscreen);
 
-        _viewFieldChips.source.x =  _viewFieldChips.source.width - 80 + (appSize.x / 2) - (_viewFieldChips.source.width / 2);
+        _viewFieldChips.source.x = _viewFieldChips.source.width - 80 + (appSize.x / 2) - (_viewFieldChips.source.width / 2);
         _viewFieldChips.source.y = (appSize.y / 2) - (_viewFieldChips.source.height / 2);
 
         _viewMeasurePoints.translate(0, 1);
@@ -164,6 +173,10 @@ public class ViewSceneGame extends ViewSceneBase
         _buttonBoosterMix.source.x += 186;
         _buttonBoosterMix.source.y += offSetY;
 
+        _buttonRetry.translate(0, 0);
+        _buttonRetry.source.x += 70;
+        _buttonRetry.source.y += 20;
+
 
         super.placeViews(fullscreen);
     }
@@ -187,6 +200,9 @@ public class ViewSceneGame extends ViewSceneBase
 
         _buttonBoosterMix.cleanup();
         _buttonBoosterMix = null;
+
+        _buttonRetry.cleanup();
+        _buttonRetry = null;
 
         super.cleanup();
     }

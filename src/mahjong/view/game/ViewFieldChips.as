@@ -83,7 +83,6 @@ public class ViewFieldChips extends ViewBase
             startPositionX += 4;
             startPositionY -= 4;
         }
-trace(_source.numChildren.toString());
     }
 
 

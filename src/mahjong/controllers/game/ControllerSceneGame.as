@@ -10,17 +10,18 @@ import core.implementations.Debug;
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
-
 import mahjong.controllers.EControllerUpdate;
 import mahjong.controllers.base.ControllerSceneBase;
+import mahjong.models.game.ManagerGame;
+import mahjong.models.level.LevelInfo;
 import mahjong.models.prchaces.EPurchaseType;
 import mahjong.states.EStateType;
 import mahjong.view.game.ViewSceneGame;
 
+import models.interfaces.IManagerGame;
+import models.interfaces.levels.ILevelInfo;
 import models.interfaces.purchases.IManagerPurchases;
 import models.interfaces.purchases.IPurchaseItem;
-
-import states.EStateTypeBase;
 
 import views.interfaces.IView;
 
@@ -48,22 +49,38 @@ public class ControllerSceneGame extends ControllerSceneBase
     {
         var result:Boolean = super.onViewClicked(view, e);
 
+        var currentLevel:LevelInfo = GameInfo.instance.managerGame.currentLevel;
+
         if (!result)
         {
             switch (view)
             {
                 case _view.buttonBoosterDoneLevel:
                 {
-//                    GameInfo.instance.managerGame.onShowChipsDisable = true;
+                    var boosterDoneLevel:IPurchaseItem = _managerPurchases.getPurchaseFirst(EPurchaseType.EPT_DONE_LEVEL);
+
+
+                    _managerPurchases.tryPurchase(boosterDoneLevel,
+                            function (item:IPurchaseItem):void
+                            {
+                                GameInfo.instance.managerGame.isMadePurchase = true;
+                                GameInfo.instance.managerGame.autoHint();
+                            });
+
                     result = true;
 
                     break;
                 }
                 case _view.buttonBoosterHint:
                 {
-//                    GameInfo.instance.managerGame.onShowChipsDisable = false;
+                    var boosterHint:IPurchaseItem = _managerPurchases.getPurchaseFirst(EPurchaseType.EPT_SHOW_COMBINATION);
 
-                    GameInfo.instance.managerGame.showCombination();
+                    _managerPurchases.tryPurchase(boosterHint,
+                            function (item:IPurchaseItem):void
+                            {
+                                GameInfo.instance.managerGame.showCombination();
+                                GameInfo.instance.managerGame.isMadePurchase = true;
+                            });
 
                     result = true;
 
@@ -71,7 +88,15 @@ public class ControllerSceneGame extends ControllerSceneBase
                 }
                 case _view.buttonBoosterUndo:
                 {
-                    GameInfo.instance.managerGame.cancelMove();
+                    var boosterUndo:IPurchaseItem = _managerPurchases.getPurchaseFirst(EPurchaseType.EPT_CANCEL_LAST_MOVE);
+
+
+                    _managerPurchases.tryPurchase(boosterUndo,
+                            function (item:IPurchaseItem):void
+                            {
+                                GameInfo.instance.managerGame.cancelLastMove();
+                                GameInfo.instance.managerGame.isMadePurchase = true;
+                            });
 
                     result = true;
 
@@ -86,9 +111,8 @@ public class ControllerSceneGame extends ControllerSceneBase
                             {
 //                                GameInfo.instance.managerGame.shuffleChips();
                                 GameInfo.instance.managerGame.shuffle();
+                                GameInfo.instance.managerGame.isMadePurchase = true;
                             });
-
-
 
                     break;
                 }
@@ -97,6 +121,23 @@ public class ControllerSceneGame extends ControllerSceneBase
                     GameInfoBase.instance.onGameEnd();
 
                     GameInfo.instance.managerStates.setState(EStateType.EST_SELECT_LEVEL);
+
+                    result = true;
+
+                    break;
+                }
+                case _view.buttonRetry:
+                {
+                    var levelInfo:ILevelInfo = GameInfo.instance.managerGame.currentLevel;
+
+                    GameInfoBase.instance.onGameEnd();
+
+
+                    var managerGame:IManagerGame = new ManagerGame(levelInfo);
+
+                    GameInfo.instance.onGameStart(managerGame);
+
+                    GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
 
                     result = true;
 
@@ -135,9 +176,9 @@ public class ControllerSceneGame extends ControllerSceneBase
         _view.viewMeasurePoints = _controllerMeasurePoints.view;
 
         _managerPurchases = GameInfo.instance.managerPurchases;
+
+        _view.buttonTOP.hide();
     }
-
-
 
 
     override public function update(type:String):void
@@ -156,6 +197,7 @@ public class ControllerSceneGame extends ControllerSceneBase
             }
             case EControllerUpdateBase.ECU_STATE_ENTER:
             {
+                GameInfo.instance.managerGame.onGameStart();
 
                 break;
             }
@@ -171,6 +213,18 @@ public class ControllerSceneGame extends ControllerSceneBase
                 break;
             }
             case EControllerUpdate.ECU_PLAYER_ENERGY:
+            {
+
+                break;
+            }
+            case EControllerUpdate.ECUT_DESTROYED_COUPLE_CHIPS:
+            case EControllerUpdate.ECU_UPDATE_TIME:
+            {
+                _controllerMeasurePoints.update(type);
+
+                break;
+            }
+            case EControllerUpdateBase.ECU_GAME_FINISHED:
             {
 
                 break;

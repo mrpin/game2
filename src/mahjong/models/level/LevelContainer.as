@@ -11,11 +11,20 @@ public class LevelContainer extends LevelContainerBase
      * Fields
      */
 
-
     /*
      * Properties
      */
+    public function get countStarReception():uint
+    {
+        var result:uint = 0;
 
+        for each(var item:LevelInfo in items)
+        {
+            result += item.countStarReception;
+        }
+
+        return result;
+    }
 
     /*
      * Events
