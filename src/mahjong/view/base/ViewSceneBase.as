@@ -23,15 +23,6 @@ public class ViewSceneBase extends ViewBase
     /*
      *Static
      */
-    private static function tween(view:IView, coordinate:Number):void
-    {
-        var tweenParam:Object =
-        {
-            x: coordinate
-        };
-
-        TweenMax.to(view.source, ConstantsBase.ANIMATION_DURATION * 4 * 2, tweenParam);
-    }
 
 
     /*
@@ -39,7 +30,7 @@ public class ViewSceneBase extends ViewBase
      */
     private var _source:DisplayObjectContainer;
 
-    private var _background:IView;
+//    private var _background:IView;
     private var _backgroundFullscreen:IView;
 
 
@@ -64,19 +55,14 @@ public class ViewSceneBase extends ViewBase
 
     private var _buttonBack:IViewButton;
 
-    private var _appSize:Point;
-
     //objects for parallax
     private var _viewsForParallax:Array;
 
-    private var _clouds:IView;
-    private var _cloudsFull:IView;
-    private var _ground:IView;
-    private var _groundFull:IView;
-    private var _bamboo:IView;
-    private var _bambooForFull:IView;
-    private var _bambooForest:IView;
-    private var _bambooForestFull:IView;
+    private var _cloud:IViewParallax;
+    private var _ground:IViewParallax;
+    private var _bamboo:IViewParallax;
+    private var _bambooForest:IViewParallax;
+
 
     /*
      * Properties
@@ -140,22 +126,6 @@ public class ViewSceneBase extends ViewBase
         _source.addChild(_viewEnergy.source);
     }
 
-    public function set coordinatesMouse(value:Point):void
-    {
-        if (value.x > 1)
-        {
-            for each(var view:IView in _viewsForParallax)
-            {
-                var speed:Number = 4;
-                if(_bamboo == view || _bambooForFull == view)
-                {
-                    speed = 1;
-                }
-                tween(view, (((_appSize.x - view.source.width) / speed)/* (_appSize.x - view.source.width > 0 ? -1 : 1)*/ / _appSize.x) * value.x);
-            }
-        }
-
-    }
 
     /*
      * Methods
@@ -170,17 +140,10 @@ public class ViewSceneBase extends ViewBase
 
     private function init():void
     {
-        _appSize = GameInfo.instance.managerApp.applicationSize;
-
         _viewsForParallax = [];
-
-        _background = new ViewBase(controller, new gBackgroundSmall());//gScreenShot());
-        _source.addChild(_background.source);
-        _background.hide();
 
         _backgroundFullscreen = new ViewBase(controller, new gBackgroundFull());
         _source.addChild(_backgroundFullscreen.source);
-        _backgroundFullscreen.hide();
 
 
         initObjectsForParallax();
@@ -237,137 +200,56 @@ public class ViewSceneBase extends ViewBase
 
     private function initObjectsForParallax():void
     {
-        _clouds = new ViewBase(controller, new gCloud);
-        _clouds.anchorPoint = new Point(0, 0);
-        _clouds.position = EViewPosition.EVP_ABSOLUTE;
-        _source.addChild(_clouds.source);
-        _viewsForParallax.push(_clouds);
+        _cloud = new ViewParallax(controller, new gCloudFull());
+        _cloud.position = EViewPosition.EVP_ABSOLUTE;
+        _cloud.anchorPoint = new Point(0.5, 0);
+        _cloud.moveLimits = new Point(40, 25);
+        _cloud.moveDirection = new Point(-1, 1);
+        _cloud.duration = 3;
+        _source.addChild(_cloud.source);
 
-        _cloudsFull = new ViewBase(controller, new gClouldFull());
-        _cloudsFull.anchorPoint = new Point(0, 0);
-        _cloudsFull.position = EViewPosition.EVP_ABSOLUTE;
-        _source.addChild(_cloudsFull.source);
-        _viewsForParallax.push(_cloudsFull);
-
-        _bambooForest = new ViewBase(controller, new gBambooForest());
-        _bambooForest.anchorPoint = new Point(0, 1);
+        _bambooForest = new ViewParallax(controller, new gBambooForestFull());
         _bambooForest.position = EViewPosition.EVP_ABSOLUTE;
+        _bambooForest.anchorPoint = new Point(0.5, 1);
+        _bambooForest.moveLimits = new Point(150, 30);
+        _bambooForest.moveDirection = new Point(-1, 1);
+        _bambooForest.duration = 3;
         _source.addChild(_bambooForest.source);
-        _viewsForParallax.push(_bambooForest);
 
-        _bambooForestFull = new ViewBase(controller, new gBambooForestFull());
-        _bambooForestFull.anchorPoint = new Point(0, 1);
-        _bambooForestFull.position = EViewPosition.EVP_ABSOLUTE;
-        _source.addChild(_bambooForestFull.source);
-        _viewsForParallax.push(_bambooForestFull);
-
-        _ground = new ViewBase(controller, new gGround());
-        _ground.anchorPoint = new Point(0, 1);
+        _ground = new ViewParallax(controller, new gGroundFull());
         _ground.position = EViewPosition.EVP_ABSOLUTE;
+        _ground.anchorPoint = new Point(0.5, 1);
+        _ground.moveLimits = new Point(50, 25);
+        _ground.moveDirection = new Point(-1, 1);
+        _ground.duration = 3;
         _source.addChild(_ground.source);
-        _viewsForParallax.push(_ground);
 
-        _groundFull = new ViewBase(controller, new gGroundFull());
-        _groundFull.anchorPoint = new Point(0, 1);
-        _groundFull.position = EViewPosition.EVP_ABSOLUTE;
-        _source.addChild(_groundFull.source);
-        _viewsForParallax.push(_groundFull);
-
-
-        _bamboo = new ViewBase(controller, new gBamboo());
-        _bamboo.anchorPoint = new Point(0, 1);
+        _bamboo = new ViewParallax(controller, new gBambooFull());
         _bamboo.position = EViewPosition.EVP_ABSOLUTE;
+        _bamboo.anchorPoint = new Point(0.5, 1);
+        _bamboo.moveLimits = new Point(50, 20);
+        _bamboo.moveDirection = new Point(1, 1);
+        _bamboo.duration = 3;
         _source.addChild(_bamboo.source);
-        _viewsForParallax.push(_bamboo);
-
-        _bambooForFull = new ViewBase(controller, new gBambooFull());
-        _bambooForFull.anchorPoint = new Point(0, 1);
-        _bambooForFull.position = EViewPosition.EVP_ABSOLUTE;
-        _source.addChild(_bambooForFull.source);
-        _viewsForParallax.push(_bambooForFull);
-
-
     }
 
 
     override public function placeViews(fullscreen:Boolean):void
     {
-        for each(var view:IView in _viewsForParallax)
-        {
-            TweenMax.killTweensOf(view.source);
-            view.source.x = 0;
-        }
-
-        _appSize = GameInfo.instance.managerApp.applicationSize;
+        var appSize:Point = GameInfo.instance.managerApp.applicationSize;
 
         if (!fullscreen)
         {
-            _background.source.x = 0;//(_appSize.x - _background.source.width) / 2;
-            _background.source.y = (_appSize.y - _background.source.height) / 2;
-            _background.show();
-            _backgroundFullscreen.hide();
-
-
-            _clouds.translate(0, 0.1);
-            _clouds.show();
-
-            _cloudsFull.hide();
-
-            _ground.translate(0, 1);
-            _ground.show();
-
-            _groundFull.hide();
-
-            _bamboo.translate(0, 1);
-            _bamboo.source.y += 20;
-            _bamboo.show();
-
-
-            _bambooForFull.hide();
-
-            _bambooForest.show();
-            _bambooForest.translate(0, 1);
-            _bambooForest.source.y -= 10;
-
-            _bambooForestFull.hide();
+            _backgroundFullscreen.source.x = (appSize.x - _backgroundFullscreen.source.width) / 2;
+            _backgroundFullscreen.source.y = appSize.y - _backgroundFullscreen.source.height;
         }
         else
         {
-            _backgroundFullscreen.source.width = _appSize.x;
-            _backgroundFullscreen.source.height = _appSize.y;
-            _backgroundFullscreen.show();
-            _background.hide();
-
-
-            _clouds.hide();
-
-            _cloudsFull.translate(0, 0.1);
-            _cloudsFull.show();
-            _cloudsFull.show();
-
-            _ground.hide();
-
-            _groundFull.translate(0, 1);
-
-            _groundFull.show();
-
-            _bamboo.hide();
-
-            _bambooForFull.translate(0, 1);
-
-            _bambooForFull.show();
-
-            _bambooForest.hide();
-
-            _bambooForestFull.translate(0, 1);
-            _bambooForestFull.source.y -= 35;
-            _bambooForestFull.show();
-
-
-            _bambooForFull.translate(0, 1);
-            _bambooForFull.source.y += 50;
+            _backgroundFullscreen.source.x = 0;
+            _backgroundFullscreen.source.y = 0;
+            _backgroundFullscreen.source.width = appSize.x;
+            _backgroundFullscreen.source.height = appSize.y;
         }
-
 
         var offsetY:int = 15;
 
@@ -403,6 +285,22 @@ public class ViewSceneBase extends ViewBase
         _buttonBack.translate(0, 0);
         _buttonBack.source.x += 10;
         _buttonBack.source.y += 20;
+
+        //place views parallax
+        _cloud.translate(0.5, 0.1);
+        _cloud.placeViews(fullscreen);
+
+        _ground.translate(0.5, 1);
+        _ground.source.y += 10;
+        _ground.placeViews(fullscreen);
+
+        _bamboo.translate(0.5, 1);
+        _bamboo.source.y += 40;
+        _bamboo.placeViews(fullscreen);
+
+        _bambooForest.translate(0.5, 1);
+        _bambooForest.source.y -= 15;
+        _bambooForest.placeViews(fullscreen);
     }
 
     /*
@@ -417,12 +315,20 @@ public class ViewSceneBase extends ViewBase
         }
         _viewsForParallax = null;
 
-
         _backgroundFullscreen.cleanup();
         _backgroundFullscreen = null;
 
-        _background.cleanup();
-        _background = null;
+        _cloud.cleanup();
+        _cloud = null;
+
+        _ground.cleanup();
+        _ground = null;
+
+        _bamboo.cleanup();
+        _bamboo = null;
+
+        _bambooForest.cleanup();
+        _bambooForest = null;
 
         _viewIconCurrency.cleanup();
         _viewIconCurrency = null;

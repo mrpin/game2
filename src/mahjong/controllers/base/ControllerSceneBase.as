@@ -117,14 +117,6 @@ public class ControllerSceneBase extends Controller
         return result;
     }
 
-    override public function onViewMouseMoved(view:IView, e:MouseEvent):Boolean
-    {
-        var result:Boolean = super.onViewMouseMoved(view, e);
-
-        _view.coordinatesMouse = new Point(e.stageX, e.stageY);
-
-        return  result;
-    }
 
     /*
      * Methods
