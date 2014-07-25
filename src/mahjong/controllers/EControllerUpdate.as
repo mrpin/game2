@@ -24,7 +24,6 @@ public class EControllerUpdate
 
     public static const ECU_UPDATE_TIME:String = "ECU_UPDATE_TIME";
 
-
-
+    public static const ECU_UPDATE_BUTTONS:String = "ECU_BUTTONS";
 }
 }

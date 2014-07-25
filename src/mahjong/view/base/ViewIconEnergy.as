@@ -3,7 +3,7 @@
  */
 package mahjong.view.base
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import utils.UtilsString;
 
@@ -67,6 +67,8 @@ public class ViewIconEnergy extends ViewBase
     {
         _buttonEnergy.cleanup();
         _buttonEnergy = null;
+
+        _source = null;
 
         super.cleanup();
     }

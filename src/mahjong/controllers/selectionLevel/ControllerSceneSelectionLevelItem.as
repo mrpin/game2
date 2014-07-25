@@ -4,6 +4,7 @@
 package mahjong.controllers.selectionLevel
 {
 import controllers.implementations.Controller;
+import controllers.implementations.popups.EPopupTypeBase;
 
 import core.implementations.Debug;
 
@@ -109,12 +110,12 @@ public class ControllerSceneSelectionLevelItem extends Controller
         {
             case ELevelMode.ELM_ADVANCED:
             {
-                if(_entry.progress.complete)
+                if (_entry.progress.complete)
                 {
                     _view.setTypeStar(EStarType.EST_VICTORY_MODE_ADVANCED, 0);
                 }
 
-                if(_entry.isCompleteNoErrors)
+                if (_entry.isCompleteNoErrors)
                 {
                     _view.setTypeStar(EStarType.EST_FOR_PASSING_ERROR_FREE, 2);
                 }
@@ -123,7 +124,7 @@ public class ControllerSceneSelectionLevelItem extends Controller
             }
             case ELevelMode.ELM_CLASSIC:
             {
-                if(_entry.progress.complete)
+                if (_entry.progress.complete)
                 {
                     _view.setTypeStar(EStarType.EST_VICTORY_MODE_CLASSIC, 0)
                 }
@@ -137,12 +138,12 @@ public class ControllerSceneSelectionLevelItem extends Controller
             }
             case ELevelMode.ELM_TIME:
             {
-                if(_entry.progress.complete)
+                if (_entry.progress.complete)
                 {
                     _view.setTypeStar(EStarType.EST_VICTORY_MODE_TIME, 0);
                 }
 
-                if(_entry.isStarForSpeedPassing)
+                if (_entry.isStarForSpeedPassing)
                 {
                     _view.setTypeStar(EStarType.EST_FOR_SHORT_TIME_PASSING, 2);
                 }
@@ -164,13 +165,13 @@ public class ControllerSceneSelectionLevelItem extends Controller
     }
 
 
-
-
     /*
      * IDisposable
      */
     public override function cleanup():void
     {
+        _view = null;
+
         super.cleanup();
     }
 

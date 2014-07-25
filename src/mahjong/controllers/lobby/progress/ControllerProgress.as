@@ -3,8 +3,8 @@
  */
 package mahjong.controllers.lobby.progress
 {
-import controllers.IController;
 import controllers.implementations.Controller;
+import controllers.interfaces.IController;
 
 import mahjong.GameInfo;
 import mahjong.view.lobby.progress.ViewProgress;
@@ -148,6 +148,8 @@ public class ControllerProgress extends Controller
         {
             item.cleanup();
         }
+
+        _itemsArray = null;
 
         super.cleanup();
     }

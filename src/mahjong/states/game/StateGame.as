@@ -7,6 +7,8 @@ import mahjong.controllers.game.ControllerSceneGame;
 import mahjong.controllers.popups.bonus.ControllerPopupBonus;
 import mahjong.states.EStateType;
 import mahjong.states.base.StateMahjongBase;
+import mahjong.view.popup.popups.controller.ControllerPopupOutOfTime;
+import mahjong.view.popup.popups.controller.win.ControllerPopupWin;
 
 public class StateGame extends StateMahjongBase
 {
@@ -51,7 +53,8 @@ public class StateGame extends StateMahjongBase
         super.prepareLayerPopups();
 
         {//register popups
-
+            registerPopup(new ControllerPopupWin());
+            registerPopup(new ControllerPopupOutOfTime());
         }
     }
 

@@ -3,15 +3,16 @@
  */
 package mahjong.view.selectionLevel
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
-import flash.geom.ColorTransform;
 import flash.geom.Point;
 
 import mahjong.GameInfo;
 import mahjong.view.lobby.ViewSceneLobby;
+
+import utils.UtilsDisplayObject;
 
 import views.interfaces.IView;
 
@@ -24,7 +25,8 @@ public class ViewSceneSelectionLevel extends ViewSceneLobby
 
     private var _viewContainerItems:ViewContainerLevelsItems;
 
-    private var _mask:Sprite;
+    private var _itemsPlaceholder:gItemsMask;
+
 
     /*
      * Properties
@@ -37,18 +39,14 @@ public class ViewSceneSelectionLevel extends ViewSceneLobby
         }
 
         _viewContainerItems = value as ViewContainerLevelsItems;
-        _source.addChild(_viewContainerItems.source);
 
-        _mask = new Sprite();
-        _mask.graphics.beginFill(0x000000);
-        _mask.graphics.drawRect(-5, -5, _viewContainerItems.size.x, _viewContainerItems.size.y + 60);
-        _mask.graphics.endFill();
-
-        _source.addChild(_mask);
-
-        _viewContainerItems.source.mask = _mask;
+        _itemsPlaceholder.viewMask.itemsPlace.addChild(_viewContainerItems.source);
     }
 
+    public function set popupView(value:IView):void
+    {
+        _source.addChild(value.source);
+    }
 
     /*
      * Events
@@ -68,7 +66,12 @@ public class ViewSceneSelectionLevel extends ViewSceneLobby
 
     private function init():void
     {
+        _itemsPlaceholder = new gItemsMask();
+        _itemsPlaceholder.viewMask.itemsPlace.removeChildren();
 
+        UtilsDisplayObject.setMouseEnabledForChildren(_itemsPlaceholder, false);
+
+        _source.addChild(_itemsPlaceholder);
     }
 
 
@@ -76,14 +79,16 @@ public class ViewSceneSelectionLevel extends ViewSceneLobby
     {
         var appSize:Point = GameInfo.instance.managerApp.applicationSize;
 
+        _itemsPlaceholder.x = (appSize.x - _viewContainerItems.gridSizeInPixels.x - 45) / 2;
+        _itemsPlaceholder.y = (appSize.y - _viewContainerItems.gridSizeInPixels.y - 90) / 2;
+
         _viewContainerItems.placeViews(fullscreen);
 
-        _viewContainerItems.source.x = (appSize.x - _viewContainerItems.size.x) / 2;
-        _viewContainerItems.source.y = (appSize.y - _viewContainerItems.size.y - 120) / 2;
+        _viewContainerItems.source.x = 25;
+        _viewContainerItems.source.y = 10;
 
-        _mask.x =  _viewContainerItems.source.x;
-        _mask.y =  _viewContainerItems.source.y;
-
+//        _viewContainerItems.source.x = (appSize.x - _viewContainerItems.gridSizeInPixels.x) / 2;
+//        _viewContainerItems.source.y = (appSize.y - _viewContainerItems.gridSizeInPixels.y - 120) / 2;
 
         super.placeViews(fullscreen);
     }
@@ -93,6 +98,10 @@ public class ViewSceneSelectionLevel extends ViewSceneLobby
      */
     public override function cleanup():void
     {
+        _viewContainerItems = null;
+
+        _source = null;
+
         super.cleanup();
     }
 

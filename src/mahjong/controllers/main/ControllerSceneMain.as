@@ -90,8 +90,12 @@ public class ControllerSceneMain extends ControllerSceneLobby
             item.cleanup();
         }
 
+        _controllerItems = null;
+
         _viewContainerItems.cleanup();
         _viewContainerItems = null;
+
+        _view = null;
 
         super.cleanup();
     }

@@ -12,14 +12,15 @@ import flash.utils.Timer;
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
 import mahjong.models.bonus.EBonusType;
-import mahjong.models.plaeyr.PlayerInfo;
 import mahjong.view.base.ViewIconEnergy;
 
 import models.interfaces.bonus.IBonusItem;
+import models.interfaces.players.IPlayerInfo;
 
 import utils.memory.UtilsMemory;
 
 import views.interfaces.IView;
+
 //TODO:сделать бонус энергии
 public class ControllerIconEnergy extends Controller
 {
@@ -30,7 +31,8 @@ public class ControllerIconEnergy extends Controller
 
     private var _timer:Timer;
 
-    private var _currentBonus:IBonusItem;
+    //TODO:implement
+//    private var _currentBonus:IBonusItem;
 
 
     /*
@@ -43,23 +45,26 @@ public class ControllerIconEnergy extends Controller
      */
     private function onTimerTick(event:TimerEvent):void
     {
-        if (_currentBonus != null)
-        {
-            if (_currentBonus.timeLeft > 0)
-            {
-                _view.time = _currentBonus.timeLeft;
-            }
-            else
-            {
-                var playerCurrent:PlayerInfo = GameInfo.instance.managerPlayers.playerCurrent as PlayerInfo;
-                playerCurrent.energy += _currentBonus.rewardCount;
-                _currentBonus = null;
-            }
-        }
-        else
-        {
-            _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusType.EBT_ENERGY);
-        }
+        //TODO:implement
+//        if (_currentBonus != null)
+//        {
+//            if (_currentBonus.timeLeft > 0)
+//            {
+//                _view.time = _currentBonus.timeLeft;
+//            }
+//            else
+//            {
+//                var playerCurrent:IPlayerInfo = GameInfo.instance.managerPlayers.playerCurrent;
+//
+
+////                playerCurrent.energy += _currentBonus.rewardCount;
+//                _currentBonus = null;
+//            }
+//        }
+//        else
+//        {
+//            _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusType.EBT_ENERGY);
+//        }
     }
 
     override public function onViewClicked(view:IView, e:MouseEvent):Boolean
@@ -102,16 +107,19 @@ public class ControllerIconEnergy extends Controller
 
     private function init():void
     {
-        _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusType.EBT_ENERGY);
+        //TODO:implement
+//        _currentBonus = GameInfo.instance.managerBonus.getBonusNext(EBonusType.EBT_ENERGY);
 
-        _timer = new Timer(ConstantsBase.ANIMATION_DURATION * 4 * 1000);
-        UtilsMemory.registerEventListener(_timer, TimerEvent.TIMER, this, onTimerTick);
-        _timer.start();
+
+        //TODO:review
+//        _timer = new Timer(ConstantsBase.ANIMATION_DURATION * 4 * 1000);
+//        UtilsMemory.registerEventListener(_timer, TimerEvent.TIMER, this, onTimerTick);
+//        _timer.start();
     }
 
     override public function update(type:String):void
     {
-        var playerInfo:PlayerInfo = GameInfo.instance.managerPlayers.playerCurrent as PlayerInfo;
+        var playerInfo:IPlayerInfo = GameInfo.instance.managerPlayers.playerCurrent;
 
         switch (type)
         {
@@ -147,6 +155,8 @@ public class ControllerIconEnergy extends Controller
     public override function cleanup():void
     {
         tryCleanupTimer();
+
+        _view = null;
 
         super.cleanup();
     }

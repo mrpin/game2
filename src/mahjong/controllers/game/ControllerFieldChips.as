@@ -4,6 +4,7 @@
 package mahjong.controllers.game
 {
 import controllers.implementations.Controller;
+import controllers.interfaces.IController;
 
 import core.implementations.Debug;
 
@@ -22,6 +23,8 @@ public class ControllerFieldChips extends Controller
     private var _view:ViewFieldChips;
 
     private var _chips:Array;
+
+    private var _grid:Array;
 
     /*
      * Properties
@@ -42,6 +45,7 @@ public class ControllerFieldChips extends Controller
     private function init():void
     {
         _chips = [];
+        _grid = [];
 
         var gridChips:Array = GameInfo.instance.managerGame.grid;
 
@@ -61,6 +65,8 @@ public class ControllerFieldChips extends Controller
                 {
                     var chip:ControllerChip = new ControllerChip(chipEntry);
 
+                    _grid.push(chip);
+
                     chipsY.push(chip);
                     chipsViewY.push(chip.view);
                 }
@@ -73,7 +79,7 @@ public class ControllerFieldChips extends Controller
 
         _view.viewsChips = chipsViews;
 
-        if(GameInfo.instance.managerGame.currentLevel.typeAdvanced == ELevelMode.ELM_CLASSIC)
+        if (GameInfo.instance.managerGame.currentLevel.typeAdvanced == ELevelMode.ELM_CLASSIC)
         {
             GameInfo.instance.managerGame.showChipsDisable();
         }
@@ -183,17 +189,17 @@ public class ControllerFieldChips extends Controller
      */
     public override function cleanup():void
     {
-        for each(var z:Array in _chips)
+        for each(var chip:IController in _grid)
         {
-            for each(var y:Array in z)
-            {
-                for each(var chip:ControllerChip in y)
-                {
-                    chip.cleanup();
-                    chip = null;
-                }
-            }
+            chip.cleanup();
         }
+
+        _grid = null;
+
+        _chips = null;
+
+        _view = null;
+
         super.cleanup();
     }
 

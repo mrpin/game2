@@ -3,7 +3,7 @@
  */
 package mahjong.view.main
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
@@ -69,7 +69,9 @@ public class ViewContainerLevelContainers extends ViewBase
 
         for (var i:int = 0; i < _viewItems.length; i++)
         {
-            var viewItem:IView = _viewItems[i];
+            var viewItem:ViewMainItem = _viewItems[i];
+
+            viewItem.placeViews(fullscreen);
 
             viewItem.source.x = positionX;
             viewItem.source.y = startY;
@@ -77,11 +79,11 @@ public class ViewContainerLevelContainers extends ViewBase
             if ((i + 1) % 3 == 0)
             {
                 positionX = startX;
-                startY += viewItem.source.height + 10;
+                startY += viewItem.size.y + 10;
             }
             else
             {
-                positionX += viewItem.source.width + 40;
+                positionX += viewItem.size.x + 40;
             }
 
         }
@@ -94,6 +96,10 @@ public class ViewContainerLevelContainers extends ViewBase
      */
     public override function cleanup():void
     {
+        _viewItems = null;
+
+        _source = null;
+
         super.cleanup();
     }
 

@@ -10,6 +10,7 @@ import flash.events.MouseEvent;
 import mahjong.GameInfo;
 import mahjong.models.level.LevelContainer;
 import mahjong.states.EStateType;
+import mahjong.view.enums.EAnimationType;
 import mahjong.view.main.ViewMainItem;
 
 import models.interfaces.levels.ELevelRequirementType;
@@ -51,7 +52,9 @@ public class ControllerMainItem extends Controller
     {
         _view.nameLevelContainer = _entry.name;
 
-        _view.isOpen = _entry.requirementIsDone(ELevelRequirementType.ELRT_POINTS);
+        var indexAnimation:int = (_entry.number - 1) % 5;
+
+        _view.isOpen(_entry.requirementIsDone(ELevelRequirementType.ELRT_POINTS),  EAnimationType.animationsForMainItems[indexAnimation], _entry.number);
 
         var allStars:uint = _entry.items.length * 3;
 
@@ -102,6 +105,8 @@ public class ControllerMainItem extends Controller
      */
     public override function cleanup():void
     {
+        _view = null;
+
         super.cleanup();
     }
 

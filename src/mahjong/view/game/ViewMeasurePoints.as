@@ -4,10 +4,9 @@
 package mahjong.view.game
 {
 import com.greensock.TweenMax;
-import com.greensock.easing.Bounce;
 import com.greensock.easing.Linear;
 
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import flash.display.Graphics;
 import flash.display.Sprite;
@@ -194,6 +193,8 @@ public class ViewMeasurePoints extends ViewBase
         TweenMax.killTweensOf(_source.viewStar);
 
         tryCleanupTimer();
+
+        _source = null;
 
         super.cleanup();
     }

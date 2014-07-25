@@ -3,17 +3,17 @@
  */
 package mahjong.controllers.base
 {
-import controllers.EControllerUpdateBase;
 import controllers.implementations.Controller;
+import controllers.implementations.popups.EPopupTypeBase;
+import controllers.interfaces.EControllerUpdateBase;
 
 import flash.events.MouseEvent;
-import flash.geom.Point;
 
 import mahjong.GameInfo;
 import mahjong.controllers.EControllerUpdate;
-import mahjong.models.plaeyr.PlayerInfo;
 import mahjong.view.base.ViewSceneBase;
 
+import models.interfaces.players.IPlayerInfo;
 import models.interfaces.sounds.IManagerSounds;
 
 import views.interfaces.IView;
@@ -44,13 +44,6 @@ public class ControllerSceneBase extends Controller
         {
             switch (view)
             {
-                case _view.buttonTOP:
-                {
-
-                    result = true;
-
-                    break;
-                }
                 case _view.buttonSound.On:
                 {
                     _managerSounds.soundsOn = false;
@@ -99,7 +92,7 @@ public class ControllerSceneBase extends Controller
                 }
                 case _view.buttonCurrency:
                 {
-//                    GameInfo.instance.managerStates.currentState.showPopup(EPopupType.EPT_BANK);
+                    GameInfo.instance.managerStates.currentState.showPopup(EPopupTypeBase.EPT_BANK);
 
                     result = true;
 
@@ -142,7 +135,7 @@ public class ControllerSceneBase extends Controller
 
     override public function update(type:String):void
     {
-        var playerInfo:PlayerInfo = GameInfo.instance.managerPlayers.playerCurrent as PlayerInfo;
+        var playerInfo:IPlayerInfo = GameInfo.instance.managerPlayers.playerCurrent;
 
         switch (type)
         {
@@ -187,6 +180,8 @@ public class ControllerSceneBase extends Controller
     {
         _controllerEnergy.cleanup();
         _controllerEnergy = null;
+
+        _view = null;
 
         super.cleanup();
     }

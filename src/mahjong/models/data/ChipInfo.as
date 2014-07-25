@@ -4,7 +4,7 @@
 package mahjong.models.data
 {
 
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import core.implementations.Debug;
 import core.implementations.DisposableObject;
@@ -150,23 +150,11 @@ public class ChipInfo extends DisposableObject implements ISerializable
 
         neighborXRightYLeft = (_y > 0 && (_x < _gridOwner[0][0].length - 2)) ? _gridOwner[_z][_y - 1][_x + 2] : null;
 
-//---------------------------------------------------------------------
-//после тестирований удалить или оставить как есть
-//удалить
-var yesNo:Boolean = (_y > 0 && (_x < _gridOwner[0][0].length - 1));
+        neighborYLeftXRight = (_y > 1 && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z][_y - 2][_x + 1] : null;
+        neighborYLeftXLeft = (_x > 1 && _y > 1) ? _gridOwner[_z][_y - 2][_x - 1] : null;
 
-//удалить
-        neighborYLeftXRight = yesNo ? _gridOwner[_z][_y - 1][_x + 1] : null;
-        //раскоментировать
-//        neighborYLeftXRight = (_y > 0 && (_x < _gridOwner[0][0].length - 1)) ? _gridOwner[_z][_y - 2][_x + 1] : null;
-
-        //удалить
-        neighborYLeftXLeft = (_x > 0 && _y > 0) ? _gridOwner[_z][_y - 1][_x - 1] : null;
-
-        //раскоментировать
-//        neighborYLeftXLeft = (_x > 0 && _y > 0) ? _gridOwner[_z][_y - 2][_x - 1] : null;
         neighborXLeftYLeft = (_x > 0 && _y > 0) ? _gridOwner[_z][_y - 1][_x - 2] : null;
-//------------------------------------------------------------------------
+
         neighborXLeftYRight = (_x > 0 && (_y < _gridOwner[0].length - 1)) ? _gridOwner[_z][_y + 1][_x - 2] : null;
         neighborYRightXLeft = (_x > 0 && (_y < _gridOwner[0].length - 2)) ? _gridOwner[_z][_y + 2][_x - 1] : null;
 

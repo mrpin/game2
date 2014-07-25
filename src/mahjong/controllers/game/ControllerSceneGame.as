@@ -3,7 +3,8 @@
  */
 package mahjong.controllers.game
 {
-import controllers.EControllerUpdateBase;
+import controllers.implementations.popups.EPopupTypeBase;
+import controllers.interfaces.EControllerUpdateBase;
 
 import core.implementations.Debug;
 
@@ -59,12 +60,11 @@ public class ControllerSceneGame extends ControllerSceneBase
                 {
                     var boosterDoneLevel:IPurchaseItem = _managerPurchases.getPurchaseFirst(EPurchaseType.EPT_DONE_LEVEL);
 
-
                     _managerPurchases.tryPurchase(boosterDoneLevel,
                             function (item:IPurchaseItem):void
                             {
                                 GameInfo.instance.managerGame.isMadePurchase = true;
-                                GameInfo.instance.managerGame.autoHint();
+                                GameInfo.instance.managerGame.levelPass();
                             });
 
                     result = true;
@@ -132,11 +132,9 @@ public class ControllerSceneGame extends ControllerSceneBase
 
                     GameInfoBase.instance.onGameEnd();
 
-
                     var managerGame:IManagerGame = new ManagerGame(levelInfo);
 
                     GameInfo.instance.onGameStart(managerGame);
-
                     GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
 
                     result = true;
@@ -177,7 +175,7 @@ public class ControllerSceneGame extends ControllerSceneBase
 
         _managerPurchases = GameInfo.instance.managerPurchases;
 
-        _view.buttonTOP.hide();
+        update(EControllerUpdate.ECU_UPDATE_BUTTONS);
     }
 
 
@@ -229,6 +227,14 @@ public class ControllerSceneGame extends ControllerSceneBase
 
                 break;
             }
+            case EControllerUpdate.ECU_UPDATE_BUTTONS:
+            {
+                _view.buttonBoosterUndo.enabled = GameInfo.instance.managerGame.isCanceledLastMove;
+                _view.buttonBoosterHint.enabled = !GameInfo.instance.managerGame.isOnButtonHint;
+
+
+                break;
+            }
             default:
             {
                 Debug.assert(false);
@@ -248,6 +254,8 @@ public class ControllerSceneGame extends ControllerSceneBase
 
         _controllerMeasurePoints.cleanup();
         _controllerMeasurePoints = null;
+
+        _view = null;
 
         super.cleanup();
     }

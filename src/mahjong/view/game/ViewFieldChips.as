@@ -3,13 +3,12 @@
  */
 package mahjong.view.game
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 
 import views.implementations.ViewBase;
-import views.interfaces.IView;
 
 public class ViewFieldChips extends ViewBase
 {
@@ -20,21 +19,39 @@ public class ViewFieldChips extends ViewBase
 
     private var _viewsChips:Array;
 
+    private var _isPlaceViewsChips:Boolean;
+
 
     /*
      * Properties
      */
     public function set viewsChips(value:Array):void
     {
+        if (_viewsChips == value)
+        {
+            return;
+        }
+
         _viewsChips = value;
 
         for each(var chipsViewZ:Array in _viewsChips)
         {
-            for each(var chipsViewY:Array in chipsViewZ)
+            var diagonalsCount:int = chipsViewZ.length + chipsViewZ[0].length - 1;
+            var diagonalMaxLength:int = Math.min(chipsViewZ.length, chipsViewZ[0].length);
+
+            for (var diagonalNumber:int = 0; diagonalNumber < diagonalsCount; diagonalNumber++)
             {
-                for each(var chipView:IView in chipsViewY)
+                var diagonalStartX:int = diagonalNumber < chipsViewZ.length ? chipsViewZ.length - diagonalNumber - 1 : 0;
+                var diagonalStartY:int = diagonalNumber < chipsViewZ.length ? 0 : diagonalNumber - chipsViewZ.length + 1;
+
+
+                var diagonalLength:int = Math.min((diagonalNumber + 1), diagonalMaxLength, (diagonalsCount - diagonalNumber));
+
+                for (var chipDiagonalNumber:int = 0; chipDiagonalNumber < diagonalLength; chipDiagonalNumber++)
                 {
-                    if(chipView.source.visible == true)
+                    var chipView:ViewChip = chipsViewZ[diagonalStartX + chipDiagonalNumber][diagonalStartY + chipDiagonalNumber];
+
+                    if (chipView.source.visible == true)
                     {
                         _source.addChild(chipView.source);
                     }
@@ -51,40 +68,46 @@ public class ViewFieldChips extends ViewBase
     {
         _source = new Sprite();
         super(controller, _source);
+    }
 
+    private function init():void
+    {
+        _isPlaceViewsChips = false;
     }
 
     override public function placeViews(fullscreen:Boolean):void
     {
-        var startPositionX:int = 0;
-        var startPositionY:int = 0;
-
-        for each (var chipsViewZ:Array in _viewsChips)
+        if (!_isPlaceViewsChips)
         {
-            var xPosition:int = startPositionX;
-            var yPosition:int = startPositionY;
+            var startPositionX:int = 0;
+            var startPositionY:int = 0;
 
-            for each (var chipsViewY:Array in chipsViewZ)
+            for each (var chipsViewZ:Array in _viewsChips)
             {
-                var positionX:int = xPosition;
-
-                for each(var chipView:ViewChip in chipsViewY)
+                var positionX:int = startPositionX;
+                for each (var chipsViewY:Array in chipsViewZ)
                 {
-                    chipView.placeViews(fullscreen);
+                    var positionY:int = startPositionY;
 
-                    chipView.source.x = positionX;
-                    chipView.source.y = yPosition;
+                    for each(var chipView:ViewChip in chipsViewY)
+                    {
+                        chipView.source.x = positionX;
+                        chipView.source.y = positionY;
 
-                    positionX += 2 - (chipView.source.width / 2); //offsetX;
+                        positionY += (chipView.size.y / 2) - 2;//offsetY + 3;
+
+                        chipView.placeViews(fullscreen);
+                    }
+                    positionX += (chipView.size.x / 2) - 2; //offsetX;
                 }
-                yPosition += (chipView.source.height / 2) - 2;//offsetY + 3;
+
+                startPositionX += 4;
+                startPositionY -= 4;
             }
 
-            startPositionX += 4;
-            startPositionY -= 4;
+            _isPlaceViewsChips = !_isPlaceViewsChips;
         }
     }
-
 
 
     /*
@@ -93,6 +116,8 @@ public class ViewFieldChips extends ViewBase
     public override function cleanup():void
     {
         _source = null;
+
+        _viewsChips = null;
 
         super.cleanup();
     }

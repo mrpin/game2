@@ -4,9 +4,12 @@
 package mahjong.models.data
 {
 import utils.Utils;
+import utils.UtilsArray;
 
 public class EChipType
 {
+
+
     public static const ETB_EMPTY:int = -2;
     //TODO: change ETB to ECT
     public static const ETB_STUB:int = -1;
@@ -61,9 +64,63 @@ public class EChipType
 
     public static const ETB_COUNT:uint = 42;
 
+
     public static function getRandomType():uint
     {
-        return Utils.randomFromTo(0, 40);
+        var allTypes:Array =
+                [
+                    ET_BAMBOO_0,
+                    ET_BAMBOO_1,
+                    ET_BAMBOO_2,
+                    ET_BAMBOO_3,
+                    ET_BAMBOO_4,
+                    ET_BAMBOO_5,
+                    ET_BAMBOO_6,
+                    ET_BAMBOO_7,
+                    ET_BAMBOO_8,
+                    ET_DOT_0,
+                    ET_DOT_1,
+                    ET_DOT_2,
+                    ET_DOT_3,
+                    ET_DOT_4,
+                    ET_DOT_5,
+                    ET_DOT_6,
+                    ET_DOT_7,
+                    ET_DOT_8,
+                    ET_DRAGON_0,
+                    ET_DRAGON_1,
+                    ET_DRAGON_2,
+                    ET_FLOWERS_0,
+                    ET_FLOWERS_1,
+                    ET_FLOWERS_2,
+                    ET_FLOWERS_3,
+                    ET_SEASON_0,
+                    ET_SEASON_1,
+                    ET_SEASON_2,
+                    ET_SEASON_3,
+                    ET_SYMBOL_0,
+                    ET_SYMBOL_1,
+                    ET_SYMBOL_2,
+                    ET_SYMBOL_3,
+                    ET_SYMBOL_4,
+                    ET_SYMBOL_5,
+                    ET_SYMBOL_6,
+                    ET_SYMBOL_7,
+                    ET_SYMBOL_8,
+                    ET_WIND_0,
+                    ET_WIND_1,
+                    ET_WIND_2,
+                    ET_WIND_3
+                ];
+
+        UtilsArray.shuffle(allTypes);
+        UtilsArray.shuffle(allTypes);
+        UtilsArray.shuffle(allTypes);
+        UtilsArray.shuffle(allTypes);
+
+        var randomValue:uint = Utils.randomFromTo(0, allTypes.length - 1);
+
+        return allTypes[randomValue];
     }
 
 }

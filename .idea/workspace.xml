@@ -2,11 +2,81 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdfa91c1-555f-4a4e-a96b-0d331748df5d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/base/IViewParallax.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/controllers/lobby/friends/ControllerFriends.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/bank/ControllerPopupBank.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/ControllerPopupLose.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/ControllerPopupNoEnergy.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/ControllerPopupOutOfTime.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/win/ControllerPopupWin.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/enums/EAnimationType.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/models/views/ManagerViews.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/lobby/friends/ViewFriends.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/bank/ViewPopupBank.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupLose.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupNoEnergy.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupOutOfTime.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWin.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWinStar.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mahjong/view/base/skeletonAnimation/ViewSkeletonAnimation.as" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/controllers/lobby/timeBonus/ControllerTimeBonusCurrency.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/models/plaeyr/PlayerInfo.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/view/lobby/progress/ViewAvatarItem.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/view/lobby/progress/ViewProgress.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/view/lobby/timeBonus/ViewTimeBonusCurrency.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/view/popup/bank/ViewPopupBank.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/mahjong/view/popup/bank/ViewPopupBankItem.as" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase13.as" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/mahjong/states/selectionLevel/StateSelectionLevel.as" afterPath="$PROJECT_DIR$/src/mahjong/states/selectionLevel/StateSelectionLevel.as" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/mahjong/view/base/IViewParallax.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/paralax/IViewParallax.as" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/mahjong/view/base/ViewParallax.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/paralax/ViewParallax.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/graphics.swc" afterPath="$PROJECT_DIR$/assets/graphics.swc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" afterPath="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/bank/ControllerBankBase1.as" afterPath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/bank/ControllerBankBase1.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerContainerLevelsItems.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerContainerLevelsItems.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerIconEnergy.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerIconEnergy.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/main/ControllerMainItem.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/main/ControllerMainItem.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerMeasurePoints.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerMeasurePoints.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/outOfTime/ControllerOutOfTimeBase.as" afterPath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/outOfTime/ControllerOutOfTimeBase.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/popups/bank/ControllerPopupBank.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/popups/bank/ControllerPopupBank.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/popups/bank/ControllerPopupBankItem.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/popups/bank/ControllerPopupBankItem.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/lobby/progress/ControllerProgress.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/lobby/progress/ControllerProgress.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/base/ViewParallax.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/ViewParallax.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/lobby/ControllerSceneLobby.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/lobby/ControllerSceneLobby.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/main/ControllerSceneMain.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/main/ControllerSceneMain.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevel.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevelItem.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevelItem.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/data/EChipType.as" afterPath="$PROJECT_DIR$/src/mahjong/models/data/EChipType.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/controllers/popups/EPopupType.as" afterPath="$PROJECT_DIR$/src/mahjong/controllers/popups/EPopupType.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/string/EStringType.as" afterPath="$PROJECT_DIR$/src/mahjong/models/string/EStringType.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/GameInfo.as" afterPath="$PROJECT_DIR$/src/mahjong/GameInfo.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.as" afterPath="$PROJECT_DIR$/src/Main.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as" afterPath="$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" afterPath="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/string/ManagerString.as" afterPath="$PROJECT_DIR$/src/mahjong/models/string/ManagerString.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/models/response/Response.as" afterPath="$PROJECT_DIR$/src/mahjong/models/response/Response.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/states/game/StateGame.as" afterPath="$PROJECT_DIR$/src/mahjong/states/game/StateGame.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as" afterPath="$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase1.as" afterPath="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase1.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/base/ViewButtonDouble.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/ViewButtonDouble.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as" afterPath="$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/main/ViewContainerLevelContainers.as" afterPath="$PROJECT_DIR$/src/mahjong/view/main/ViewContainerLevelContainers.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewContainerLevelsItems.as" afterPath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewContainerLevelsItems.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as" afterPath="$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/base/ViewIconEnergy.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/ViewIconEnergy.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/main/ViewMainItem.as" afterPath="$PROJECT_DIR$/src/mahjong/view/main/ViewMainItem.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/game/ViewMeasurePoints.as" afterPath="$PROJECT_DIR$/src/mahjong/view/game/ViewMeasurePoints.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" afterPath="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/game/ViewSceneGame.as" afterPath="$PROJECT_DIR$/src/mahjong/view/game/ViewSceneGame.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/lobby/ViewSceneLobby.as" afterPath="$PROJECT_DIR$/src/mahjong/view/lobby/ViewSceneLobby.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/main/ViewSceneMain.as" afterPath="$PROJECT_DIR$/src/mahjong/view/main/ViewSceneMain.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewSceneSelectionLevel.as" afterPath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewSceneSelectionLevel.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewSceneSelectionLevelItem.as" afterPath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewSceneSelectionLevelItem.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewStar.as" afterPath="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewStar.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahjong.iml" afterPath="$PROJECT_DIR$/mahjong.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mahjong.iws" />
@@ -76,39 +146,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ViewSceneBase.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as">
+      <file leaf-file-name="ViewBankBase1.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase1.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="45" selection-start="5708" selection-end="5708" vertical-scroll-proportion="-12.115385" vertical-offset="2745" max-vertical-offset="5535">
+            <state line="208" column="23" selection-start="5763" selection-end="5763" vertical-scroll-proportion="0.0" vertical-offset="2218" max-vertical-offset="3285">
               <folding>
-                <element signature="e#73#103#0" expanded="true" />
+                <element signature="e#90#137#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerSceneBase.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
+      <file leaf-file-name="ViewBankItemBase0.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankItemBase0.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="0" selection-start="2873" selection-end="2873" vertical-scroll-proportion="0.0" vertical-offset="928" max-vertical-offset="2805">
+            <state line="205" column="0" selection-start="5943" selection-end="5943" vertical-scroll-proportion="0.0" vertical-offset="1963" max-vertical-offset="2985">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IDisposable.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/core/IDisposable.as">
+      <file leaf-file-name="ViewWinBase0.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/win/ViewWinBase0.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="13" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <folding />
+            <state line="58" column="24" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0" vertical-offset="602" max-vertical-offset="2340">
+              <folding>
+                <element signature="e#89#136#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IViewPopup.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IViewPopup.as">
+      <file leaf-file-name="ViewNoEnergyBase0.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/noEnergy/ViewNoEnergyBase0.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -116,62 +188,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IViewCheckbox.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IViewCheckbox.as">
+      <file leaf-file-name="Controller.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/Controller.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IViewButton.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/buttons/IViewButton.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="17" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="100" column="0" selection-start="1891" selection-end="1891" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1485">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IViewParallax.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/IViewParallax.as">
+      <file leaf-file-name="StateMahjongBase.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="17" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="81" column="0" selection-start="1613" selection-end="1613" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1395">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#74#98#0" expanded="true" />
+                <element signature="e#75#122#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewParallax.as" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewParallax.as">
+      <file leaf-file-name="ControllerBankBase1.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/bank/ControllerBankBase1.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="0" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.3768116" vertical-offset="1710" max-vertical-offset="2745">
+            <state line="96" column="30" selection-start="2431" selection-end="2431" vertical-scroll-proportion="0.0" vertical-offset="1348" max-vertical-offset="2370">
               <folding>
-                <element signature="e#74#104#0" expanded="true" />
+                <element signature="e#96#147#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="library.swf" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/vendors/greensock/greensock.swc!/library.swf">
+      <file leaf-file-name="ViewPopupWin.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWin.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="38" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="43440">
-              <folding />
+            <state line="15" column="0" selection-start="394" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#91#138#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IView.as" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IView.as">
+      <file leaf-file-name="ViewPopupWinStar.as" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWinStar.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="13" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="975">
+            <state line="12" column="22" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#91#121#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerPopupWin.as" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/win/ControllerPopupWin.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.10144927" vertical-offset="0" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
@@ -195,57 +271,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/effects/PixelExplosionEffect.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as" />
-        <option value="$PROJECT_DIR$/src/effects/PixelExplosion.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/base/timerBonus/ControllerTimeBonusEnergy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/ViewEnergy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerEnergy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/bonus/EBonusType.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerIconEnergy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewSceneSelectionLevel.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerContainerLevelsItems.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewSceneGame.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/ELevelMode.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/ETypeStarLevel.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/ViewIconEnergy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/EStarType.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewStar.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewSceneSelectionLevelItem.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/prchaces/EPurchaseType.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/states/game/StateGame.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewFieldChips.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/game/SourceLoader.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/LevelContainer.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/main/ViewMainItem.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/main/ControllerMainItem.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/GameInfo.as" />
-        <option value="$PROJECT_DIR$/src/Main.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/LevelProgess.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/LevelProges.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevelItem.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/lobby/timeBonus/ControllerTimeBonusCurrency.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/win/IViewWin.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/win/ViewWin.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/win/IViewPopupWin.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/poupups/view/ViewPopupWin.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/poupups/controller/ControllerPopupWin.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/win/ViewWinBase0.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/poupups/view/win/ViewPopupWin.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/poupups/view/win/ViewPopupWinStar.as" />
         <option value="$PROJECT_DIR$/src/mahjong/models/level/LevelInfo.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/models/level/LevelProgress.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/GameInfo.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevelItem.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/Utils.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/models/string/EStringType.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/models/string/ManagerString.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/IViewOutOfTime.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/win/ControllerWinBase.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/outOfTime/IViewOutOfTime.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/purchases/EPurchaseTypeBase.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/outOfTime/ViewOutOfTimeBase0.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/states/game/StateGame.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupOutOfTime.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as" />
         <option value="$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerMeasurePoints.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewMeasurePoints.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewContainerLevelsItems.as" />
-        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IViewPopup.as" />
-        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IViewParallax.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/IViewParallaxq.as" />
-        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IView.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/IViewParallax.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/main/ViewMainItem.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankItemFree0.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBace1.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/views/EViewTypeBase.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/ControllerPopupOutOfTime.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/views/ManagerViewsBase.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase0.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/string/EStringTypeBase.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/string/ManagerStringBase.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase13.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupLose.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/bank/ControllerPopupBank.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as" />
         <option value="$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/ViewParallax.as" />
-        <option value="$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/bank/ViewPopupBankItem.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/bank/ControllerPopupBankItem.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/models/views/ManagerViews.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/bank/IViewPopupBank1.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/bank/ViewPopupBank.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/scroll/ViewDraggable.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/outOfTime/ControllerOutOfTimeBase.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/bank/ControllerBankBase1.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankItemBase0.as" />
+        <option value="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase1.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWin.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWinStar.as" />
+        <option value="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/win/ControllerPopupWin.as" />
       </list>
     </option>
   </component>
@@ -282,14 +358,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="mahjong" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -432,7 +510,163 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="popup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="win" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,15 +722,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lobby" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="timeBonus" />
+              <option name="myItemId" value="states" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,41 +748,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lobby" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="progress" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="states" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -586,7 +778,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="states" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -620,7 +812,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="string" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -706,66 +898,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="prchaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plaeyr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="level" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -822,97 +954,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="selectionLevel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mahjong" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -976,7 +1018,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="timeBonus" />
+              <option name="myItemId" value="friends" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1049,9 +1091,919 @@
               <option name="myItemId" value="mahjong" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="panda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="win" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="outOfTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noEnergy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="text" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="win" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="start" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="outOfTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noEnergy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bonus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friends" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="win" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="start" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="outOfTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noEnergy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friends" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game-sdk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1059,11 +2011,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="editing.templates" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="SearchEverywhereHistory" value="&#10;Spr" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/none_debug.html" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -1075,27 +2027,46 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="flex.debug.filter.swf.load.unload" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="229" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="246" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="249" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1044" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="240" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="242" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="246" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1040" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
+      <recent name="mahjong.view.popup.popups.controller.bank" />
+      <recent name="mahjong.view.popup.popups.view.bank" />
+      <recent name="views.implementations.popups.bank" />
+      <recent name="views.interfaces.popups.bank" />
+      <recent name="controllers.implementations.popups.bank" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/mahjong/controllers/lobby" />
       <recent name="$PROJECT_DIR$/src/mahjong/view/lobby" />
       <recent name="$PROJECT_DIR$/src/mahjong/view/lounge" />
       <recent name="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel" />
     </key>
-    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="mahjong.view.base" />
-      <recent name="mahjong.models.level" />
-      <recent name="mahjong.view.game" />
-      <recent name="mahjong.view.selectionLevel" />
-      <recent name="mahjong.models.bonus" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces" />
-      <recent name="$PROJECT_DIR$/src/mahjong/models/level" />
-      <recent name="$PROJECT_DIR$/src/mahjong/controllers/selectionLevel" />
-      <recent name="$PROJECT_DIR$/src/mahjong/view/base" />
-      <recent name="$PROJECT_DIR$/src/mahjong/controllers/lounge" />
+      <recent name="$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/outOfTime" />
+      <recent name="$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/win" />
+      <recent name="$PROJECT_DIR$/src/mahjong/view/popup/poupups/view/win" />
+      <recent name="$PROJECT_DIR$/src/mahjong/view/popup/poupups/view" />
+      <recent name="$PROJECT_DIR$/src/mahjong/view/popup/poupups/controller" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Flash App.none.debug">
@@ -1341,12 +2312,14 @@
       <option name="screenDpi" value="0" />
       <option name="screenHeight" value="0" />
       <option name="screenWidth" value="0" />
-      <option name="url" value="$PROJECT_DIR$/bin/offline_debug.html" />
+      <option name="url" value="$PROJECT_DIR$/bin/none_debug.html" />
       <option name="usbDebugPort" value="7936" />
       <RunnerSettings RunnerId="FlexDebugRunner" />
       <RunnerSettings RunnerId="FlexRunner" />
+      <RunnerSettings RunnerId="Profile" />
       <ConfigurationWrapper RunnerId="FlexDebugRunner" />
       <ConfigurationWrapper RunnerId="FlexRunner" />
+      <ConfigurationWrapper RunnerId="Profile" />
       <method />
     </configuration>
     <list size="1">
@@ -1423,12 +2396,33 @@
       <workItem from="1402754639052" duration="10747000" />
       <workItem from="1402913931250" duration="313000" />
       <workItem from="1402904084820" duration="43942000" />
-      <workItem from="1403073396197" duration="44689000" />
+      <workItem from="1403073396197" duration="57112000" />
+      <workItem from="1403506738438" duration="2106000" />
+      <workItem from="1403509933414" duration="23483000" />
+      <workItem from="1403595443441" duration="7288000" />
+      <workItem from="1403604179222" duration="114000" />
+      <workItem from="1403604594427" duration="5463000" />
+      <workItem from="1403613300827" duration="6243000" />
+      <workItem from="1403619704553" duration="61795000" />
+      <workItem from="1403875777533" duration="57350000" />
+      <workItem from="1404290337222" duration="7062000" />
+      <workItem from="1404305793153" duration="53361000" />
+      <workItem from="1404562595757" duration="6341000" />
+      <workItem from="1404728483250" duration="1886000" />
+      <workItem from="1404741198276" duration="3344000" />
+      <workItem from="1404804837281" duration="19259000" />
+      <workItem from="1404892751480" duration="23081000" />
+      <workItem from="1405323145035" duration="34126000" />
+      <workItem from="1405422303434" duration="4650000" />
+      <workItem from="1405432838292" duration="12525000" />
+      <workItem from="1405493904449" duration="20320000" />
+      <workItem from="1405593800776" duration="15930000" />
+      <workItem from="1405925704364" duration="94433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1054211000" />
+    <option name="totallyTimeSpent" value="1546755000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1451,7 +2445,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1853" height="1178" extended-state="0" />
+    <frame x="0" y="22" width="1853" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1459,28 +2453,29 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14917128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25230202" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984003" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33406958" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10957643" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2048592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19086021" sideWeight="0.50045085" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20541137" sideWeight="0.40537745" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928848" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11970534" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296501" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24033149" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4240751" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21700718" sideWeight="0.73345935" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22749862" sideWeight="0.5935884" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1499,10 +2494,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="flex">
+          <url>file://$PROJECT_DIR$/src/com/greensock/core/Animation.as</url>
+          <line>956</line>
+          <option name="timeStamp" value="888" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="725" />
+      <option name="time" value="1050" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1510,329 +2512,432 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/data/ChipInfo.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.0" vertical-offset="1319" max-vertical-offset="4440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerFieldChips.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="53" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="2985" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="139" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/states/ManagerStatesBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="20" selection-start="2203" selection-end="2203" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2475" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/states/IManagerStates.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="13" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/LevelContainerBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="0" selection-start="5467" selection-end="5467" vertical-scroll-proportion="0.0" vertical-offset="2607" max-vertical-offset="3480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/ManagerLevelsBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="20" selection-start="3147" selection-end="3147" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="3675" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/GameInfo.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="3486" selection-end="3486" vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="2640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/levels/ILevelProgress.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="17" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/level/LevelContainer.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="45" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="960" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/level/EStarType.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerSceneSelectionLevelItem.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="0" selection-start="4104" selection-end="4104" vertical-scroll-proportion="0.0" vertical-offset="1197" max-vertical-offset="2475" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/lobby/timeBonus/ControllerTimeBonusCurrency.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="17" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0" vertical-offset="974" max-vertical-offset="2055" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/EControllerUpdate.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="73" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="46" selection-start="239416" selection-end="239416" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="9885" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/GameInfoBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="20" selection-start="5674" selection-end="5674" vertical-scroll-proportion="0.0" vertical-offset="2354" max-vertical-offset="4080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/core/implementations/Debug.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0" vertical-offset="65" max-vertical-offset="1470" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/LevelProgressBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="20" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1410" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/levels/ILevelInfo.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="17" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/levels/LevelInfoBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="18" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2055" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/level/LevelInfo.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.0" vertical-offset="1605" max-vertical-offset="3450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/models/level/LevelProgress.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerSceneGame.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="54" selection-start="6279" selection-end="6279" vertical-scroll-proportion="0.0" vertical-offset="2310" max-vertical-offset="3615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerMeasurePoints.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="29" selection-start="1249" selection-end="1249" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewMeasurePoints.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2880" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/models/game/ManagerGame.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="600" column="0" selection-start="15672" selection-end="15672" vertical-scroll-proportion="0.0" vertical-offset="8679" max-vertical-offset="9660">
-          <folding />
+        <state line="607" column="0" selection-start="16160" selection-end="16160" vertical-scroll-proportion="0.0" vertical-offset="8822" max-vertical-offset="9810">
+          <folding>
+            <element signature="e#75#132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/win/ControlPopupWinBase.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/states/game/StateGame.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1410">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/game/ManagerGameBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="1963" selection-end="1963" vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1770">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/game/ViewChip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="62" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0" vertical-offset="1089" max-vertical-offset="1980">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/selectionLevel/ControllerContainerLevelsItems.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2085">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/game/ControllerChip.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="28" selection-start="3637" selection-end="3637" vertical-scroll-proportion="0.0" vertical-offset="1604" max-vertical-offset="4335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/utils/memory/UtilsMemory.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="27" selection-start="1709" selection-end="1709" vertical-scroll-proportion="0.0" vertical-offset="509" max-vertical-offset="2190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../sdks-flash/flex/4.6/frameworks/libs/player/11.1/playerglobal.swc!/library.swf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1387" column="29" selection-start="61287" selection-end="61287" vertical-scroll-proportion="0.0" vertical-offset="20519" max-vertical-offset="144420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/selectionLevel/ViewContainerLevelsItems.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="78" selection-start="4240" selection-end="4240" vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="3930">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewButtonDouble.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/scroll/IViewDraggable.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/core/implementations/DisposableObject.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/ViewBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="35" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/scroll/ViewDraggable.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="463" selection-end="463" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5160">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/buttons/ViewButton.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="310" column="20" selection-start="6412" selection-end="6412" vertical-scroll-proportion="0.0" vertical-offset="3744" max-vertical-offset="5610">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/buttons/IViewButton.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IViewPopup.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2445">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IViewCheckbox.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/friends/ControllerFriendsBase0.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2820">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/core/IDisposable.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/views/EViewTypeBase.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+        <state line="34" column="31" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1380">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/vendors/greensock/greensock.swc!/library.swf">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/views/ManagerViewsBase.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="43440">
+        <state line="18" column="13" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="2250">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IView.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/views/IManagerViews.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="13" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="975">
+        <state line="13" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/string/ManagerStringBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="295" column="77" selection-start="11574" selection-end="11574" vertical-scroll-proportion="0.0" vertical-offset="3936" max-vertical-offset="6465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/string/EStringTypeBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="42" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="2610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/bank/ControllerBankBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="55" selection-start="665" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2250">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/EPopupTypeBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="24" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/bank/IViewPopupBank.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="3" selection-start="396" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/base/ViewPopup.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="20" selection-start="2264" selection-end="2264" vertical-scroll-proportion="0.0" vertical-offset="752" max-vertical-offset="1620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupLose.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/ControllerPopupLose.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/implementations/purchases/ManagerPurchasesBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="0" selection-start="2721" selection-end="2721" vertical-scroll-proportion="0.0" vertical-offset="1187" max-vertical-offset="3450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/base/ControllerSceneBase.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="0" selection-start="2873" selection-end="2873" vertical-scroll-proportion="0.0" vertical-offset="928" max-vertical-offset="2805">
+        <state line="69" column="17" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2955">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#80#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/lobby/friends/ViewFriends.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="27" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/controllers/lobby/friends/ControllerFriends.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/views/ManagerViews.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="5" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/core/implementations/Debug.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="1470">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/IViewParallax.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/IView.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="37" column="13" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/start/ViewStartBase0.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1455">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#74#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewSceneBase.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/outOfTime/ViewOutOfTimeBase0.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="45" selection-start="5708" selection-end="5708" vertical-scroll-proportion="-12.115385" vertical-offset="2745" max-vertical-offset="5535">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545">
           <folding>
-            <element signature="e#73#103#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mahjong/view/base/ViewParallax.as">
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/noEnergy/ViewNoEnergyBase1.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="0" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.3768116" vertical-offset="1710" max-vertical-offset="2745">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1470">
           <folding>
-            <element signature="e#74#104#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/popups/bank/IViewPopupBank1.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="17" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding>
+            <element signature="e#85#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/interfaces/scroll/IViewDraggable.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/scroll/ViewDraggable.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="305" column="43" selection-start="7493" selection-end="7493" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="5160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/win/ControllerWinBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#95#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/start/ControllerStartBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#97#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/noEnergy/ControllerNoEnergyBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#100#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/lose/ControllerLoseBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#96#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/models/interfaces/purchases/EPurchaseTypeBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="24" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/models/proxy/ManagerProxy.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="327" column="0" selection-start="317916" selection-end="317916" vertical-scroll-proportion="0.0" vertical-offset="4386" max-vertical-offset="5475">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#76#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/outOfTime/ControllerOutOfTimeBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0" vertical-offset="647" max-vertical-offset="1755">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#101#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/ViewPopupOutOfTime.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <folding>
+            <element signature="e#87#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/bank/ViewPopupBank.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <folding>
+            <element signature="e#92#139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase0.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="70" selection-start="784" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankItemFree0.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewSale.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="20" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/bank/ControllerPopupBank.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <folding>
+            <element signature="e#98#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/states/StateBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="463" column="0" selection-start="11223" selection-end="11223" vertical-scroll-proportion="0.0" vertical-offset="5910" max-vertical-offset="6945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/states/base/StateMahjongBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="1613" selection-end="1613" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1395">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#75#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/Controller.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="0" selection-start="1891" selection-end="1891" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/win/ViewWinBase0.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="24" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0" vertical-offset="602" max-vertical-offset="2340">
+          <folding>
+            <element signature="e#89#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/noEnergy/ViewNoEnergyBase0.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankBase1.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="23" selection-start="5763" selection-end="5763" vertical-scroll-proportion="0.0" vertical-offset="2218" max-vertical-offset="3285">
+          <folding>
+            <element signature="e#90#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/views/implementations/popups/bank/ViewBankItemBase0.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="205" column="0" selection-start="5943" selection-end="5943" vertical-scroll-proportion="0.0" vertical-offset="1963" max-vertical-offset="2985">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../sdks-flash/game-sdk/src/controllers/implementations/popups/bank/ControllerBankBase1.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="30" selection-start="2431" selection-end="2431" vertical-scroll-proportion="0.0" vertical-offset="1348" max-vertical-offset="2370">
+          <folding>
+            <element signature="e#96#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWin.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="394" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#91#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/view/win/ViewPopupWinStar.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#91#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mahjong/view/popup/popups/controller/win/ControllerPopupWin.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="230" selection-end="230" vertical-scroll-proportion="0.10144927" vertical-offset="0" max-vertical-offset="1035">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1914,6 +3019,18 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>assets</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Unnamed</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

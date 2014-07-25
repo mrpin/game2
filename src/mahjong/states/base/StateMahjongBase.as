@@ -3,10 +3,11 @@
  */
 package mahjong.states.base
 {
-import controllers.IControllerPopup;
+import controllers.interfaces.IControllerPopup;
 
-import mahjong.controllers.popups.bank.ControllerPopupBank;
-import mahjong.controllers.popups.top.ControllerPopupTop;
+import mahjong.view.popup.popups.controller.ControllerPopupLose;
+import mahjong.view.popup.popups.controller.ControllerPopupNoEnergy;
+import mahjong.view.popup.popups.controller.bank.ControllerPopupBank;
 
 import states.StateBase;
 
@@ -57,8 +58,9 @@ public class StateMahjongBase extends StateBase
         super.prepareLayerPopups();
 
         {//register popups
-//            registerPopup(new ControllerPopupBank());
-//            registerPopup(new ControllerPopupTop());
+            registerPopup(new ControllerPopupNoEnergy());
+            registerPopup(new ControllerPopupLose());
+            registerPopup(new ControllerPopupBank());
         }
     }
 

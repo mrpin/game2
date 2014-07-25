@@ -9,7 +9,7 @@ import core.implementations.Debug;
 
 import flash.events.MouseEvent;
 
-import mahjong.view.popup.bank.ViewPopupBankItem;
+import mahjong.view.popup.popups.view.bank.ViewPopupBankItem;
 
 import views.interfaces.IView;
 

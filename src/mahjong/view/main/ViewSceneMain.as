@@ -3,7 +3,7 @@
  */
 package mahjong.view.main
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
@@ -56,18 +56,12 @@ public class ViewSceneMain extends ViewSceneLobby
         super.buttonBack.source.visible = false;
     }
 
-    override public function addSubView(view:IView):void
-    {
-        _source.addChild(view.source);
-    }
-
     override public function placeViews(fullscreen:Boolean):void
     {
         super.placeViews(fullscreen);
 
         _containerItems.placeViews(fullscreen);
         _containerItems.translate(0.5, 0.5);
-        _containerItems.source.y += -30;
     }
 
     /*
@@ -75,6 +69,10 @@ public class ViewSceneMain extends ViewSceneLobby
      */
     public override function cleanup():void
     {
+        _containerItems = null;
+
+        _source = null;
+
         super.cleanup();
     }
 

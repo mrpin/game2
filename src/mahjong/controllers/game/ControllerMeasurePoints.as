@@ -3,15 +3,13 @@
  */
 package mahjong.controllers.game
 {
-import controllers.EControllerUpdateBase;
 import controllers.implementations.Controller;
+import controllers.interfaces.EControllerUpdateBase;
 
 import core.implementations.Debug;
 
 import mahjong.GameInfo;
-
 import mahjong.controllers.EControllerUpdate;
-
 import mahjong.view.game.ViewMeasurePoints;
 
 public class ControllerMeasurePoints extends Controller
@@ -77,11 +75,14 @@ public class ControllerMeasurePoints extends Controller
             }
         }
     }
+
     /*
      * IDisposable
      */
     public override function cleanup():void
     {
+        _view = null;
+
         super.cleanup();
     }
 

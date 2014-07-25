@@ -3,11 +3,12 @@
  */
 package mahjong.states.selectionLevel
 {
+import core.implementations.Debug;
+
+import mahjong.GameInfo;
 import mahjong.controllers.selectionLevel.ControllerSceneSelectionLevel;
 import mahjong.states.EStateType;
 import mahjong.states.base.StateMahjongBase;
-
-import states.StateBase;
 
 public class StateSelectionLevel extends StateMahjongBase
 {
@@ -34,7 +35,7 @@ public class StateSelectionLevel extends StateMahjongBase
      */
     public function StateSelectionLevel()
     {
-
+        Debug.assertNotEqual(GameInfo.instance.managerLevels.currentLevelContainer, null);
 
         init();
     }

@@ -6,25 +6,28 @@ package mahjong
 import core.implementations.Debug;
 
 import flash.display.Stage;
+import flash.utils.Timer;
 
 import mahjong.models.game.ManagerGame;
 import mahjong.models.level.LevelContainer;
 import mahjong.models.level.LevelInfo;
-import mahjong.models.plaeyr.PlayerInfo;
 import mahjong.models.proxy.ManagerProxy;
 import mahjong.models.remote.ManagerRemoteStub;
 import mahjong.models.response.Response;
 import mahjong.models.sounds.ManagerSounds;
 import mahjong.models.string.ManagerString;
+import mahjong.models.views.ManagerViews;
 import mahjong.states.EStateType;
 import mahjong.states.game.StateGame;
 import mahjong.states.main.StateMain;
 import mahjong.states.selectionLevel.StateSelectionLevel;
 
 import models.implementations.app.ManagerAppBase;
+import models.implementations.bonus.BonusItemBase;
 import models.implementations.bonus.ManagerBonusBase;
 import models.implementations.levels.ManagerLevelsBase;
 import models.implementations.players.ManagerPlayersBase;
+import models.implementations.players.PlayerInfoBase;
 import models.implementations.purchases.ManagerPurchasesBase;
 import models.implementations.purchases.PurchaseItemBase;
 import models.implementations.resources.ManagerResourceBase;
@@ -32,9 +35,9 @@ import models.implementations.states.ManagerStatesBase;
 import models.implementations.views.ManagerViewsBase;
 import models.interfaces.IManagerGame;
 import models.interfaces.levels.ILevelInfo;
-import models.interfaces.remote.ERemoteResponseTypeBase;
-import models.interfaces.remote.EResponseStatus;
 import models.interfaces.remote.IResponse;
+
+import utils.Utils;
 
 public class GameInfo extends GameInfoBase
 {
@@ -116,7 +119,7 @@ public class GameInfo extends GameInfoBase
 
         _managerStates = new ManagerStatesBase();
 
-        _managerPlayers = new ManagerPlayersBase(PlayerInfo);
+        _managerPlayers = new ManagerPlayersBase(PlayerInfoBase);
         _managerPlayers.deserialize(_response.entry["players"]);
 
         _managerLevels = new ManagerLevelsBase(LevelContainer, LevelInfo);
@@ -125,12 +128,14 @@ public class GameInfo extends GameInfoBase
         _managerPurchases = new ManagerPurchasesBase(PurchaseItemBase);
         _managerPurchases.deserialize(_response.entry["purchases"]);
 
-        _managerBonus = new ManagerBonusBase();
-        _managerBonus.deserialize(_response.entry["bonus"]);
+
+        //TODO:implement
+//        _managerBonus = new ManagerBonusBase(BonusItemBase);
+//        _managerBonus.deserialize(_response.entry["bonus"]);
 
         _managerSounds = new ManagerSounds();
 
-        _managerViews = new ManagerViewsBase();
+        _managerViews = new ManagerViews();
 
 
         {   //register states
@@ -140,8 +145,10 @@ public class GameInfo extends GameInfoBase
         }
 
 
-        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
-//        GameInfo.instance.managerStates.setState(EStateType.EST_SELECT_LEVEL);
+//        GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
+
+        GameInfo.instance.managerLevels.currentLevelContainer = GameInfo.instance.managerLevels.items[0];
+        GameInfo.instance.managerStates.setState(EStateType.EST_SELECT_LEVEL);
 
 //        startStubGame();
 
@@ -174,30 +181,39 @@ public class GameInfo extends GameInfoBase
     {
         var nextLevel:ILevelInfo = GameInfo.instance.managerLevels.firstIncompleteLevelOpen;
 
-        if (nextLevel == null)
-        {
-            _managerStates.setState(EStateType.EST_MAIN);
-        }
-        else
-        {
-            GameInfoBase.instance.managerRemote.update(ERemoteResponseTypeBase.ERRTB_LEVEL_START, nextLevel,
-                    function (response:IResponse):void
-                    {
-                        if (response.status == EResponseStatus.ERS_OK)
-                        {
-                            var managerGame:IManagerGame = new ManagerGame(nextLevel);
+        var managerGame:IManagerGame = new ManagerGame(nextLevel);
 
-                            GameInfo.instance.onGameStart(managerGame);
+        onGameStart(managerGame);
 
-                            GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
-                        }
-                        else
-                        {
-                            Debug.assert(false, "Can't start stub game")
-                        }
+        _managerStates.setState(EStateType.EST_GAME);
 
-                    });
-        }
+        //todo: implement
+//        if (nextLevel == null)
+//        {
+//            _managerStates.setState(EStateType.EST_MAIN);
+//        }
+//        else
+//        {
+//            GameInfoBase.instance.managerRemote.update(ERemoteResponseTypeBase.ERRTB_LEVEL_START, nextLevel,
+//                    function (response:IResponse):void
+//                    {
+//                        if (response.status == EResponseStatus.ERS_OK)
+//                        {
+//                            var managerGame:IManagerGame = new ManagerGame(nextLevel);
+//
+//                            GameInfo.instance.onGameStart(managerGame);
+//
+//                            GameInfo.instance.managerStates.setState(EStateType.EST_GAME);
+//                        }
+//                        else
+//                        {
+//                            Debug.assert(false, "Can't start stub game")
+//                        }
+//
+//                    });
+//        }
     }
+
+
 }
 }

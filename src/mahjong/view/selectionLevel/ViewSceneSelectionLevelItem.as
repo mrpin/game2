@@ -3,7 +3,7 @@
  */
 package mahjong.view.selectionLevel
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import core.implementations.Debug;
 
@@ -19,7 +19,7 @@ public class ViewSceneSelectionLevelItem extends ViewButton
     /*
      * Fields
      */
-    private var _source:gSceneSelectionLevelItem;
+    private var _source:gSceneLevelsItem;
 
     private var _viewStars:Array;
 
@@ -99,7 +99,7 @@ public class ViewSceneSelectionLevelItem extends ViewButton
      */
     public function ViewSceneSelectionLevelItem(controller:IController)
     {
-        _source = new gSceneSelectionLevelItem();
+        _source = new gSceneLevelsItem();
         super(controller, _source);
 
         init();
@@ -151,6 +151,8 @@ public class ViewSceneSelectionLevelItem extends ViewButton
         }
 
         _viewStars = null;
+
+        _source = null;
 
         super.cleanup();
     }

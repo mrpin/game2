@@ -90,6 +90,10 @@ public class ManagerString extends ManagerStringBase
             _currentLanguage[EStringType.EST_POPUP_BONUS_LABEL_BONUS] = "бонус";
             _currentLanguage[EStringType.EST_POPUP_BONUS_TEXT] = "Бонус дается раз в сутки при входе в игру.";
             _currentLanguage[EStringType.EST_POPUP_BONUS_BUTTON_CLOSE] = "Далее";
+
+
+           // popup out of time
+            _currentLanguage[EStringType.EST_POPUP_OUT_OF_TIME_BUTTON_PASS_LEVEL] = "Пройти уровень";
         }
 
         //purchases

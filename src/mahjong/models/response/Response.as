@@ -83,6 +83,9 @@ public class Response extends ResponseBase
         }
     }
 
-
+    override public function cleanup():void
+    {
+        super.cleanup();
+    }
 }
 }

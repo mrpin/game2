@@ -3,7 +3,7 @@
  */
 package mahjong.view.selectionLevel
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import core.implementations.Debug;
 

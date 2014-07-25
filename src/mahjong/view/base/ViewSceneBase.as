@@ -5,12 +5,15 @@ package mahjong.view.base
 {
 import com.greensock.TweenMax;
 
-import controllers.IController;
+import controllers.interfaces.IController;
 
 import flash.display.DisplayObjectContainer;
+import flash.display.MovieClip;
 import flash.geom.Point;
 
 import mahjong.GameInfo;
+import mahjong.view.base.paralax.IViewParallax;
+import mahjong.view.base.paralax.ViewParallax;
 
 import views.implementations.ViewBase;
 import views.implementations.buttons.ViewButton;
@@ -30,9 +33,7 @@ public class ViewSceneBase extends ViewBase
      */
     private var _source:DisplayObjectContainer;
 
-//    private var _background:IView;
     private var _backgroundFullscreen:IView;
-
 
     private var _gViewCurrency:gViewCurrency;
     private var _viewIconCurrency:IView;
@@ -50,8 +51,6 @@ public class ViewSceneBase extends ViewBase
     private var _buttonMusic:ViewButtonDouble;
 
     private var _buttonFullScreen:IViewButton;
-
-    private var _buttonTOP:IViewButton;
 
     private var _buttonBack:IViewButton;
 
@@ -85,11 +84,6 @@ public class ViewSceneBase extends ViewBase
     public function get buttonMusic():ViewButtonDouble
     {
         return _buttonMusic;
-    }
-
-    public function get buttonTOP():IViewButton
-    {
-        return _buttonTOP;
     }
 
     public function get buttonFullScreen():IViewButton
@@ -187,11 +181,6 @@ public class ViewSceneBase extends ViewBase
             _source.addChild(_buttonMusic.source);
         }
 
-        _buttonTOP = new ViewButton(controller, new gButtonTop());
-        _buttonTOP.position = EViewPosition.EVP_ABSOLUTE;
-        _buttonTOP.anchorPoint = new Point(1, 1);
-        _source.addChild(_buttonTOP.source);
-
         _buttonBack = new ViewButton(controller, new gButtonExit());
         _buttonBack.position = EViewPosition.EVP_ABSOLUTE;
         _buttonBack.anchorPoint = new Point(0, 0);
@@ -200,37 +189,26 @@ public class ViewSceneBase extends ViewBase
 
     private function initObjectsForParallax():void
     {
-        _cloud = new ViewParallax(controller, new gCloudFull());
-        _cloud.position = EViewPosition.EVP_ABSOLUTE;
-        _cloud.anchorPoint = new Point(0.5, 0);
-        _cloud.moveLimits = new Point(40, 25);
-        _cloud.moveDirection = new Point(-1, 1);
-        _cloud.duration = 3;
-        _source.addChild(_cloud.source);
+        _cloud = createViewParallax(gCloudFull, new Point(0.5, 0), new Point(90, 25), new Point(-1, 1));
+        _bambooForest = createViewParallax(gBambooForestFull, new Point(0.5, 1), new Point(150, 30), new Point(-1, 1));
+        _ground = createViewParallax(gGroundFull, new Point(0.5, 1), new Point(90, 25), new Point(-1, 1));
+        _bamboo = createViewParallax(gBambooFull, new Point(0.5, 1), new Point(90, 20), new Point(1, 1));
+    }
 
-        _bambooForest = new ViewParallax(controller, new gBambooForestFull());
-        _bambooForest.position = EViewPosition.EVP_ABSOLUTE;
-        _bambooForest.anchorPoint = new Point(0.5, 1);
-        _bambooForest.moveLimits = new Point(150, 30);
-        _bambooForest.moveDirection = new Point(-1, 1);
-        _bambooForest.duration = 3;
-        _source.addChild(_bambooForest.source);
+    private function createViewParallax(sourceClass:Class, anchor:Point, moveLimits:Point, moveDirection:Point):IViewParallax
+    {
+        var movieClip:MovieClip = new sourceClass();
+        var result:IViewParallax = new ViewParallax(controller, movieClip);
+        result.anchorPoint = anchor;
+        result.moveLimits = moveLimits;
+        result.moveDirection = moveDirection;
 
-        _ground = new ViewParallax(controller, new gGroundFull());
-        _ground.position = EViewPosition.EVP_ABSOLUTE;
-        _ground.anchorPoint = new Point(0.5, 1);
-        _ground.moveLimits = new Point(50, 25);
-        _ground.moveDirection = new Point(-1, 1);
-        _ground.duration = 3;
-        _source.addChild(_ground.source);
+        result.duration = 3;
+        result.position = EViewPosition.EVP_ABSOLUTE;
 
-        _bamboo = new ViewParallax(controller, new gBambooFull());
-        _bamboo.position = EViewPosition.EVP_ABSOLUTE;
-        _bamboo.anchorPoint = new Point(0.5, 1);
-        _bamboo.moveLimits = new Point(50, 20);
-        _bamboo.moveDirection = new Point(1, 1);
-        _bamboo.duration = 3;
-        _source.addChild(_bamboo.source);
+        _source.addChild(result.source);
+
+        return result;
     }
 
 
@@ -278,10 +256,6 @@ public class ViewSceneBase extends ViewBase
         _buttonMusic.source.x += -15;
         _buttonMusic.source.y += 75;
 
-        _buttonTOP.translate(1, 1);
-        _buttonTOP.source.x += -17;
-        _buttonTOP.source.y += -19;
-
         _buttonBack.translate(0, 0);
         _buttonBack.source.x += 10;
         _buttonBack.source.y += 20;
@@ -291,7 +265,7 @@ public class ViewSceneBase extends ViewBase
         _cloud.placeViews(fullscreen);
 
         _ground.translate(0.5, 1);
-        _ground.source.y += 10;
+        _ground.source.y += 20;
         _ground.placeViews(fullscreen);
 
         _bamboo.translate(0.5, 1);
@@ -299,7 +273,7 @@ public class ViewSceneBase extends ViewBase
         _bamboo.placeViews(fullscreen);
 
         _bambooForest.translate(0.5, 1);
-        _bambooForest.source.y -= 15;
+        _bambooForest.source.y -= 5;
         _bambooForest.placeViews(fullscreen);
     }
 
@@ -351,13 +325,16 @@ public class ViewSceneBase extends ViewBase
         _buttonFullScreen.cleanup();
         _buttonFullScreen = null;
 
-        _buttonTOP.cleanup();
-        _buttonTOP = null;
-
         _buttonBack.cleanup();
         _buttonBack = null;
 
+        _gViewPoints = null;
+
+        _gViewCurrency = null;
+
         _source = null;
+
+        _viewEnergy = null;
 
         super.cleanup();
     }

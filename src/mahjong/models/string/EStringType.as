@@ -43,6 +43,11 @@ public class EStringType
     public static const EST_POPUP_BONUS_BUTTON_CLOSE:String = "EST_POPUP_BONUS_BUTTON_CLOSE";
 
     /*
+     * popup out of time
+     */
+    public static const EST_POPUP_OUT_OF_TIME_BUTTON_PASS_LEVEL:String = "EST_POPUP_OUT_OF_TIME_BUTTON_PASS_LEVEL";
+
+    /*
      * Purchases
      */
 

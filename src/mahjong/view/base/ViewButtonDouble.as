@@ -3,16 +3,13 @@
  */
 package mahjong.view.base
 {
-import controllers.IController;
+import controllers.interfaces.IController;
 
-import flash.display.DisplayObject;
 import flash.display.DisplayObjectContainer;
 import flash.display.MovieClip;
-import flash.display.Sprite;
 import flash.events.MouseEvent;
 
 import views.implementations.ViewBase;
-
 import views.implementations.buttons.ViewButton;
 import views.interfaces.buttons.IViewButton;
 
@@ -48,7 +45,7 @@ public class ViewButtonDouble extends ViewBase
 
     public function set isOn(value:Boolean):void
     {
-        if(value == _isOn)
+        if (value == _isOn)
         {
             return;
         }
@@ -106,6 +103,9 @@ public class ViewButtonDouble extends ViewBase
 
         _buttonOff.cleanup();
         _buttonOff = null;
+
+        _source = null;
+
         super.cleanup();
     }
 

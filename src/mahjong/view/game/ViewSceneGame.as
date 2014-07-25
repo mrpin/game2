@@ -3,7 +3,9 @@
  */
 package mahjong.view.game
 {
-import controllers.IController;
+import controllers.interfaces.IController;
+
+import effects.PixelExplosion;
 
 import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
@@ -28,16 +30,12 @@ public class ViewSceneGame extends ViewSceneBase
 
     private var _viewMeasurePoints:IView;
 
-//    private var _viewTimer:gTimer;
-
     private var _buttonBoosterDoneLevel:IViewButton;
     private var _buttonBoosterHint:IViewButton;
     private var _buttonBoosterUndo:IViewButton;
     private var _buttonBoosterMix:IViewButton;
 
     private var _buttonRetry:IViewButton;
-
-    private var _appSize:Point;
 
     /*
      * Properties
@@ -135,9 +133,11 @@ public class ViewSceneGame extends ViewSceneBase
     }
 
 
-    override public function addSubView(view:IView):void
+    public function pixelExplosion():void
     {
-
+        var pixel:PixelExplosion = new PixelExplosion(5, _viewFieldChips.source as DisplayObjectContainer, 8, 0.1, 0, 4, 1.5, 3, 0.8, 2);
+        _source.addChild(pixel);
+        _viewFieldChips.source.visible = false;
     }
 
 
@@ -147,8 +147,8 @@ public class ViewSceneGame extends ViewSceneBase
 
         _viewFieldChips.placeViews(fullscreen);
 
-        _viewFieldChips.source.x = _viewFieldChips.source.width - 80 + (appSize.x / 2) - (_viewFieldChips.source.width / 2);
-        _viewFieldChips.source.y = (appSize.y / 2) - (_viewFieldChips.source.height / 2);
+        _viewFieldChips.source.x = (appSize.x - _viewFieldChips.source.width) / 2;
+        _viewFieldChips.source.y = (appSize.y - _viewFieldChips.source.height) / 2;
 
         _viewMeasurePoints.translate(0, 1);
         _viewMeasurePoints.source.x += 40;
@@ -186,9 +186,6 @@ public class ViewSceneGame extends ViewSceneBase
      */
     public override function cleanup():void
     {
-//        _viewFieldChips.cleanup();
-//        _viewFieldChips = null;
-
         _buttonBoosterDoneLevel.cleanup();
         _buttonBoosterDoneLevel = null;
 
@@ -203,6 +200,10 @@ public class ViewSceneGame extends ViewSceneBase
 
         _buttonRetry.cleanup();
         _buttonRetry = null;
+
+        _viewFieldChips = null;
+
+        _source = null;
 
         super.cleanup();
     }

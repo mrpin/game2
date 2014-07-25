@@ -3,17 +3,13 @@
  */
 package mahjong.controllers.selectionLevel
 {
-import controllers.implementations.Controller;
-
 import flash.events.MouseEvent;
 
 import mahjong.GameInfo;
-
-import mahjong.controllers.base.ControllerSceneBase;
 import mahjong.controllers.lobby.ControllerSceneLobby;
 import mahjong.states.EStateType;
-import mahjong.view.selectionLevel.ViewContainerLevelsItems;
-
+import mahjong.view.popup.popups.controller.ControllerPopupLose;
+import mahjong.view.popup.popups.controller.ControllerPopupNoEnergy;
 import mahjong.view.selectionLevel.ViewSceneSelectionLevel;
 
 import views.interfaces.IView;
@@ -90,6 +86,8 @@ public class ControllerSceneSelectionLevel extends ControllerSceneLobby
     {
         _containerItems.cleanup();
         _containerItems = null;
+
+        _view = null;
 
         super.cleanup();
     }

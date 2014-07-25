@@ -3,16 +3,13 @@
  */
 package mahjong.controllers.lobby
 {
+import controllers.implementations.friends.ControllerFriendsBase0;
+
 import flash.events.MouseEvent;
 
-import mahjong.GameInfo;
-
 import mahjong.controllers.base.ControllerSceneBase;
-import mahjong.controllers.lobby.progress.ControllerProgress;
-import mahjong.controllers.lobby.timeBonus.ControllerTimeBonusCurrency;
-import mahjong.states.EStateType;
+import mahjong.controllers.lobby.friends.ControllerFriends;
 import mahjong.view.lobby.ViewSceneLobby;
-import mahjong.view.selectionLevel.ViewSceneSelectionLevel;
 
 import views.interfaces.IView;
 
@@ -23,9 +20,8 @@ public class ControllerSceneLobby extends ControllerSceneBase
      */
     private var _view:ViewSceneLobby;
 
-    private var _controllerProgress:ControllerProgress;
+    private var _controllerFriends:ControllerFriendsBase0;
 
-    private var _controllerTimeBonus:ControllerTimeBonusCurrency;
 
     /*
      * Properties
@@ -36,31 +32,9 @@ public class ControllerSceneLobby extends ControllerSceneBase
      * Events
      */
 
-
     override public function onViewClicked(view:IView, e:MouseEvent):Boolean
     {
         var result:Boolean = super.onViewClicked(view, e);
-
-//        if (!result)
-//        {
-//            switch (view)
-//            {
-//                case _view.buttonBack:
-//                {
-//                    GameInfo.instance.managerStates.setState(EStateType.EST_MAIN);
-//
-//                    result = true;
-//
-//                    break;
-//                }
-//                default:
-//                {
-//                    result = true;
-//
-//                    break;
-//                }
-//            }
-//        }
 
         return result;
     }
@@ -78,11 +52,8 @@ public class ControllerSceneLobby extends ControllerSceneBase
 
     private function init():void
     {
-        _controllerProgress = new ControllerProgress();
-        _view.progress = _controllerProgress.view;
-
-        _controllerTimeBonus = new ControllerTimeBonusCurrency();
-        _view.timeBonusView = _controllerTimeBonus.view;
+        _controllerFriends = new ControllerFriends();
+        _view.viewFriends = _controllerFriends.view;
     }
 
 
@@ -91,11 +62,8 @@ public class ControllerSceneLobby extends ControllerSceneBase
      */
     public override function cleanup():void
     {
-        _controllerProgress.cleanup();
-        _controllerProgress = null;
-
-        _controllerTimeBonus.cleanup();
-        _controllerTimeBonus = null;
+        _controllerFriends.cleanup();
+        _controllerFriends = null;
 
         super.cleanup();
     }

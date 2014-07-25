@@ -22,6 +22,7 @@ public class Main extends Sprite
     /*
      * Fields
      */
+
     public function Main()
     {
 //        Cc.startOnStage(this);

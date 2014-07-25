@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="none.debug">
     <configurations>
-      <configuration name="none.debug" pure-as="true" main-class="Main" output-file="offline_debug.swf" output-folder="$MODULE_DIR$/bin">
+      <configuration name="none.debug" pure-as="true" main-class="Main" output-file="none_debug.swf" output-folder="$MODULE_DIR$/bin">
         <dependencies target-player="11.1">
           <entries>
             <entry library-name="game-sdk-assets" library-level="application">

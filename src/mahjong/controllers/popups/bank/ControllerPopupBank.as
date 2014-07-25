@@ -6,7 +6,7 @@ package mahjong.controllers.popups.bank
 import controllers.implementations.ControllerPopup;
 
 import mahjong.controllers.popups.*;
-import mahjong.view.popup.bank.ViewPopupBank;
+import mahjong.view.popup.popups.view.bank.ViewPopupBank;
 
 import views.interfaces.IViewPopup;
 
@@ -62,6 +62,9 @@ public class ControllerPopupBank extends ControllerPopup
             item.cleanup();
             item = null;
         }
+
+        _controllersPopupsBankItems = null;
+
         super.cleanup();
     }
 

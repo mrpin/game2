@@ -3,8 +3,8 @@
  */
 package mahjong.controllers.selectionLevel
 {
-import controllers.IController;
 import controllers.implementations.Controller;
+import controllers.interfaces.IController;
 
 import core.implementations.Debug;
 
@@ -16,8 +16,6 @@ import mahjong.view.selectionLevel.ViewContainerLevelsItems;
 import models.interfaces.levels.ILevelContainer;
 import models.interfaces.levels.ILevelInfo;
 
-import mx.utils.StringUtil;
-
 import views.interfaces.IView;
 
 public class ControllerContainerLevelsItems extends Controller
@@ -27,9 +25,10 @@ public class ControllerContainerLevelsItems extends Controller
      */
     private var _view:ViewContainerLevelsItems;
 
-    private var _controllersItems:Array;
+    private var _items:Array;
 
-    private var _currentContainer:uint;
+    private var _pageCurrent:uint;
+    private var _pagesCount:uint;
 
     /*
      * Properties
@@ -45,13 +44,20 @@ public class ControllerContainerLevelsItems extends Controller
 
         switch (view)
         {
-            case _view.buttonBack:
+            case _view.buttonPrev:
             {
-                if(_currentContainer != 1 && _view.isTweenEnd)
-                {
-                    _view.moveAllItems(false);
-                    _currentContainer --
-                }
+                _view.buttonPrev.enabled = false;
+                _view.buttonNext.enabled = false;
+
+                _view.moveCurrentPageToRight(_pageCurrent,
+                        function ():void
+                        {
+                            _view.buttonPrev.enabled = true;
+                            _view.buttonNext.enabled = true;
+                        });
+
+                _pageCurrent--;
+                updateButtons();
 
                 result = true;
 
@@ -59,11 +65,18 @@ public class ControllerContainerLevelsItems extends Controller
             }
             case _view.buttonNext:
             {
-                if(_currentContainer < _controllersItems.length && _view.isTweenEnd)
-                {
-                    _view.moveAllItems(true);
-                    _currentContainer ++;
-                }
+                _view.buttonPrev.enabled = false;
+                _view.buttonNext.enabled = false;
+
+                _view.moveCurrentPageToLeft(_pageCurrent,
+                        function ():void
+                        {
+                            _view.buttonPrev.enabled = true;
+                            _view.buttonNext.enabled = true;
+                        });
+                _pageCurrent++;
+                updateButtons();
+//                }
 
                 result = true;
 
@@ -95,34 +108,56 @@ public class ControllerContainerLevelsItems extends Controller
     {
         var levelContainer:ILevelContainer = GameInfo.instance.managerLevels.currentLevelContainer;
 
-        _controllersItems = [];
+        _items = [];
         var controllerItemsContainer:Array = [];
+        var itemsRow:Array = [];
 
         var viewsItems:Array = [];
         var viewItemsContainer:Array = [];
+        var viewRow:Array = [];
+
+        var itemsOnPage:uint = _view.gridSize.x * _view.gridSize.y;
 
         for (var i:int = 0; i < levelContainer.items.length; i++)
         {
             var itemLevel:ILevelInfo = levelContainer.items[i];
-            var controllerItem:ControllerSceneSelectionLevelItem = new ControllerSceneSelectionLevelItem(itemLevel);
-            controllerItemsContainer.push(controllerItem);
-            viewItemsContainer.push(controllerItem.view);
 
-            if ((i + 1) % 15 == 0)
+            var controllerItem:ControllerSceneSelectionLevelItem = new ControllerSceneSelectionLevelItem(itemLevel);
+            itemsRow.push(controllerItem);
+            viewRow.push(controllerItem.view);
+            if ((i + 1) % 5 == 0)
+            {
+                controllerItemsContainer.push(itemsRow);
+                viewItemsContainer.push(viewRow);
+
+                itemsRow = [];
+                viewRow = [];
+            }
+
+            if ((i + 1) % itemsOnPage == 0)
             {
                 viewsItems.push(viewItemsContainer);
-                _controllersItems.push(controllerItemsContainer);
+                _items.push(controllerItemsContainer);
 
                 viewItemsContainer = [];
                 controllerItemsContainer = [];
             }
         }
 
-       _view.textButtonNext = StringUtil.substitute("{0}/{1}", levelContainer.completeLevelsCount, levelContainer.items.length);
+        _view.updateButtonNext(levelContainer.completeLevelsCount, levelContainer.items.length);
 
-        _view.viewsItems = viewsItems;
+        _view.items = viewsItems;
 
-        _currentContainer = 1;
+        _pageCurrent = 0;
+        _pagesCount = levelContainer.items.length / itemsOnPage;
+
+        updateButtons();
+    }
+
+    private function updateButtons():void
+    {
+        _pageCurrent == 0 ? _view.buttonPrev.hide() : _view.buttonPrev.show();
+        _pageCurrent == _pagesCount - 1 ? _view.buttonNext.hide() : _view.buttonNext.show();
     }
 
 
@@ -131,14 +166,21 @@ public class ControllerContainerLevelsItems extends Controller
      */
     public override function cleanup():void
     {
-        for each(var items:Array in _controllersItems)
+        for each(var items:Array in _items)
         {
-            for each(var item:IController in items)
+            for each (var row:Array in items)
             {
-                item.cleanup();
+                for each(var item:IController in row)
+                {
+                    item.cleanup();
+                }
             }
+
         }
 
+        _items = null;
+
+        _view = null;
 
         super.cleanup();
     }
